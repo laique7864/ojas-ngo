@@ -1,0 +1,90 @@
+
+
+.Img {
+    background-image: url('../../Navbarlogo/Rectangle.png');
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+.Img-Text {
+    color: whitesmoke;
+    font-size: xx-large;
+}
+
+.Main-Contain-text {
+    color: #278CEA;
+    text-align: center;
+}
+
+.Main-Container-Box {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+}
+
+.box1 {
+    height: 50vh;
+    width: 50vh;
+    background-color: red;
+    box-sizing: border-box;
+    border: 1px solid #278CEA;
+}
+
+.box2 {
+    height: 50vh;
+    width: 50vh;
+    background-color: yellow;
+    box-sizing: border-box;
+    border: 1px solid #278CEA;
+}
+
+.box3 {
+    height: 50vh;
+    width: 50vh;
+    background-color: green;
+    box-sizing: border-box;
+    border: 1px solid #278CEA;
+}
+
+.text {
+    display: flex;
+    justify-content: space-evenly;
+    color: #025FB5;
+}
+
+.Latest-Text {
+    color: #278CEA;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.Latest-Activety {
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    background: whitesmoke;
+    border: 2px solid #0966BB;
+    border-radius: 20px;
+    margin-top: 2rem;
+}
+.Main-Abouts{
+    margin-top: 2rem;
+    text-align: center;
+    color: #025FB5;
+}
+.Abouts-Img{
+    width: 231px;
+    height: 232px;
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+.Abouts-Main-contain{
+    display: flex;
+    justify-content: space-evenly;
+}
+.Obj1{
+    height: 50vh;
+    width: 50vh;
+    background-color: red;
+}

@@ -1,0 +1,97 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+.Links {
+    color: whitesmoke;
+    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: #025FB5;;
+    align-items: center;
+    height: 50px;
+   
+}
+.Links img:hover{
+    border-radius: 20px;
+    background-color: darkblue;
+}
+.Links a{
+    color: whitesmoke;
+}
+.Links a:hover{
+    color: black;
+}
+
+.head{
+  
+    background-color:whitesmoke;
+}
+li a{
+    text-decoration: none;
+    color: #025FB5;
+
+    font-size: larger;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+} 
+ul{
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      text-decoration: none;
+      height: 45px;
+      align-items: center;
+      width: 77%;
+  
+}
+.img{
+  /* background-image: url('../Navbarlogo/Rectangle.png'); */
+  width: 100%;
+  height: 600px;
+  background-repeat: no-repeat;
+  
+}
+.fade-in {
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  height: 100%;
+    width: 100%;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.img-button{
+  background-color: #4FA9FB;
+margin-top: 100px;
+border-radius: 40px;
+padding: 17px 40px 14px 36px;
+border: none;
+color: whitesmoke;
+}
+.img-button:hover{
+  background-color: black;
+}
+.img-text{
+  position: absolute;
+width: 150px;
+height: 35px;
+left: 695px;
+top: 234px;
+font-family: 'Merienda';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 35px;
+text-align: justify-center;
+color: whitesmoke;
+
+}

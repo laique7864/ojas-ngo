@@ -1,0 +1,65 @@
+.h3 {
+    text-align: center;
+    color: #025FB5;
+    font-family: 'Merienda';
+
+
+}
+
+.card-1 {
+    height: 250px;
+    width: 250px;
+    left: 81px;
+    top: 327px;
+    border: 1px solid #278CEA;
+    box-sizing: border-box;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.profile {
+
+    height: 120px;
+    width: 120px;
+    margin-left: 63px;
+    margin-top: 10px;
+    border-radius: 80px;
+    background: #D9D9D9;
+
+
+}
+
+.card-1 p {
+    text-align: center;
+}
+
+.main-cards {
+    display: flex;
+    margin-left: 55px;
+    margin-bottom: 20px;
+}
+
+.bottom-heading {
+    text-align: center;
+}
+
+.bottom-heading button {
+    background-color: #4FA9FB;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-family: 'Merienda';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+
+}
+
+.bottom-heading p {
+    font-family: 'Merienda';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+}

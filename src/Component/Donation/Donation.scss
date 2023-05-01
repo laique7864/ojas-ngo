@@ -1,0 +1,32 @@
+.Main{   
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Bank{
+    height: 250px;
+    width: 250px;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+.QR-code{
+    height: 250px;
+    width: 250px;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+.button{
+   padding:5px 50px;
+   border-radius: 20px;
+   color: whitesmoke;
+   background-color:  #4FA9FB;;
+    border: none;
+   font-weight: 1000;
+}
+.button:hover{
+    background-color: black;
+} 
