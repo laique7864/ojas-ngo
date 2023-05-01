@@ -1,13 +1,15 @@
 import React from 'react'
 import './Navbar.css'
-import Contain from '../../Component/Navbar/Contain'
+// import Contain from '../../Component/Navbar/Contain'
 
-const Navbar=()=> {
+const Navbar = () => {
   return (
-   <>
-   <h1>edasffdsadf</h1>
- {/* <Contain/> */}
- </>
+    <>
+      <div>
+        <h1 className='pl-5'>edasffdsadf</h1>
+      </div>
+      {/* <Contain/> */}
+    </>
   )
 }
 
