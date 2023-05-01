@@ -6,10 +6,14 @@ const Contain = () => {
     return (
         <>
             <div className='Img'>
-                <div className='Img-Text'>
-                    <h5>Your small help</h5>
-                    <h5>can light up</h5>
-                    <h5>someone’s life </h5>
+                <div className='Img-Text flex justify-center h-full items-center'>
+                    <p className='text-4xl w-72 h-40 font-sans '>
+                    Your small help
+                    can light up
+                    someone’s life 
+
+                    </p>
+                   
                 </div>
             </div>
             <div>
