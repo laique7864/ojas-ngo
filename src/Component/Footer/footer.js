@@ -1,53 +1,55 @@
 import React from 'react'
-import './Footer.css'
-import Ellipse from'../../FooterLogo/Ellipse.png'
-import Navbarlogo from '../../Navbarlogo/instagram.png'
-import Navbarlog01 from '../../Navbarlogo/facebook.png'
-import Navbarlogo2 from '../../Navbarlogo/twitter.png'
-import Vector from '../../FooterLogo/Vector.png'
-import world from '../../FooterLogo/world.png'
-import phone from '../../FooterLogo/phone.png'
-import email from '../../FooterLogo/email.png'
+import img from '../images/instagram.png'
+import img2 from '../images/facebook.png'
+import img3 from '../images/twituer.png'
+import img4 from '../images/location.png'
+import img5 from '../images/server.png'
+import img6 from "../images/sms.png"
+import img7 from '../images/phone.png'
 
-
-
-const Footers = () => {
+function Footer() {
   return (
     <>
-      <div className='main-footer'>
-        <div className='logo'>
-          <img src={Ellipse} ></img>
+      <div className='bg-blue-500 h-48 flex items-center justify-around rounded-t-3xl'>
+        {/* <div className='w-24 h-24 rounded-tr-3xl rounded-tl-3xl'></div> */}
+        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'white' }}></div>
+        <div className='text-white'>Terms & Conditions</div>
+        <div>
+          <div className='flex justify-between mb-2'>
+            <img src={img} alt='' />
+            <img src={img2} alt='' />
+            <img src={img3} alt='' />
+          </div>
+          <div>
+            <p className='mb-1 text-white'>Privacy Policy</p>
+            <p className='text-white'>All rights reserved</p>
+          </div>
         </div>
-
-
-        <div className='item'>
-          <span>Terms & Condition</span>
+        <div className='flex'>
+          <p className='mr-6 text-white'>Disclaimer</p>
+          <p className='text-white'>Refund Policy</p>
         </div>
-        <div className='info'>
-          <ul>
-            <li><img src={Navbarlogo} ></img></li>
-            <li><img src={Navbarlog01} ></img></li>
-            <li><img src={Navbarlogo2} ></img></li>
-          </ul>
-          <p >Privacy Policy </p>
-          <p> All rights reserved</p>
-
+        <div>
+          <div className='flex mb-2'>
+            <img src={img4} alt='' className='mr-3' />
+            <p className='text-white'>Office Address</p>
+          </div>
+          <div className='flex mb-2'>
+            <img src={img5} alt='' className='mr-3' />
+            <p className='text-white'>www.ngo.com</p>
+          </div>
+          <div className='flex mb-2'>
+            <img src={img6} alt='' className='mr-3' />
+            <p className='text-white'>ngo@abcfoundation.org</p>
+          </div>
+          <div className='flex mb-2'>
+            <img src={img7} alt='' className='mr-3' />
+            <p className='text-white'>9876543210</p>
+          </div>
         </div>
-        <div className='dif'>
-          <span>Disclaimer &emsp; Refund Policy</span>
-        </div>
-        <div className='ser'>
-        <p><img src={Vector} />  &ensp;   Office Address</p><br/>
-        <p><img src={world} /> &ensp;www.ngo.com</p><br/>
-        <p><img src={email} /> &ensp;ngo@abcf</p><br/>
-        <p><img src={phone} /> &ensp;9876543210</p><br/>
       </div>
-      </div>
-     
-
-
     </>
   )
 }
 
-export default Footers
+export default Footer

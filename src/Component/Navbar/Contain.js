@@ -8,12 +8,12 @@ const Contain = () => {
             <div className='Img'>
                 <div className='Img-Text flex justify-center h-full items-center'>
                     <p className='text-4xl w-72 h-40 font-sans '>
-                    Your small help
-                    can light up
-                    someone’s life 
+                        Your small help
+                        can light up
+                        someone’s life
 
                     </p>
-                   
+
                 </div>
             </div>
             <div>
@@ -50,7 +50,7 @@ const Contain = () => {
                 <div>
                     <img src={img} className='Abouts-Img' />
                 </div>
-                <div  style={{marginTop:'4rem'}}>
+                <div style={{ marginTop: '4rem' }}>
 
                     <p> MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state </p>
                     <p>and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.</p>
@@ -63,22 +63,38 @@ const Contain = () => {
             <div>
                 <h4>Our Objective</h4>
                 <div className='flex justify-center'>
-                <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
-                <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
-                <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
-                <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
-                <div class="w-60 h-60 border  border-1C6FB rounded-full"></div>
+                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
+                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
+                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
+                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
+                    <div class="w-60 h-60 border  border-1C6FB rounded-full"></div>
                 </div>
             </div>
-            <div className='flex justify-center'>
-            <div class="w-2/5 h-80  bg-FFFFFF border border-1C6FB mr-3.5">
-            <div class="border-b-2 border-gray-400 w-4/5 mb-2"></div>
-<div class="border-b-2 border-gray-400 w-4/5 mb-2"></div>
-<div class="border-b-2 border-gray-400 w-4/5 mb-2"></div>
-<div class="border-b-2 border-gray-400 w-4/5 mb-2"></div>
-<div class="border-b-2 border-gray-400 w-4/5"></div>
-            </div>
-            <div class="w-2/5 h-80 bg-FFFFFF border border-1C6FB"></div>
+            <div className='flex justify-center mb-11'>
+                <div class="w-2/5 h-80  bg-FFFFFF border border-1C6FB mr-3.5">
+                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-6"></div>
+                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
+                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
+                    <div class="border-b-2 border-gray-400 w-4/5 ml-6"></div>
+                    <div style={{display:'flex',alignItems:'center'}}>
+                        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'blue', marginTop: '3rem', marginLeft: '2rem' }}>
+                        </div>
+                        <p className='mt-24 ml-5 text-blue-500'>Moin Shaikh,Member</p>
+                    </div>
+
+                </div>
+                <div class="w-2/5 h-80 bg-FFFFFF border border-1C6FB">
+                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-11"></div>
+                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
+                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
+                    <div class="border-b-2 border-gray-400 w-4/5 ml-11"></div>
+
+                    <div style={{display:'flex',alignItems:'center'}}>
+                        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'blue', marginTop: '3rem', marginLeft: '2rem' }}>
+                        </div>
+                        <p className='mt-24 ml-5 text-blue-500'>Afreen Nagdade, Member</p>
+                    </div>
+                </div>
             </div>
         </>
     )
