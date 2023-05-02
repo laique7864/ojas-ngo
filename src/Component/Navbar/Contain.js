@@ -5,17 +5,10 @@ const Contain = () => {
 
     return (
         <>
-            <div className='Img'>
-                <div className='Img-Text flex justify-center h-full items-center'>
-                    <p className='text-4xl w-72 h-40 font-sans '>
-                        Your small help
-                        can light up
-                        someone’s life
-
-                    </p>
-
-                </div>
-            </div>
+            <div className="flex justify-center items-center h-600 w-1440">
+  <img src={require('../../Navbarlogo/Rectangle.png')} className="h-full w-full object-cover" alt="image description" />
+  <p className="absolute text-center text-white z-10 font-sans w-80 text-4xl">Your small help can light up someone’s life</p>
+</div>
             <div>
                 <h3 className='Main-Contain-text'>Upcoming Events</h3>
             </div>
@@ -39,11 +32,11 @@ const Contain = () => {
                 <div className='Latest-Text'>
                     <h3>Latest Activity</h3>
                 </div>
-                <div className='Latest-Activety'>
-                </div>
+                <div class="flex flex-col items-center justify-center w-1233 h-1211 mx-auto border-2 border-0966BB">
+</div>
             </div>
 
-            <div className='Main-Abouts'>
+            <div className='Main-Abouts'>   
                 <h3>About Us</h3>
             </div>
             <div className='Abouts-Main-contain'>

@@ -12,12 +12,18 @@ module.exports = {
         "025FB5": "#025FB5",
         '1C6FB'   :"#1C6FBB",
         "FFFFFF":"#FFFFFF",
-        "000000":"#000000",
-        "nav-hover": "linear-gradient(180deg, rgba(246, 118, 0, 0.6) 0%, rgba(255, 255, 255, 0.5) 52.08%, rgba(66, 248, 2, 0.4) 100%)"
-      },
+        "0966BB":"#0966BB",
+        "000000":"#000000"
+        },
       fontFamily: {
         sans: ['"Merienda"', 'sans-serif'],
       },
+      width:{
+        "1233":"1233px"
+      },
+      height:{
+        "1211":"800px"
+      }
     },
   },
   plugins: [],
