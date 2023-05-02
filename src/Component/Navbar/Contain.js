@@ -62,13 +62,23 @@ const Contain = () => {
             </div>
             <div>
                 <h4>Our Objective</h4>
-                <div>
-                  <div className='Obj1'></div>
-                  <div  className='Obj2'></div>
-                  <div  className='Obj3'></div>
-                  <div  className='Obj4'></div>
-                  <div  className='Obj5'></div>
+                <div className='flex justify-center'>
+                <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
+                <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
+                <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
+                <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
+                <div class="w-60 h-60 border  border-1C6FB rounded-full"></div>
                 </div>
+            </div>
+            <div className='flex justify-center'>
+            <div class="w-2/5 h-80  bg-FFFFFF border border-1C6FB mr-3.5">
+            <div class="border-b-2 border-gray-400 w-4/5 mb-2"></div>
+<div class="border-b-2 border-gray-400 w-4/5 mb-2"></div>
+<div class="border-b-2 border-gray-400 w-4/5 mb-2"></div>
+<div class="border-b-2 border-gray-400 w-4/5 mb-2"></div>
+<div class="border-b-2 border-gray-400 w-4/5"></div>
+            </div>
+            <div class="w-2/5 h-80 bg-FFFFFF border border-1C6FB"></div>
             </div>
         </>
     )
