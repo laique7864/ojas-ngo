@@ -1,7 +1,4 @@
-/* *{
-    margin: 0;
-    padding: 0;
-} */
+/* 
 .Links {
     color: whitesmoke;
     display: inline-block;
@@ -47,7 +44,7 @@ ul{
 }
 .img{
   /* background-image: url('../Navbarlogo/Rectangle.png'); */
-  width: 100%;
+  /* width: 100%;
   height: 600px;
   background-repeat: no-repeat;
   
@@ -94,20 +91,4 @@ line-height: 35px;
 text-align: justify-center;
 color: whitesmoke;
 
-}
-.flag{
-  background: linear-gradient(180deg, #F67600 0%, #FFFFFF 52.08%, rgba(66, 248, 2, 0.4) 100%);
-    width: 181px;
-    height: 164.17px;
-}
-.flag::before{
-  content: '';
-  position: absolute;
-  bottom: 0; right: 0;
-  border-bottom: 80px solid white;
-  border-left: 80px solid red;
-  width: 0;
-}
-.hover-nav:hover{
-  background: linear-gradient(180deg, #F67600 0%, #FFFFFF 52.08%, rgba(66, 248, 2, 0.4) 100%);
-}
+}  */ 
