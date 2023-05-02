@@ -61,22 +61,30 @@ const Contain = () => {
                 </div>
             </div>
             <div>
-                <h4>Our Objective</h4>
-                <div className='flex justify-center'>
+                <h4 className='flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans'>Our Objective</h4>
+                <div className='flex justify-center mb-4'>
                     <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
                     <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
                     <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
                     <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
                     <div class="w-60 h-60 border  border-1C6FB rounded-full"></div>
                 </div>
+                <div className='flex items-center justify-evenly mb-8'>
+                    <p className='text-025FB5 font-sans'>Providing Food</p>
+                    <p className='text-025FB5 font-sans'>Provide Clothes</p>
+                    <p className='text-025FB5 font-sans'>Financial Support</p>
+                    <p className='text-025FB5 font-sans'>Medical Support</p>
+                    <p className='text-025FB5 font-sans'>Help Needy</p>
+                </div>
             </div>
+            <div className='flex items-center justify-center font-sans text-025FB5 text-2xl mb-10'>Testimonial</div>
             <div className='flex justify-center mb-11'>
                 <div class="w-2/5 h-80  bg-FFFFFF border border-1C6FB mr-3.5">
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-6"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 ml-6"></div>
-                    <div style={{display:'flex',alignItems:'center'}}>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'blue', marginTop: '3rem', marginLeft: '2rem' }}>
                         </div>
                         <p className='mt-24 ml-5 text-blue-500'>Moin Shaikh,Member</p>
@@ -89,7 +97,7 @@ const Contain = () => {
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 ml-11"></div>
 
-                    <div style={{display:'flex',alignItems:'center'}}>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'blue', marginTop: '3rem', marginLeft: '2rem' }}>
                         </div>
                         <p className='mt-24 ml-5 text-blue-500'>Afreen Nagdade, Member</p>
