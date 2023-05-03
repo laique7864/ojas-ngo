@@ -1,4 +1,4 @@
-
+/* 
 
 .Img {
     background-image: url('../../Navbarlogo/Rectangle.png');
@@ -26,24 +26,34 @@
 .box1 {
     height: 50vh;
     width: 50vh;
+<<<<<<< HEAD
     /* background-color: red; */
     box-sizing: border-box;
+=======
+>>>>>>> 4c9c5ed6fa6fd024cc727bba370d9747fae82c89
     border: 1px solid #278CEA;
 }
 
 .box2 {
     height: 50vh;
     width: 50vh;
+<<<<<<< HEAD
     /* background-color: yellow; */
     box-sizing: border-box;
+=======
+
+>>>>>>> 4c9c5ed6fa6fd024cc727bba370d9747fae82c89
     border: 1px solid #278CEA;
 }
 
 .box3 {
     height: 50vh;
     width: 50vh;
+<<<<<<< HEAD
     /* background-color: green; */
     box-sizing: border-box;
+=======
+>>>>>>> 4c9c5ed6fa6fd024cc727bba370d9747fae82c89
     border: 1px solid #278CEA;
 }
 
@@ -87,4 +97,4 @@
     height: 50vh;
     width: 50vh;
     background-color: red;
-}
+} 

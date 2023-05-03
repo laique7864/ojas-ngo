@@ -19,10 +19,12 @@ module.exports = {
         sans: ['"Merienda"', 'sans-serif'],
       },
       width:{
-        "1233":"1233px"
+        "1233":"1233px",
+        "1384":"1384px"
       },
       height:{
-        "1211":"800px"
+        "1211":"800px",
+        "1536":"1536px"
       }
     },
   },

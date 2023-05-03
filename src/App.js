@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import Home from './Component/Navbar/Navbar'
+// import Home from './Component/Navbar/Navbar'
 import Login from './Component/Login/Login'
 import Donation from './Component/Donation/Donation';
 import Contact from './Component/Contact/contact';
@@ -27,8 +27,9 @@ function App() {
           <Route path='/Donationpage' element={<Donation/>} />
           <Route path='/DonorList' element={<DonorList/>} />
           <Route path='/Login' element={<Login/>} />
+          <Route path='/ragistrationform' element={<RagistrationForm/>} />
+
         </Route>
-        <Route path='/ragistrationform' element={<RagistrationForm/>} />
 
       </Route>
 

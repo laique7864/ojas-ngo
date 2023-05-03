@@ -1,5 +1,5 @@
 import React from 'react'
-import './Contain.css'
+// import './Contain.css'
 import img from '../../Navbarlogo/Ellipse 4.png'
 const Contain = () => {
 

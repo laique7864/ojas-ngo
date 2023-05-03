@@ -50,7 +50,7 @@ const Navbar = () => {
             <span className='text-white'>helpdesk@xyz.com</span>
           </div>
         </div>
-        <div className='h-24 flex items-center justify-end'>
+        <div className='h-24 flex items-center justify-end shadow-md'>
           {/* Navigation Links */}
           <div className="hidden sm:block sm:mr-11">
             <div className="flex space-x-4">
