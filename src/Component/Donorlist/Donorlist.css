@@ -29,8 +29,8 @@
 }
 .main-cards {
     display: flex;
-    margin-left: 55px;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-top: 4rem;
 }
 
 .bottom-heading {

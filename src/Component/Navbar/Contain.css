@@ -26,7 +26,7 @@
 .box1 {
     height: 50vh;
     width: 50vh;
-    background-color: red;
+    /* background-color: red; */
     box-sizing: border-box;
     border: 1px solid #278CEA;
 }
@@ -34,7 +34,7 @@
 .box2 {
     height: 50vh;
     width: 50vh;
-    background-color: yellow;
+    /* background-color: yellow; */
     box-sizing: border-box;
     border: 1px solid #278CEA;
 }
@@ -42,7 +42,7 @@
 .box3 {
     height: 50vh;
     width: 50vh;
-    background-color: green;
+    /* background-color: green; */
     box-sizing: border-box;
     border: 1px solid #278CEA;
 }
