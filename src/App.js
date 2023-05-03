@@ -9,6 +9,7 @@ import Contact from './Component/Contact/contact';
 import DonorList from './Component/Donorlist/DonorList'
 import Root from './Component/root/Root';
 import Contain from './Component/Navbar/Contain';
+import RagistrationForm from './Component/ragistrationForm/RagistrationForm';
 
 // import Upcoming from './Components/Navbar/Upcomingevent/upcoming'
 
@@ -27,6 +28,8 @@ function App() {
           <Route path='/DonorList' element={<DonorList/>} />
           <Route path='/Login' element={<Login/>} />
         </Route>
+        <Route path='/ragistrationform' element={<RagistrationForm/>} />
+
       </Route>
 
     )
