@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import './Login.scss'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const Login =()=>{
     const [data, setData] = useState([])
@@ -29,7 +27,6 @@ const Login =()=>{
     return(
         <>
         <h1 className="heding">User Login</h1>
-        <ToastContainer />
         <div className="main-div">
             <label className="lab-div">Name</label>
             <input type='text' name="user" value={inputField.name} onChange={handelOnchange} />
