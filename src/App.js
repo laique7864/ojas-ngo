@@ -10,6 +10,11 @@ import DonorList from './Component/Donorlist/DonorList'
 import Root from './Component/root/Root';
 import Contain from './Component/Navbar/Contain';
 import RagistrationForm from './Component/ragistrationForm/RagistrationForm';
+import Admin from './Component/Admin/Admin'
+
+
+
+
 
 // import Upcoming from './Components/Navbar/Upcomingevent/upcoming'
 
@@ -24,10 +29,13 @@ function App() {
           <Route path='/' element={<Contain />} />
           {/* <Route path='/VerfiedMember' element={<Verfied />} /> */}
           <Route path='/Contact' element={<Contact />} />
-          <Route path='/Donationpage' element={<Donation/>} />
+          <Route path='/Donation' element={<Donation/>} />
           <Route path='/DonorList' element={<DonorList/>} />
           <Route path='/Login' element={<Login/>} />
           <Route path='/ragistrationform' element={<RagistrationForm/>} />
+          <Route path='/Admin' element={<Admin/>} />
+         
+         
 
         </Route>
 

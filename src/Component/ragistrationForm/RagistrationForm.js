@@ -11,7 +11,7 @@ function RagistrationForm() {
         state: '',
         district: '',
         mobileno: '',
-        alternatno: '',
+        alternateno: '',
         adress: '',
         pincode: '',
         email: '',
@@ -20,15 +20,20 @@ function RagistrationForm() {
         voterid: '',
         otherdocument: ''
     })
-    const handleOnSubmit = ()=>{
-        console.log(inputField);
-    }
+   
 
-    const handleOnchange = (event) => {
-        setInputField((e) => {
-            e[event.target.name] = event.target.value
-            return 
+    const handleOnchange=(event)=>{
+     
+        setInputField((prev)=>{
+            let helper = {...prev}
+         helper[event.target.name] = event.target.value
+         return helper
         })
+   
+    }
+    const handleOnSubmit = (event)=>{
+        event.preventDefault();
+        console.log(inputField);
     }
 
     return (
@@ -120,7 +125,7 @@ function RagistrationForm() {
                     <button style={{
                         border: '1px solid #4FA9FB', backgroundColor: '#4FA9FB',
                         width: '10rem', height: '3rem', borderRadius: '2rem', color: 'white'
-                    }} onSubmit={handleOnSubmit}>Register</button>
+                    }} onClick={handleOnSubmit}>Register</button>
                 </div>
             </div>
         </>

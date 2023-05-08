@@ -34,7 +34,7 @@ const Contact = () => {
    
     <>
     <form>
-    <div className="mt-10">
+    <div className="mt-10 ">
       <h1 className="flex align-item justify-center text-blue-800 text-2xl">Contact Us</h1>
       <div className="border-2  border-indigo-500/100 mt-5">
 
@@ -67,7 +67,7 @@ const Contact = () => {
           <textarea className="h-96 w-8/12 border-2  border-indigo-500/100 mr-20" name="describtion" value={inputField.describtion} onChange={handelOnchange}></textarea>
         </div>
      
-        <button className="rounded-2xl bg-blue-500 p-2 text-white" type="submite"  onClick={userhandleSubmite}>Submit</button>
+        <button className=" flex justify-center  rounded-2xl bg-blue-500 p-2 text-white " type="submite"  onClick={userhandleSubmite}>Submit</button>
       </div>
       </div>
       </form>

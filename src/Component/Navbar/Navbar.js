@@ -4,6 +4,7 @@ import img from '../images/instagram.png'
 import img2 from '../images/facebook.png'
 import img3 from '../images/twituer.png'
 import tirenga from '../images/terenga.png'
+
 import { Link } from 'react-router-dom'
 // import Contain from '../../Component/Navbar/Contain'
 
@@ -33,8 +34,11 @@ const Navbar = () => {
     <>
       <div>
         <div className='bg-blue-500 flex items-center justify-around h-14'>
-          <div className='flex items-center'>
-            <img src={tirenga} alt='' className='absolute top-0 left-14' />
+          <div className='flex items-center '>
+         
+            <img src={tirenga} alt='' className='absolute top-0 left-14'  />
+            
+          
             {/* <h1 >LOG0</h1> */}
           </div>
           <div className='flex items-center w-2/6'>
@@ -58,7 +62,7 @@ const Navbar = () => {
                 <Link
                   to={`/${item.href}`}
                   style={{
-                    background: index === current && "linear-gradient(180deg, rgba(246, 118, 0, 0.6) 0%, rgba(255, 255, 255, 0.5) 52.08%, rgba(66, 248, 2, 0.4) 100%)",
+                   background: index === current && "linear-gradient(180deg, rgba(246, 118, 0, 0.6) 0%, rgba(255, 255, 255, 0.5) 52.08%, rgba(66, 248, 2, 0.4) 100%)",
                   }}
                   key={item.name}
                   className={classNames(
