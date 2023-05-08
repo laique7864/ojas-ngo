@@ -38,8 +38,10 @@ function RagistrationForm() {
 
     return (
         <>
-            <h2 className='flex items-center justify-center font-sans mb-7 mt-5 text-2xl text-025FB5'>Registration Form</h2>
-            <div style={{ boxSizing: 'border-box', border: '1px solid #025FB5', width: '75rem', marginLeft: '6rem', marginBottom: '3rem' }}>
+        <div className='flex items-center flex-col '>
+            <h2 className='flex items-center justify-center font-sans text-2xl text-025FB5'>Registration Form</h2>
+
+            <div style={{ boxSizing: 'border-box', border: '1px solid #025FB5', width: '75rem' }} className='rounded-lg'>
                 <div className='flex items-center justify-evenly mt-8'>
                     <label className='text-025FB5 w-64'>Name <span className='text-red-600'>*</span> :</label>
                     <input type='text' placeholder='Name' className='w-56 h-7' name='name' onChange={handleOnchange} value={inputField.name} />
@@ -127,6 +129,7 @@ function RagistrationForm() {
                         width: '10rem', height: '3rem', borderRadius: '2rem', color: 'white'
                     }} onClick={handleOnSubmit}>Register</button>
                 </div>
+            </div>
             </div>
         </>
     )

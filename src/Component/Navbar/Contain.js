@@ -12,27 +12,36 @@ const Contain = () => {
             <div>
                 <h3 className='Main-Contain-text'>Upcoming Events</h3>
             </div>
-            <div className='Main-Container-Box'>
-                <div className='box1'></div>
+            <div class="flex justify-center space-x-3">
+            <div class="w-30per h-80 bg-FFFFFF border border-1C6FB"></div>
+            <div class="w-30per h-80 bg-FFFFFF border border-1C6FB"></div>
+            <div class="w-30per h-80 bg-FFFFFF border border-1C6FB"></div>
+           
+                {/* <div class="w-96 h-1/5 border-2 border-blue-500"></div>
+                <div class="w-96 h-1/5 border-2 border-blue-500"></div>
+                <div class="w-96 h-1/5 border-2 border-blue-500"></div> */}
+                {/* <div className='text'>
 
-                <div className='box2'></div>
-                <div className='box3'></div>
-                <div className='text'>
-
-                </div>
+                </div> */}
 
             </div>
-            <div className='text'>
+            <div class="flex justify-center space-x-3">
+                <h4 className='w-30per text-center'>Blood Donation Camp</h4>
+                <h4 className='w-30per text-center'>Blood Donation Camp</h4>
+                <h4 className='w-30per text-center'>Blood Donation Camp</h4>
+                {/* <h4 className='w-30per'>Blood Donation Camp</h4> */}
+            </div>
+            {/* <div className='text'>
                 <p>Blood Donation Camp</p>
                 <p>Books Distribution</p>
                 <p>Career Guidance</p>
-            </div>
+            </div> */}
 
             <div >
-                <div className='Latest-Text'>
+                <div className='Latest-Text text-center'>
                     <h3>Latest Activity</h3>
                 </div>
-                <div class="flex flex-col items-center justify-center w-1233 h-1211 mx-auto border-2 border-0966BB">
+                <div class="flex flex-col items-center justify-center w-1233 h-1211 mx-auto border-2 rounded-lg border-0966BB">
 </div>
             </div>
 
@@ -40,18 +49,16 @@ const Contain = () => {
                 <h3>About Us</h3>
             </div>
             <div className='Abouts-Main-contain'>
-                <div>
-                    <img src={img} className='Abouts-Img' />
+                <div className='flex items-center'> 
+                    <img src={img} className='Abouts-Img'  />
+                    <p> MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state 
+                    and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
+          An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity.</p>
                 </div>
-                <div style={{ marginTop: '4rem' }}>
+                {/* <div>
 
-                    <p> MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state </p>
-                    <p>and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.</p>
-                    <p>  An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required </p>
-                    <p> (as is for any charitable trust) is a legal contract and deed that conveys property.</p>
-                    <p>While no federal government involvement comes into play, states in the U.S. </p>
-                    <p> may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity.</p>
-                </div>
+                
+                </div> */}
             </div>
             <div>
                 <h4 className='flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans'>Our Objective</h4>
