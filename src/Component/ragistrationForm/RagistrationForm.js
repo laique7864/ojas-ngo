@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 function RagistrationForm() {
+ 
     const [inputField, setInputField] = useState({
         name: '',
         fathername: '',
@@ -11,8 +12,8 @@ function RagistrationForm() {
         state: '',
         district: '',
         mobileno: '',
-        alternateno: '',
-        adress: '',
+        alternatno: '',
+        address: '',
         pincode: '',
         email: '',
         profilepicture: '',
@@ -31,14 +32,38 @@ function RagistrationForm() {
         })
    
     }
+
     const handleOnSubmit = (event)=>{
         event.preventDefault();
         console.log(inputField);
+     
+        setInputField({
+            name: '',
+            fathername: '',
+            dateofbirth: '',
+            gender: '',
+            profession: '',
+            bloodgroup: '',
+            state: '',
+            district: '',
+            mobileno: '',
+            alternatno: '',
+            address: '',
+            pincode: '',
+            email: '',
+            profilepicture: '',
+            adharcard: '',
+            voterid: '',
+            otherdocument: ''
+          });
+       
     }
+
+
 
     return (
         <>
-        <div className='flex items-center flex-col '>
+        <div className='flex items-center flex-col mt-12 '>
             <h2 className='flex items-center justify-center font-sans text-2xl text-025FB5'>Registration Form</h2>
 
             <div style={{ boxSizing: 'border-box', border: '1px solid #025FB5', width: '75rem' }} className='rounded-lg'>
@@ -80,16 +105,16 @@ function RagistrationForm() {
 
                 <div className='flex items-center justify-evenly'>
                     <label className='text-025FB5 w-64'>Mobile No<span className='text-red-600'>*</span> :</label>
-                    <input type='number' name='mobileno' onChange={handleOnchange} value={inputField.mobileno} placeholder='Number' className='w-56 h-7' />
+                    <input type='number' name='mobileno' onChange={handleOnchange} value={inputField.mobileno}   maxLength={10} placeholder='Number' className='w-56 h-7' />
 
                     <label className='text-025FB5 w-64'>Alternate No :</label>
-                    <input type='text' name='alternateno' onChange={handleOnchange} value={inputField.alternatno} className='w-56 h-7' />
+                    <input type='text' name='alternatno' onChange={handleOnchange} value={inputField.alternatno} className='w-56 h-7' />
                 </div>
                 <div style={{ border: '1px solid #025FB5', width: '60rem', marginLeft: '8rem', marginBottom: '2rem', marginTop: '0.7rem' }}></div>
 
                 <div className='flex ml-12'>
                     <label className='text-025FB5 w-64'>Address<span className='text-red-600'>*</span> :</label>
-                    <textarea style={{
+                    <textarea  name='address' onChange={handleOnchange} value={inputField.address} style={{
                         boxSizing: 'border-box', width: '50rem', border: '1px solid #025FB5',
                         height: '5rem', marginLeft: '3rem', marginBottom: '1rem'
                     }}

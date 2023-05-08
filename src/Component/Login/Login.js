@@ -6,9 +6,9 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 const Login =()=>{
-    const [data, setData] = useState([])
+  
     const [inputField,setInputField]=useState({
-        user:"",
+        name:"",
         email:"",
         password:"",
 })
@@ -22,35 +22,14 @@ const Login =()=>{
         })
    
     }
-   
-    function validateForm() {
-        const user = document.getElementById("name");
-        const email = document.getElementById("email");
-        const password = document.getElementById("password");
-    
-        if (user.value === "") {
-          alert("Please enter your name.");
-          // nameInput.focus();
-          return false;
-        }
-    
-        if (email.value === "") {
-          alert("Please enter your email.");
-          // emailInput.focus();
-          return false;
-        }
-    
-        if (password.value.length < 8) {
-          alert("Password must be at least 8 characters.");
-          password.focus();
-          return false;
-        }
-    
-        return true;
-      }
+
       const userhandleSubmite=()=>{
         console.log(inputField)
-        console.log(validateForm)
+        setInputField({
+         name:"",
+          email:"",
+          password:"",
+        })
     }
  
     return(
@@ -81,7 +60,7 @@ const Login =()=>{
         <h1 className="heding">User Login</h1>
         <div className="main-div">
             <label className="lab-div">Name</label>
-            <input type='text' name="user" value={inputField.name} onChange={handelOnchange} required/>
+            <input type='text' name="name" value={inputField.name} onChange={handelOnchange} required/>
             <label className="lab-div-emsil">Email</label>
             <input type='text'  name="email"  value={inputField.email} onChange={handelOnchange} required />
             <label className="lab-div">Password</label>

@@ -14,9 +14,11 @@ const Navbar = () => {
     { name: 'Verified Members', href: '#' },
     { name: 'Events', href: '#' },
     { name: 'Donors list', href: 'DonorList' },
+    // { name: 'President Desk', href: '#' },
     { name: 'Management Team', href: '#' },
     { name: 'Contact us', href: 'Contact' },
     { name: 'Login', href: '#' },
+   
   ];
   const [current, setCurrent] = useState(0);
 

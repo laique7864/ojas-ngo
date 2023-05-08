@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./contact.scss";
+// import "./contact.scss";
 
 
 const Contact = () => {
   
   const [inputField,setInputField]=useState({
-    user:"",
+    name:"",
     mobileNo:"",
     email:"",
     topic:"",
@@ -28,6 +28,13 @@ const Contact = () => {
   const userhandleSubmite=(e)=>{
     e.preventDefault()
     console.log(inputField)
+    setInputField({
+      name:"",
+      mobileNo:"",
+      email:"",
+      topic:"",
+      describtion:"",
+    })
   }
 
   return (
@@ -40,7 +47,7 @@ const Contact = () => {
 
         <div className="flex justify-around   mt-12">
         <label className="ml-8 text-blue-600 font-semibold" >Name<span className=" text-red-600">*</span>:</label>
-        <input className="w-80 h-9" type="text" name="user" value={inputField.name} onChange={handelOnchange}/>
+        <input className="w-80 h-9" type="text" name="name" value={inputField.name} onChange={handelOnchange}/>
 
         <label className="ml-8 text-blue-600 font-semibold" >Mobile No<span className="text-red-600">*</span>:</label>
         <input className="w-80 h-9 mr-20" type="number" name="mobileNo" value={inputField.mobileNo} onChange={handelOnchange}/>
