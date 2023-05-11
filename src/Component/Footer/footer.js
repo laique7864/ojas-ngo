@@ -13,16 +13,16 @@ function Footer() {
       <div className='bg-blue-500 h-48 flex items-center justify-around rounded-t-3xl'>
         {/* <div className='w-24 h-24 rounded-tr-3xl rounded-tl-3xl'></div> */}
         <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'white' }}></div>
-        <div className='text-white'>Terms & Conditions</div>
+        <div className='text-white cursor-pointer'>Terms & Conditions</div>
         <div>
           <div className='flex justify-between mb-2'>
-            <img src={img} alt='' />
-            <img src={img2} alt='' />
-            <img src={img3} alt='' />
+            <img src={img} alt='' className='cursor-pointer' />
+            <img src={img2} alt='' className='cursor-pointer' />
+            <img src={img3} alt='' className='cursor-pointer' />
           </div>
           <div>
-            <p className='mb-1 text-white'>Privacy Policy</p>
-            <p className='text-white'>All rights reserved</p>
+            <p className='mb-1 text-white cursor-pointer'>Privacy Policy</p>
+            <p className='text-white cursor-pointer'>All rights reserved</p>
           </div>
         </div>
         <div className='flex'>

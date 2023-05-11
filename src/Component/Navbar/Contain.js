@@ -6,17 +6,17 @@ const Contain = () => {
     return (
         <>
             <div className="flex justify-center items-center h-600 w-1440">
-  <img src={require('../../Navbarlogo/Rectangle.png')} className="h-full w-full object-cover" alt="image description" />
-  <p className="absolute text-center text-white z-10 font-sans w-80 text-4xl">Your small help can light up someone’s life</p>
-</div>
+                <img src={require('../../Navbarlogo/Rectangle.png')} className="h-full w-full object-cover" alt="image description" />
+                <p className="absolute text-center text-white z-10 font-sans w-80 text-4xl">Your small help can light up someone’s life</p>
+            </div>
             <div>
                 <h3 className='Main-Contain-text'>Upcoming Events</h3>
             </div>
             <div class="flex justify-center space-x-3">
-            <div class="w-30per h-80 bg-FFFFFF border border-1C6FB"></div>
-            <div class="w-30per h-80 bg-FFFFFF border border-1C6FB"></div>
-            <div class="w-30per h-80 bg-FFFFFF border border-1C6FB"></div>
-           
+                <div class="w-30per h-80 bg-FFFFFF border border-1C6FB"></div>
+                <div class="w-30per h-80 bg-FFFFFF border border-1C6FB"></div>
+                <div class="w-30per h-80 bg-FFFFFF border border-1C6FB"></div>
+
                 {/* <div class="w-96 h-1/5 border-2 border-blue-500"></div>
                 <div class="w-96 h-1/5 border-2 border-blue-500"></div>
                 <div class="w-96 h-1/5 border-2 border-blue-500"></div> */}
@@ -42,18 +42,18 @@ const Contain = () => {
                     <h3>Latest Activity</h3>
                 </div>
                 <div class="flex flex-col items-center justify-center w-1233 h-1211 mx-auto border-2 rounded-lg border-0966BB">
-</div>
+                </div>
             </div>
 
-            <div className='Main-Abouts'>   
+            <div className='Main-Abouts'>
                 <h3>About Us</h3>
             </div>
             <div className='Abouts-Main-contain'>
-                <div className='flex items-center'> 
-                    <img src={img} className='Abouts-Img'  />
-                    <p> MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state 
-                    and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
-          An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity.</p>
+                <div className='flex items-center'>
+                    <img src={img} className='Abouts-Img' />
+                    <p> MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
+                        and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
+                        An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity.</p>
                 </div>
                 {/* <div>
 
