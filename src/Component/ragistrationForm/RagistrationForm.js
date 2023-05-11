@@ -22,12 +22,7 @@ function RagistrationForm() {
         otherdocument: ''
     })
    
-  const handlePhoneNumberChange = (event) => {
-    const inputValue = event.target.value.replace(/\D/g,''); // Removes all non-numeric characters
-    if (inputValue.length <= 10) {
-        setInputField(inputValue);
-    }
-  };
+  
     const handleOnchange=(event)=>{
      
         setInputField((prev)=>{
@@ -41,7 +36,7 @@ function RagistrationForm() {
     const handleOnSubmit = (event)=>{
         event.preventDefault();
         console.log(inputField);
-        handlePhoneNumberChange(inputField);
+     
      
         setInputField({
             name: '',
