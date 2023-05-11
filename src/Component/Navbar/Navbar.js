@@ -46,9 +46,9 @@ const Navbar = () => {
           <div className='flex items-center w-2/6'>
             <a href='!' className='mr-14 text-white'>Follow Us</a>
             <div className='contents '>
-              <img src={img} alt='' className=' mr-6' />
-              <img src={img2} alt='' className='mr-6' />
-              <img src={img3} alt='' className='mr-6' />
+              <img src={img} alt='' className=' mr-6 cursor-pointer' />
+              <img src={img2} alt='' className='mr-6 cursor-pointer' />
+              <img src={img3} alt='' className='mr-6 cursor-pointer' />
             </div>
           </div>
           <div className='w-60'>

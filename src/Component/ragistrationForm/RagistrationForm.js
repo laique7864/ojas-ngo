@@ -69,8 +69,8 @@ function RagistrationForm() {
 
     return (
         <>
-        <div className='flex items-center flex-col mt-12 '>
-            <h2 className='flex items-center justify-center font-sans text-2xl text-025FB5'>Registration Form</h2>
+        <div className='flex items-center flex-col mt-12 mb-8'>
+            <h2 className='flex items-center justify-center font-sans mb-5 text-2xl text-025FB5'>Registration Form</h2>
 
             <div style={{ boxSizing: 'border-box', border: '1px solid #025FB5', width: '75rem' }} className='rounded-lg'>
                 <div className='flex items-center justify-evenly mt-8'>
