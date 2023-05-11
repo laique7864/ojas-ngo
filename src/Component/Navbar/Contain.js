@@ -1,7 +1,12 @@
 import React from 'react'
 // import './Contain.css'
 import img from '../../Navbarlogo/Ellipse 4.png'
- import img2 from '../../Navbarlogo/5x5h-removebg-preview.png'
+import img2 from '../../Navbarlogo/5x5h-removebg-preview.png'
+import freeMedicl from '../../Navbarlogo/free medical chek up.png'
+import urineTest from '../../Navbarlogo/blod and urine test.jpg'
+import foodDistribution from '../../Navbarlogo/food distribution ngo.jpg'
+import creerguidance from '../../Navbarlogo/career guidance.jpeg'
+import road from '../../Navbarlogo/road ngo.jpg'
 
 
 const Contain = () => {
@@ -115,11 +120,21 @@ women, running credit societies etc.
             <div>
                 <h4 className='flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans'>Our Objective</h4>
                 <div className='flex justify-center mb-4'>
-                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
-                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
-                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
-                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full"></div>
-                    <div class="w-60 h-60 border  border-1C6FB rounded-full"></div>
+                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full">
+                        <img className='w-60 h-60  mr-3.5 rounded-full' src={freeMedicl}/>
+                    </div>
+                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full">
+                    <img className='w-60 h-60  mr-3.5 rounded-full' src={urineTest}/>
+                    </div>
+                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full">
+                    <img className='w-60 h-60  mr-3.5 rounded-full' src={foodDistribution}/>
+                    </div>
+                    <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full">
+                    <img className='w-60 h-60  mr-3.5 rounded-full' src={creerguidance}/>
+                    </div>
+                    <div class="w-60 h-60 border  border-1C6FB rounded-full">
+                    <img className='w-60 h-60  mr-3.5 rounded-full' src={road}/>
+                    </div>
                 </div>
                 <div className='flex items-center justify-evenly mb-8'>
                     <p className='text-025FB5 font-sans'>Free Meical Chek Up</p>
