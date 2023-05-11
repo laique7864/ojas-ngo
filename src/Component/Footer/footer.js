@@ -6,13 +6,16 @@ import img4 from '../images/location.png'
 import img5 from '../images/server.png'
 import img6 from "../images/sms.png"
 import img7 from '../images/phone.png'
+import img8 from '../../Navbarlogo/5x5h-removebg-preview.png'
 
 function Footer() {
   return (
     <>
       <div className='bg-blue-500 h-48 flex items-center justify-around rounded-t-3xl'>
         {/* <div className='w-24 h-24 rounded-tr-3xl rounded-tl-3xl'></div> */}
-        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'white' }}></div>
+        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'white' }}>
+          <img  className='h-24 min-h-full' src={img8}/>
+        </div>
         <div className='text-white'>Terms & Conditions</div>
         <div>
           <div className='flex justify-between mb-2'>
