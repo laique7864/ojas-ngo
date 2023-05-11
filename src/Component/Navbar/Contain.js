@@ -50,7 +50,7 @@ const Contain = () => {
             </div>
             <div className='Abouts-Main-contain'>
                 <div className='flex items-center'> 
-                    <img src={img} className='Abouts-Img'  />
+                    <img src={img} className='Abouts-Img h-56 w-56 ml-12'   />
                     <p> MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state 
                     and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
           An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity.</p>
