@@ -12,7 +12,7 @@ const Navbar = () => {
   const navigation = [
     { name: 'Home', href: '#' },
     { name: 'Verified Members', href: '#' },
-    { name: 'Events', href: '#' },
+    { name: 'Events', href: 'events' },
     { name: 'Donors list', href: 'DonorList' },
     // { name: 'President Desk', href: '#' },
     { name: 'Management Team', href: '#' },

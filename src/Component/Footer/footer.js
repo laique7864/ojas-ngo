@@ -14,7 +14,7 @@ function Footer() {
       <div className='bg-blue-500 h-48 flex items-center justify-around rounded-t-3xl'>
         {/* <div className='w-24 h-24 rounded-tr-3xl rounded-tl-3xl'></div> */}
         <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'white' }}>
-          <img  className='h-24 min-h-full' src={img8}/>
+          <img  className='h-24 min-h-full' src={img8} alt=''/>
         </div>
         <div className='text-white'>Terms & Conditions</div>
         <div>
