@@ -7,9 +7,11 @@ import urineTest from '../../Navbarlogo/blod and urine test.jpg'
 import foodDistribution from '../../Navbarlogo/food distribution ngo.jpg'
 import creerguidance from '../../Navbarlogo/career guidance.jpeg'
 import road from '../../Navbarlogo/road ngo.jpg'
-
+// import rightimg from '../../Navbarlogo/said bar right.png'
+// import leftimg from '../../Navbarlogo/saide bar.png'
 
 const Contain = () => {
+    
 
     return (
         <>
@@ -70,7 +72,9 @@ const Contain = () => {
             </div>
             <div>
                 <h4 className='flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans'>Our Objective</h4>
+
                 <div className='flex justify-center mb-4'>
+                   {/* <img src={leftimg}/> */}
                     <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full">
                         <img className='w-60 h-60  mr-3.5 rounded-full' src={freeMedicl}/>
                     </div>
@@ -86,6 +90,7 @@ const Contain = () => {
                     <div class="w-60 h-60 border  border-1C6FB rounded-full">
                     <img className='w-60 h-60  mr-3.5 rounded-full' src={road}/>
                     </div>
+                    {/* <img src={rightimg}/> */}
                 </div>
                 <div className='flex items-center justify-evenly mb-8'>
                     <p className='text-025FB5 font-sans'>Free Meical Chek Up</p>
