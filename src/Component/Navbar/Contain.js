@@ -60,7 +60,7 @@ const Contain = () => {
             </div>
             <div className='Abouts-Main-contain'>
                 <div className='flex items-center'>
-                    <img src={img} className='Abouts-Img' />
+                    <img src={img} alt='' className='Abouts-Img' />
                     <p> MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
                         and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
                         An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity.</p>
@@ -76,24 +76,24 @@ const Contain = () => {
                 <div className='flex justify-center mb-4'>
                    {/* <img src={leftimg}/> */}
                     <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full">
-                        <img className='w-60 h-60  mr-3.5 rounded-full' src={freeMedicl}/>
+                        <img className='w-60 h-60  mr-3.5 rounded-full' src={freeMedicl} />
                     </div>
                     <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={urineTest}/>
+                        <img className='w-60 h-60  mr-3.5 rounded-full' src={urineTest} />
                     </div>
                     <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={foodDistribution}/>
+                        <img className='w-60 h-60  mr-3.5 rounded-full' src={foodDistribution} />
                     </div>
                     <div class="w-60 h-60 border mr-3.5 border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={creerguidance}/>
+                        <img className='w-60 h-60  mr-3.5 rounded-full' src={creerguidance} />
                     </div>
                     <div class="w-60 h-60 border  border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={road}/>
+                        <img className='w-60 h-60  mr-3.5 rounded-full' src={road} />
                     </div>
                     {/* <img src={rightimg}/> */}
                 </div>
                 <div className='flex items-center justify-evenly mb-8'>
-                    <p className='text-025FB5 font-sans'>Free Meical Chek Up</p>
+                    <p className='text-025FB5 font-sans'>Free Medical Chek Up</p>
                     <p className='text-025FB5 font-sans'>Free Blood And Urine Test</p>
                     <p className='text-025FB5 font-sans'>Food Distribution</p>
                     <p className='text-025FB5 font-sans'>Career Guidance To Youth</p>
@@ -109,7 +109,7 @@ const Contain = () => {
                     <div class="border-b-2 border-gray-400 w-4/5 ml-6"></div>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'blue', marginTop: '3rem', marginLeft: '2rem' }}>
-               
+
                         </div>
                         <p className='mt-24 ml-5 text-blue-500'>Moin Shaikh,Member</p>
                     </div>
@@ -123,7 +123,7 @@ const Contain = () => {
 
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'blue', marginTop: '3rem', marginLeft: '2rem' }}>
-                         
+
                         </div>
                         <p className='mt-24 ml-5 text-blue-500'>Afreen Nagdade, Member</p>
                     </div>

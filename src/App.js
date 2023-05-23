@@ -11,7 +11,12 @@ import Root from './Component/root/Root';
 import Contain from './Component/Navbar/Contain';
 import RagistrationForm from './Component/ragistrationForm/RagistrationForm';
 
+
 import Icard from './Component/I-card/Icard'
+
+
+import Events from './Component/event/Events';
+
 
 
 
@@ -34,8 +39,13 @@ function App() {
           <Route path='/DonorList' element={<DonorList/>} />
           <Route path='/Login' element={<Login/>} />
           <Route path='/ragistrationform' element={<RagistrationForm/>} />
+
         
           <Route path='/Icard' element={<Icard/>} />
+
+       
+          <Route path='/events' element={<Events/>} />
+
          
          
 
