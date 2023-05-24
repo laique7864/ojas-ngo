@@ -4,6 +4,7 @@ import './Donorlist.css'
 const DonorList=()=> {
     return (
         <>
+
             <div>
                 <h3 className='h3'>Donor's list</h3>
             </div>
@@ -118,7 +119,168 @@ const DonorList=()=> {
             <div className='bottom-heading'>
                 <p>want to donate to a NGO?</p>
                 <button>Donate</button>
+            </div> 
+
+
+     
+     
+     {/* junaid khan convert css in tailwind */}
+
+     
+{/* <div>
+        <h3 className=" text-center text-sky-600 font-mono">volunteers</h3>
+      </div>
+      <div className="flex justify-evenly mt-16">
+        <div className=" border-sky-400 border-2 rounded-lg border-box ">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5 ">
+            <div className=" border-2  border-sky-500  mt-8 rounded-full h-24 w-24 ml-16  bg-black ">
+        
             </div>
+          <br></br>
+          <div  className='mt-10'>
+          <p>Raju Shete</p>
+            <p>Volunteer : OJAS009</p>
+            <p>PBN MAHARASHTRA</p>
+          </div>
+           
+          </div>
+        </div>
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className=" border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16  bg-black ">
+        
+            </div>
+            <div className='mt-16'>
+            <p>Baban Bhopale</p>
+            <p>Volunteer : OJAS010</p>
+            <p>PBN MAHARASHTRA</p>
+            </div>
+           
+          </div>
+        </div>{" "}
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className="border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16  bg-black ">
+             
+            </div>
+            <div  className='mt-16'>
+            <p>Gaurav Dahale</p>
+            <p>Volunteer : OJAS011</p>
+            <p>Jalna MAHARASHTRA</p>
+            </div>
+
+           
+           
+          </div>
+        </div>{" "}
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className="border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16  bg-black ">
+        
+            </div>
+            <div  className='mt-16'>
+            <p>Keshav kanhe</p>
+            <p>Volunteer: OJAS012</p>
+            <p>Jintur MAHARASHTRA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-evenly mt-16">
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className="border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16  bg-black ">
+           
+            </div>
+            <div  className='mt-16'>
+            <p>Narayan Mishra</p>
+            <p>Volunteer : OJAS013</p>
+            <p>Delhi UTTARPRADESH</p>
+            </div>
+          </div>
+        </div>
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className="border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16  bg-black ">
+      
+            </div>
+            <div  className='mt-16'>
+            <p>Ku. Gayatri Kanbale</p>
+            <p>Volunteer : OJAS014</p>
+            <p>Purna MAHARASHTRA</p>
+            </div>
+          </div>
+        </div>{" "}
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className="border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16  bg-black ">
+        
+            </div>
+            <div  className='mt-16'>
+            <p>Ku.Akanksha Dhone</p>
+            <p>Volunteer : OJAS015</p>
+            <p>Purna MAHARASHTRA</p>
+            </div>
+          </div>
+        </div>{" "}
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className="border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16  bg-black ">
+         
+            </div>
+            <div  className='mt-16'>
+            <p>Ajim Kaji</p>
+            <p>Volunteer : OJAS016</p>
+            <p>PBN MAHARASHTRA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-evenly mt-16">
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className="border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16 bg-sky-500/100  ">
+            
+            </div>
+       
+          </div>
+        </div>
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className="border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16 bg-sky-500/100  ">
+           
+            </div>
+           
+          </div>
+        </div>{" "}
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className="border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16 bg-sky-500/100  ">
+           
+            </div>
+          
+          </div>
+        </div>{" "}
+        <div className="sub-main-cards border-sky-400 border-2 rounded-lg">
+          <div className="card-1 text-center h-64 w-64 left-520 top-80 ml-5">
+            <div className="border-2 border-sky-500 mt-8 rounded-full h-24 w-24 ml-16 bg-sky-500/100  ">
+           
+            </div>
+         
+          </div>
+        </div>
+      </div>
+     
+      <br />
+      <br />
+      <div className="bottom-heading text-center">
+        <p className="text-xl not-italic font-light">
+          want to donate to a NGO?
+        </p>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          Donate
+        </button>
+      </div> */}
 
         </>
     )

@@ -7,6 +7,9 @@ import urineTest from '../../Navbarlogo/blod and urine test.jpg'
 import foodDistribution from '../../Navbarlogo/food distribution ngo.jpg'
 import creerguidance from '../../Navbarlogo/career guidance.jpeg'
 import road from '../../Navbarlogo/road ngo.jpg'
+import Sir from '../../Navbarlogo/JK-SAWAND.png'
+import Sejal from '../../Navbarlogo/JK-SEJAL.png'
+
 
 
 const Contain = () => {
@@ -97,32 +100,40 @@ const Contain = () => {
             </div>
             <div className='flex items-center justify-center font-sans text-025FB5 text-2xl mb-10'>Testimonial</div>
             <div className='flex justify-center mb-11'>
-                <div class="w-2/5 h-80  bg-FFFFFF border border-1C6FB mr-3.5">
-                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-6"></div>
+                <div class="w-2/5 h-80 bg-FFFFFF border border-1C6FB mr-3.5">
+                 {/* <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-6"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
-                    <div class="border-b-2 border-gray-400 w-4/5 ml-6"></div>
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'blue', marginTop: '3rem', marginLeft: '2rem' }}>
-               
-                        </div>
-                        <p className='mt-24 ml-5 text-blue-500'>Moin Shaikh,Member</p>
-                    </div>
 
-                </div>
-                <div class="w-2/5 h-80 bg-FFFFFF border border-1C6FB">
-                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-11"></div>
-                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
-                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
-                    <div class="border-b-2 border-gray-400 w-4/5 ml-11"></div>
-
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'blue', marginTop: '3rem', marginLeft: '2rem' }}>
+                    <div class="border-b-2 border-gray-400 w-4/5 ml-6"></div> */}
+                    <p className='mt-4 italic text-sky-400 ml-4 '>Testimonial : I am honored to share my heartfelt testimonial about my life-changing experience with OJAS. From the very beginning, this remarkable organization has
+                         been dedicated to transforming lives and communities through its unwavering commitment to social justice and sustainable development. Today, I stand as a proud testament to their 
+                         incredible work, and I cannot thank them enough for the profound impact they have had on my life.</p>
                          
+
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'blue', marginTop: '3rem', marginLeft: '2rem' }}>
+                          <img className='w-40 h-28  rounded-full'src={Sir}/>
                         </div>
-                        <p className='mt-24 ml-5 text-blue-500'>Afreen Nagdade, Member</p>
-                    </div>
+                        <p className='mt-24 ml-5 text-blue-500'>Prof. Sambhaji Sawandkar</p>
+                    </div> 
+                    
                 </div>
+                 <div class="w-2/5 h-80 bg-FFFFFF border border-1C6FB  mr-3.5">
+                    {/* <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-11"></div>
+                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
+                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
+                    <div class="border-b-2 border-gray-400 w-4/5 ml-11"></div> */}
+                            <p className='mt-4 italic text-sky-400 ml-4'>Testimonial : [ Empowerment and Education ] Education is the cornerstone of progress, and OJAS understands this fundamental truth. They provided me with opportunities for personal 
+                            and professional growth through educational programs tailored to my needs. Whether it was vocational training, scholarships, or mentorship programs,
+                            [NGO Name] equipped me with the tools to enhance my skills, broaden my horizons, and unlock new possibilities. They believed in my potential and empowered me to dream bigger, helping me shape a brighter future for myself and my family.</p>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'blue', marginTop: '3rem', marginLeft: '2rem' }}>
+                        <img className='w-40 h-28  rounded-full'src={Sejal}/>
+                        </div>
+                        <p className='mt-24 ml-5 text-blue-500'>Miss Sejal G. Matra</p>
+                    </div>
+                </div> 
             </div>
         </>
     )

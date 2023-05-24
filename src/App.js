@@ -11,6 +11,7 @@ import Root from './Component/root/Root';
 import Contain from './Component/Navbar/Contain';
 import RagistrationForm from './Component/ragistrationForm/RagistrationForm';
 import Admin from './Component/Admin/Admin'
+import Manajment from './Component/ManajmentTeam/Manajment'
 
 
 
@@ -34,7 +35,7 @@ function App() {
           <Route path='/Login' element={<Login/>} />
           <Route path='/ragistrationform' element={<RagistrationForm/>} />
           <Route path='/Admin' element={<Admin/>} />
-         
+          <Route path='/Manajment' element={<Manajment/>} />
          
 
         </Route>
