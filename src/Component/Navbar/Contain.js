@@ -28,17 +28,17 @@ const Contain = () => {
                 <h3 className='Main-Contain-text'>Upcoming Events</h3>
             </div>
             <div class="flex justify-center mb-4 flex-col sm:flex-row items-center">
-                <div className='w-9/12 mb-8 h-80'>
-                <div class="w-9/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
-                <p className='text-025FB5 w-9/12 font-sans text-center'>Free Meical Chek Up</p>
+                <div className='w-10/12 pl-8 mb-8 h-80'>
+                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
+                <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>
                 </div>
-                <div className='w-9/12 mb-8 h-80'>
-                <div class="w-9/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
-                <p className='text-025FB5 w-9/12 font-sans text-center'>Free Meical Chek Up</p>
+                <div className='w-10/12 pl-8 mb-8 h-80'>
+                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
+                <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>
                 </div>
-                <div className='w-9/12 mb-8 h-80'>
-                <div class="w-9/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
-                <p className='text-025FB5 w-9/12 font-sans text-center'>Free Meical Chek Up</p>    
+                <div className='w-10/12 pl-8 mb-8 h-80'>
+                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
+                <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>    
                 </div>
        
                 {/* <div class="w-30per h-80 bg-FFFFFF border mb-8 border-1C6FB"></div>

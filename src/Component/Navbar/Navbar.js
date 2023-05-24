@@ -35,15 +35,15 @@ const Navbar = () => {
   return (
     <>
       <div>
-        <div className='bg-blue-500 flex items-center justify-around h-14'>
+        <div className='bg-blue-500 flex items-center justify-around sm:h-14 h-20	'>
           <div className='flex items-center '>
          
-            <img src={tirenga} alt='' className='absolute top-0 left-14'  />
+            <img src={tirenga} alt='' className='absolute top-0 left-14 sm:max-w-full w-16'  />
             
           
             {/* <h1 >LOG0</h1> */}
           </div>
-          <div className='flex items-center w-2/6'>
+          <div className='hidden sm:flex items-center w-2/6'>
             <a href='!' className='mr-14 text-white'>Follow Us</a>
             <div className='contents '>
               <img src={img} alt='' className=' mr-6 cursor-pointer' />
@@ -51,12 +51,12 @@ const Navbar = () => {
               <img src={img3} alt='' className='mr-6 cursor-pointer' />
             </div>
           </div>
-          <div className='w-60'>
-            {/* <span className='mr-7 text-white'>Contact:22548963</span> */}
-            {/* <span className='text-white'>helpdesk@xyz.com</span> */}
+          <div className='w-48  flex flex-col' >
+            <span className='mr-7 text-white'>Contact:22548963</span>
+            <span className='text-white'>helpdesk@xyz.com</span>
           </div>
         </div>
-        <div className='h-24 flex items-center justify-end shadow-md'>
+        <div className='h-24 hidden sm:flex sm:mr-11  items-center justify-end shadow-md'>
           {/* Navigation Links */}
           <div className="hidden sm:block sm:mr-11">
             <div className="flex space-x-4">
