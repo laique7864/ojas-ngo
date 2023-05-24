@@ -52,8 +52,8 @@ const Navbar = () => {
             </div>
           </div>
           <div className='w-60'>
-            <span className='mr-7 text-white'>Contact:22548963</span>
-            <span className='text-white'>helpdesk@xyz.com</span>
+            {/* <span className='mr-7 text-white'>Contact:22548963</span> */}
+            {/* <span className='text-white'>helpdesk@xyz.com</span> */}
           </div>
         </div>
         <div className='h-24 flex items-center justify-end shadow-md'>
