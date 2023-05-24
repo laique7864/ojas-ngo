@@ -5,13 +5,18 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import Login from './Component/Login/Login'
 import Donation from './Component/Donation/Donation';
 import Contact from './Component/Contact/contact';
-// import verfied from './Component/VerfiedMember/verfied';
+import VerfiedMember from './Component/VerfiedMember/verfied';
 import DonorList from './Component/Donorlist/DonorList'
 import Root from './Component/root/Root';
 import Contain from './Component/Navbar/Contain';
 import RagistrationForm from './Component/ragistrationForm/RagistrationForm';
-import Admin from './Component/Admin/Admin'
+
 import Manajment from './Component/ManajmentTeam/Manajment'
+import Icard from './Component/I-card/Icard'
+
+
+import Events from './Component/event/Events';
+
 
 
 
@@ -28,14 +33,25 @@ function App() {
       <Route>
         <Route element={<Root />}>
           <Route path='/' element={<Contain />} />
-          {/* <Route path='/VerfiedMember' element={<Verfied />} /> */}
+           <Route path='/VerfiedMember' element={<VerfiedMember />} /> 
           <Route path='/Contact' element={<Contact />} />
           <Route path='/Donation' element={<Donation/>} />
           <Route path='/DonorList' element={<DonorList/>} />
           <Route path='/Login' element={<Login/>} />
           <Route path='/ragistrationform' element={<RagistrationForm/>} />
-          <Route path='/Admin' element={<Admin/>} />
+
+         
           <Route path='/Manajment' element={<Manajment/>} />
+
+
+        
+          <Route path='/Icard' element={<Icard/>} />
+
+       
+          <Route path='/events' element={<Events/>} />
+
+         
+
          
 
         </Route>

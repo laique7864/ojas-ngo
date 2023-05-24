@@ -24,30 +24,30 @@ function Footer() {
             <img src={img3} alt='' className='cursor-pointer' />
           </div>
           <div>
-            <p className='mb-1 text-white cursor-pointer'>Privacy Policy</p>
-            <p className='text-white cursor-pointer'>All rights reserved</p>
+            <p className='mb-1 text-white cursor-pointer text-1.6 '>Privacy Policy</p>
+            <p className='text-white cursor-pointer text-1.6 '>All rights reserved</p>
           </div>
         </div>
         <div className='flex'>
-          <p className='mr-6 text-white'>Disclaimer</p>
-          <p className='text-white'>Refund Policy</p>
+          <p className='mr-6 text-white text-1.6 '>Disclaimer</p>
+          <p className='text-white text-1.6 '>Refund Policy</p>
         </div>
         <div>
           <div className='flex mb-2'>
             <img src={img4} alt='' className='mr-3' />
-            <p className='text-white'>Office Address</p>
+            <p className='text-white text-1.6 '>Office Address</p>
           </div>
           <div className='flex mb-2'>
             <img src={img5} alt='' className='mr-3' />
-            <p className='text-white'>www.ngo.com</p>
+            <p className='text-white text-1.6 '>www.ngo.com</p>
           </div>
           <div className='flex mb-2'>
             <img src={img6} alt='' className='mr-3' />
-            <p className='text-white'>ngo@abcfoundation.org</p>
+            <p className='text-white text-1.6 '>ngo@abcfoundation.org</p>
           </div>
           <div className='flex mb-2'>
             <img src={img7} alt='' className='mr-3' />
-            <p className='text-white'>9876543210</p>
+            <p className='text-white text-1.6 '>9876543210</p>
           </div>
         </div>
       </div>

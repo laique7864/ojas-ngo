@@ -26,6 +26,9 @@ module.exports = {
       height:{
         "1211":"800px",
         "1536":"1536px"
+      },
+      fontSize:{
+        "1.6": "1.4vh",
       }
     },
   },
