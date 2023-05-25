@@ -29,6 +29,7 @@ module.exports = {
       },
       fontSize:{
         "1.6": "1.4vh",
+        "2.6":"2vh"
       }
     },
   },

@@ -1,5 +1,5 @@
-import React from 'react'
-// import './Contain.css'
+import React, { useState } from 'react'
+import './Contain.css'
 import img from '../../Navbarlogo/Ellipse 4.png'
 import img2 from '../../Navbarlogo/5x5h-removebg-preview.png'
 import freeMedicl from '../../Navbarlogo/free medical chek up.png'
@@ -9,25 +9,33 @@ import creerguidance from '../../Navbarlogo/career guidance.jpeg'
 import road from '../../Navbarlogo/road ngo.jpg'
 import Sir from '../../Navbarlogo/JK-SAWAND.png'
 import Sejal from '../../Navbarlogo/JK-SEJAL.png'
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+
+import { Button } from 'reactstrap'
 
 
 
 const Contain = () => {
+    const [next,setNext]=useState(false)
     const imageStyle = {
         backgroundImage: "url('../../Navbarlogo/JK-SEJAL.png')",
         backgroundRepeat: 'no-repeat',
       };
 
+      const sliderHandler =()=>{
+        setNext(!next)
+      }
+
     return (
         <>
             <div className="flex justify-center items-center h-600 w-1440">
                 <img src={require('../../Navbarlogo/Rectangle.png')} className="h-full w-full object-cover" alt="image description" />
-                <p className="absolute text-center text-white z-10 font-sans w-80 text-4xl">Your small help can light up someone’s life</p>
+                <p className="absolute text-center text-white sm:z-10 font-sans w-80 text-4xl z-0">Your small help can light up someone’s life</p>
             </div>
             <div>
-                <h3 className='Main-Contain-text'>Upcoming Events</h3>
+                <h3 className='Main-Contain-text text-center font-bold mt-8  text-blue-600/100'>Upcoming Events</h3>
             </div>
-            <div class="flex justify-center mb-4 flex-col sm:flex-row items-center">
+            <div class="flex justify-center mb-4 flex-col sm:flex-row items-center mt-4">
                 <div className='w-10/12 pl-8 mb-8 h-80'>
                 <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
                 <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>
@@ -54,9 +62,9 @@ const Contain = () => {
             </div>
             <div >
                 <div className='Latest-Text text-center'>
-                    <h3>Latest Activity</h3>
+                    <h3 className='text-blue-600/100  font-bold'>Latest Activity</h3>
                 </div>
-                <div class="flex flex-col items-center justify-center w-full h-1211 mx-auto border-2 rounded-lg border-0966BB">
+                <div class="flex flex-col items-center justify-center w-full h-1211 mx-auto border-2 rounded-lg border-0966BB mt-2">
                 </div>
             </div>
 
@@ -83,8 +91,18 @@ const Contain = () => {
   </div>
 </div>
             <div>
+      {/* <Button className="carousel-button carousel-button-left">
+        <FaArrowLeft />
+      </Button>
+
+      <Button className="carousel-button carousel-button-right">
+        <FaArrowRight />
+      </Button> */}
                 <h4 className='flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans'>Our Objective</h4>
-                <div className="flex justify-center mb-4 flex-col sm:flex-row items-center">
+              {!next ?  <div className="flex justify-center mb-4 flex-col sm:flex-row items-center">
+              <Button className="carousel-button carousel-button-left" onClick={sliderHandler}>
+        <FaArrowLeft className="text-xl" />
+      </Button>
                     <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
                         <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
                         <p className='text-025FB5 font-sans text-center'>Free Meical Chek Up</p>
@@ -105,7 +123,41 @@ const Contain = () => {
                     <img className='w-60 h-60  mr-3.5 rounded-full' src={road}/>
                     <p className='text-025FB5 font-sans text-center'>Road Rules Awareness For Student</p>
                     </div>
+                    <Button className="carousel-button carousel-button-right text-2.6" onClick={sliderHandler}>
+        <FaArrowRight className="text-xl" />
+      </Button>
+                </div> :
+                <div className="flex justify-center mb-4 flex-col sm:flex-row items-center">
+                       <Button className="carousel-button carousel-button-left" onClick={sliderHandler}>
+        <FaArrowLeft className="text-xl" />
+      </Button>
+                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+                        <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
+                        <p className='text-025FB5 font-sans text-center'>Free </p>
+                    </div>
+                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+                    <img className='w-60 h-60  mr-3.5 rounded-full' src={road} />
+                    <p className='text-025FB5 font-sans text-center'> Blood </p>
+                    </div>
+                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+                    <img className='w-60 h-60  mr-3.5 rounded-full' src={foodDistribution}/>
+                    <p className='text-025FB5 font-sans text-center'> Distribution</p>
+                    </div>
+                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+                    <img className='w-60 h-60  mr-3.5 rounded-full' src={creerguidance}/>
+                    <p className='text-025FB5 font-sans text-center'> Youth</p>
+                    </div>
+                    <div class="w-60 h-60 border mb-8  border-1C6FB rounded-full">
+                    <img className='w-60 h-60  mr-3.5 rounded-full'  src={urineTest}/>
+                    <p className='text-025FB5 font-sans text-center'>For Student</p>
+                    </div>
+                    <Button className="carousel-button carousel-button-right text-2.6" onClick={sliderHandler}>
+        <FaArrowRight className="text-xl" />
+      </Button>
                 </div>
+                
+
+        }
                 {/* <div className='flex items-center justify-evenly mb-8'>
                     <p className='text-025FB5 font-sans'>Free Meical Chek Up</p>
                     <p className='text-025FB5 font-sans'>Free Blood And Urine Test</p>
@@ -117,12 +169,15 @@ const Contain = () => {
             <div className='flex items-center justify-center font-sans text-025FB5 text-2xl mb-10'>Testimonial</div>
             <div className='flex justify-center flex-col mb-11 sm:flex-row'>
                 <div class="sm:w-2/5 h-80 w-full bg-FFFFFF border border-1C6FB mr-3.5 flex flex-col justify-between">
+                <div className="sliding-element">
+  <p>This element will slide in when first rendered.</p>
+</div>
                  {/* <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-6"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
 
                     <div class="border-b-2 border-gray-400 w-4/5 ml-6"></div> */}
-                    <p className='mt-4 italic text-sky-400 ml-4 text-1.6 overflow-hidden'>Testimonial : I am honored to share my heartfelt testimonial about my life-changing experience with OJAS. From the very beginning, this remarkable organization has
+                    <p className='mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden'>Testimonial : I am honored to share my heartfelt testimonial about my life-changing experience with OJAS. From the very beginning, this remarkable organization has
                          been dedicated to transforming lives and communities through its unwavering commitment to social justice and sustainable development. Today, I stand as a proud testament to their 
                          incredible work, and I cannot thank them enough for the profound impact they have had on my life.</p>
                          
@@ -140,7 +195,7 @@ const Contain = () => {
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 ml-11"></div> */}
-                            <p className='mt-4 italic text-sky-400 ml-4 text-1.6 overflow-hidden' >Testimonial : [ Empowerment and Education ] Education is the cornerstone of progress, and OJAS understands this fundamental truth. They provided me with opportunities for personal 
+                            <p className='mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden' >Testimonial : [ Empowerment and Education ] Education is the cornerstone of progress, and OJAS understands this fundamental truth. They provided me with opportunities for personal 
                             and professional growth through educational programs tailored to my needs. Whether it was vocational training, scholarships, or mentorship programs,
                             [NGO Name] equipped me with the tools to enhance my skills, broaden my horizons, and unlock new possibilities. They believed in my potential and empowered me to dream bigger, helping me shape a brighter future for myself and my family.</p>
                             <div style={{ display: 'flex', alignItems: 'center' }}>

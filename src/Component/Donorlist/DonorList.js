@@ -8,7 +8,117 @@ const DonorList=()=> {
             <div>
                 <h3 className='h3'>Donor's list</h3>
             </div>
-            <div className='main-cards'>
+            <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ml-40 md:ml-10 ">
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+  <div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div></div>
+</div>
+            {/* <div className='main-cards'>
                 <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile'>
@@ -27,6 +137,79 @@ const DonorList=()=> {
                         <p>Maharashtra</p>
                     </div>
                 </div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div> <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div>
+                <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div>
+                <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div>
+                <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div>
+                <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div>
+                <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div>
+                <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                        </div>
+                        <p>Mr.raj shukla</p>
+                        <p>ammount:3000</p>
+                        <p>Maharashtra</p>
+                    </div>
+                </div>
+            </div> */}
+            {/* <div className='main-cards'>
+          <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile'>
                         </div>
@@ -79,43 +262,7 @@ const DonorList=()=> {
                         <p>Maharashtra</p>
                     </div>
                 </div>
-            </div>
-            <div className='main-cards'>
-                <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div>
-                <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div>
-            </div>
+            </div> */}
             <div className='bottom-heading'>
                 <p>want to donate to a NGO?</p>
                 <button>Donate</button>

@@ -41,7 +41,7 @@ const Contact = () => {
 
     <>
       <form>
-        <div className="mt-10" style={{width:'75rem',marginLeft:'5rem',marginBottom:'2rem'}}>
+        <div className="mt-10">
           <h1 className="flex align-item justify-center text-blue-800 text-2xl">Contact Us</h1>
           <div className="border-2  border-indigo-500/100 mt-5">
 
