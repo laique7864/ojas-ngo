@@ -9,9 +9,8 @@ import creerguidance from '../../Navbarlogo/career guidance.jpeg'
 import road from '../../Navbarlogo/road ngo.jpg'
 import Sir from '../../Navbarlogo/JK-SAWAND.png'
 import Sejal from '../../Navbarlogo/JK-SEJAL.png'
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-
-import { Button } from 'reactstrap'
+import { IconButton } from '@mui/material'
+import { ChevronLeft, ChevronRight } from '@mui/icons-material'
 
 
 
@@ -100,10 +99,10 @@ const Contain = () => {
       </Button> */}
                 <h4 className='flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans'>Our Objective</h4>
               {!next ?  <div className="flex justify-center mb-4 flex-col sm:flex-row items-center">
-              <Button className="carousel-button carousel-button-left" onClick={sliderHandler}>
-        <FaArrowLeft className="text-xl" />
-      </Button>
-                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+              <IconButton style={{position:'absolute',top:'0px' ,left:"0px"  , color:'black'}} onClick={sliderHandler}>
+                    <ChevronLeft />
+
+                  </IconButton>  <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
                         <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
                         <p className='text-025FB5 font-sans text-center'>Free Meical Chek Up</p>
                     </div>
@@ -123,14 +122,16 @@ const Contain = () => {
                     <img className='w-60 h-60  mr-3.5 rounded-full' src={road}/>
                     <p className='text-025FB5 font-sans text-center'>Road Rules Awareness For Student</p>
                     </div>
-                    <Button className="carousel-button carousel-button-right text-2.6" onClick={sliderHandler}>
-        <FaArrowRight className="text-xl" />
-      </Button>
+                    <IconButton style={{position:'absolute',top:'0px' ,left:"0px"  , color:'black'}} onClick={sliderHandler}>
+                    <ChevronRight />
+
+                  </IconButton> 
                 </div> :
                 <div className="flex justify-center mb-4 flex-col sm:flex-row items-center">
-                       <Button className="carousel-button carousel-button-left" onClick={sliderHandler}>
-        <FaArrowLeft className="text-xl" />
-      </Button>
+                       <IconButton style={{position:'absolute',top:'0px' ,left:"0px"  , color:'black'}} onClick={sliderHandler}>
+                    <ChevronLeft />
+
+                  </IconButton> 
                     <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
                         <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
                         <p className='text-025FB5 font-sans text-center'>Free </p>
@@ -151,9 +152,10 @@ const Contain = () => {
                     <img className='w-60 h-60  mr-3.5 rounded-full'  src={urineTest}/>
                     <p className='text-025FB5 font-sans text-center'>For Student</p>
                     </div>
-                    <Button className="carousel-button carousel-button-right text-2.6" onClick={sliderHandler}>
-        <FaArrowRight className="text-xl" />
-      </Button>
+                    <IconButton style={{position:'absolute',top:'0px' ,left:"0px"  , color:'black'}} onClick={sliderHandler}>
+                    <ChevronRight />
+
+                  </IconButton> 
                 </div>
                 
 

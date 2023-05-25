@@ -16,6 +16,10 @@ import Icard from './Component/I-card/Icard'
 
 
 import Events from './Component/event/Events';
+import AdminRoutes from './Component/root/AdminRoutes';
+import { ThemeProvider } from '@emotion/react';
+import { CssBaseline } from '@mui/material';
+import { useMode } from './theme';
 
 
 
@@ -26,6 +30,7 @@ import Events from './Component/event/Events';
 
 
 function App() {
+  const [theme, colorMode] = useMode();
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -56,16 +61,24 @@ function App() {
 
         </Route>
 
+        <Route element={<AdminRoutes />}>
+          <Route path='/admin' element={<h6>hello world</h6>} />
+          <Route path='/categories' element={<h2>sandansk</h2>} />
+          <Route path='/Products' element={<h2>Product</h2>} />
+        </Route>
+
       </Route>
 
     )
   )
   return(
     <>
-    
+       <ThemeProvider theme={theme}>
+        <CssBaseline />
     <RouterProvider router={router}>
     
     </RouterProvider>
+    </ThemeProvider>
     </>
   );
 }
