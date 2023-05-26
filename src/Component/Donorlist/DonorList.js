@@ -4,11 +4,12 @@ import './Donorlist.css'
 const DonorList=()=> {
     return (
         <>
-
+<div className="container flex items-center flex-col p-8">
             <div>
-                <h3 className='h3'>Donor's list</h3>
+                <h3 className='text-1C6FB font-sans'>Donor's list</h3>
             </div>
-            <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ml-40 md:ml-10 ">
+            
+            <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  ">
   <div> <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile'>
@@ -428,7 +429,7 @@ const DonorList=()=> {
           Donate
         </button>
       </div> */}
-
+</div>
         </>
     )
 }

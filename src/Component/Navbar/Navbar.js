@@ -12,7 +12,7 @@ const Navbar = () => {
   const navigation = [
     { name: 'Home', href: '#' },
     { name: 'Verified Members', href: '#' },
-    { name: 'Events', href: '#' },
+    { name: 'Events', href: 'Events' },
     { name: 'Donors list', href: 'DonorList' },
     // { name: 'President Desk', href: '#' },
     { name: 'Manajment ', href: 'Manajment' },
@@ -59,7 +59,7 @@ useEffect(()=>{
           
           <div className='flex items-center '>
          
-            <img src={tirenga} alt='' className='absolute top-0 left-14 sm:max-w-full w-16'  />
+            <img src={tirenga} alt='' className='absolute top-0 left-14 sm:max-w-full sm:w-40	 w-16'  />
             
           
             {/* <h1 >LOG0</h1> */}
@@ -89,9 +89,9 @@ useEffect(()=>{
           </div>
         
         </div>
-        <div className='h-24 hidden sm:flex sm:mr-11  items-center justify-end shadow-md'>
+        <div className='h-24 hidden sm:flex   items-center justify-end shadow-md'>
           {/* Navigation Links */}
-          <div className="hidden sm:block sm:mr-11">
+          <div className="hidden sm:block ">
             <div className="flex space-x-4">
               {navigation.map((item, index) => (
                 <Link

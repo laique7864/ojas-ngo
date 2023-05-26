@@ -11,14 +11,14 @@ import img8 from '../../Navbarlogo/5x5h-removebg-preview.png'
 function Footer() {
   return (
     <>
-      <div className='bg-blue-500 flex sm:justify-around justify-between  flex-col sm:flex-row items-center rounded-t-3xl'>
+      <div className='bg-blue-500 flex sm:justify-around justify-between  flex-col sm:flex-row items-center rounded-t-3xl gap-1'>
         {/* <div className='w-24 h-24 rounded-tr-3xl rounded-tl-3xl'></div> */}
-        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'white' }}>
+        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'white' }} className='my-0.5'>
           <img  className='h-24 min-h-full' src={img8}/>
         </div>
         <div className='text-white'>Terms & Conditions</div>
-        <div>
-          <div className='flex justify-between mb-2'>
+        <div className='flex justify-center place-items-center  flex-col gap-3'>
+          <div className='flex justify-between gap-2'>
             <img src={img} alt='' className='cursor-pointer' />
             <img src={img2} alt='' className='cursor-pointer' />
             <img src={img3} alt='' className='cursor-pointer' />
@@ -32,7 +32,7 @@ function Footer() {
           <p className='mr-6 text-white text-1.6 '>Disclaimer</p>
           <p className='text-white text-1.6 '>Refund Policy</p>
         </div>
-        <div>
+        <div className='flex justify-center place-items-center  flex-col gap-1'>
           <div className='flex mb-2'>
             <img src={img4} alt='' className='mr-3' />
             <p className='text-white text-1.6 '>Office Address</p>

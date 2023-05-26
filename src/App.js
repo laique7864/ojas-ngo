@@ -44,6 +44,7 @@ function App() {
           <Route path='/DonorList' element={<DonorList/>} />
           <Route path='/Login' element={<Login/>} />
           <Route path='/ragistrationform' element={<RagistrationForm/>} />
+          {/* <Route path='/Event' element={<Event/>} /> */}
 
          
           <Route path='/Manajment' element={<Manajment/>} />
