@@ -11,7 +11,7 @@ import img8 from '../../Navbarlogo/5x5h-removebg-preview.png'
 function Footer() {
   return (
     <>
-      <div className='bg-blue-500 flex sm:justify-around justify-between mb-4 flex-col sm:flex-row items-center rounded-t-3xl'>
+      <div className='bg-blue-500 flex sm:justify-around justify-between  flex-col sm:flex-row items-center rounded-t-3xl'>
         {/* <div className='w-24 h-24 rounded-tr-3xl rounded-tl-3xl'></div> */}
         <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'white' }}>
           <img  className='h-24 min-h-full' src={img8}/>
@@ -47,7 +47,7 @@ function Footer() {
           </div>
           <div className='flex mb-2'>
             <img src={img7} alt='' className='mr-3' />
-            {/* <p className='text-white text-1.6 '>9876543210</p> */}
+            <p className='text-white text-1.6 '>9876543210</p>
           </div>
         </div>
       </div>
