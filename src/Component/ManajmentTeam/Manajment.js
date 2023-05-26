@@ -19,7 +19,7 @@ const ManagementTeam=()=> {
             <div>
                 <h3 className='h3'>ManagementTeam</h3>
             </div>
-            <div className='grid  grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-20  '>
+            <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20  '>
                 <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile '>
