@@ -28,8 +28,8 @@ import {
   CalendarMonthOutlined,
   AdminPanelSettingsOutlined,
   TrendingUpOutlined,
-  EventOutlinedIcon ,
-    ChevronRight,
+  EventOutlinedIcon,
+  ChevronRight,
 } from "@mui/icons-material";
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import EventIcon from '@mui/icons-material/Event';
@@ -39,7 +39,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 // const { styled } = require("@mui/system");
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import InputIcon from '@mui/icons-material/Input';
-import {styled} from '@mui/system'
+import { styled } from '@mui/system'
 
 import { tokens } from "../../theme";
 
@@ -61,7 +61,7 @@ const navItems = [
   },
   {
     text: "Products",
-    icon: <EventIcon  />,
+    icon: <EventIcon />,
   },
 
   {
@@ -87,7 +87,7 @@ const Sidebar = ({
   setIsSidebarOpen,
   isSidebarOpen
 }) => {
-    const isNonMobile = useMediaQuery("(min-width: 600px)");
+  const isNonMobile = useMediaQuery("(min-width: 600px)");
 
   const { pathname } = useLocation();
   const [active, setActive] = useState("");
@@ -102,10 +102,10 @@ const Sidebar = ({
 
   return (
     <Box component="nav">
-                 <IconButton style={{position:'absolute',top:'0px' ,left:"0px"  , color:colors.blueAccent[100]}} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                    <ChevronRight />
+      <IconButton style={{ position: 'absolute', top: '0px', left: "0px", color: colors.blueAccent[100] }} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+        <ChevronRight />
 
-                  </IconButton>
+      </IconButton>
 
       {isSidebarOpen && (
         <Drawer
@@ -130,7 +130,7 @@ const Sidebar = ({
               <FlexBetween color={'white'}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
-                  Madni Restaurant
+                    Madni Restaurant
                   </Typography>
                 </Box>
                 {!isNonMobile && (
@@ -167,7 +167,7 @@ const Sidebar = ({
                         color:
                           active === lcText
                             ? colors.primary[600]
-                            :"white",
+                            : "white",
                       }}
                     >
                       <ListItemIcon
@@ -195,14 +195,14 @@ const Sidebar = ({
           <Box position="absolute" bottom="2rem">
             <Divider />
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
-             
+
               <Box textAlign="left">
                 <Typography
                   fontWeight="bold"
                   fontSize="0.9rem"
                   sx={{ color: "white" }}
                 >
-                 Nerraj
+                  Nerraj
                 </Typography>
                 <Typography
                   fontSize="0.8rem"
@@ -211,7 +211,7 @@ const Sidebar = ({
                   Skyline
                 </Typography>
               </Box>
-           
+
             </FlexBetween>
           </Box>
         </Drawer>
