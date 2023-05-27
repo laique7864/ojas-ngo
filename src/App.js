@@ -20,6 +20,7 @@ import AdminRoutes from './Component/root/AdminRoutes';
 import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import { useMode } from './theme';
+import AddEvent from './Component/addevent/AddEvent';
 
 
 
@@ -56,16 +57,13 @@ function App() {
        
           <Route path='/events' element={<Events/>} />
 
-         
-
-         
-
+                
         </Route>
 
         <Route element={<AdminRoutes />}>
           <Route path='/admin' element={<h6>hello world</h6>} />
           <Route path='/categories' element={<h2>sandansk</h2>} />
-          <Route path='/Products' element={<h2>Product</h2>} />
+          <Route path='/event' element={<AddEvent/>} />
         </Route>
 
       </Route>

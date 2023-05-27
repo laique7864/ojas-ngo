@@ -60,7 +60,7 @@ const navItems = [
     icon: <HowToRegIcon />,
   },
   {
-    text: "Products",
+    text: "Event",
     icon: <EventIcon />,
   },
 
@@ -203,7 +203,7 @@ const Sidebar = ({
                   fontSize="0.9rem"
                   sx={{ color: "white" }}
                 >
-                  {user.firstName}
+                  {user?.firstName}
                 </Typography>
                 {/* <Typography
                   fontSize="0.8rem"
