@@ -85,7 +85,8 @@ const navItems = [
 const Sidebar = ({
   drawerWidth,
   setIsSidebarOpen,
-  isSidebarOpen
+  isSidebarOpen,
+  user
 }) => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
 
@@ -130,7 +131,7 @@ const Sidebar = ({
               <FlexBetween color={'white'}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
-                    Madni Restaurant
+                    OJAS NGO
                   </Typography>
                 </Box>
                 {!isNonMobile && (
@@ -193,7 +194,7 @@ const Sidebar = ({
           </Box>
 
           <Box position="absolute" bottom="2rem">
-            <Divider />
+            <Divider style={{background:'White'}} />
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
 
               <Box textAlign="left">
@@ -202,14 +203,14 @@ const Sidebar = ({
                   fontSize="0.9rem"
                   sx={{ color: "white" }}
                 >
-                  Nerraj
+                  {user.firstName}
                 </Typography>
-                <Typography
+                {/* <Typography
                   fontSize="0.8rem"
                   sx={{ color: colors.secondary[200] }}
                 >
                   Skyline
-                </Typography>
+                </Typography> */}
               </Box>
 
             </FlexBetween>

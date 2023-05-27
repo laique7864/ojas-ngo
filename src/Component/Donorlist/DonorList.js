@@ -14,7 +14,7 @@ const DonorList=()=> {
                     <div className='card-1'>
                         <div className='profile'>
                         </div>
-                        <p>Mr.raj shukla</p>
+                        <p className='text-black'>Mr.raj shukla</p>
                         <p>ammount:3000</p>
                         <p>Maharashtra</p>
                     </div>

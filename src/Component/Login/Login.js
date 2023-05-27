@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import './Login.scss'
+import { AdminLoginService } from "../../services/admin.service";
+import { useNavigate } from "react-router-dom";
 // import { Formik, Form } from 'formik';
 // import { ToastContainer, toast } from 'react-toastify';
 
@@ -8,9 +10,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 const Login = () => {
+  const navigate =useNavigate()
 
   const [inputField, setInputField] = useState({
-    name: "",
     email: "",
     password: "",
   })
@@ -27,59 +29,24 @@ const Login = () => {
   const [agreed, setAgreed] = useState(false)
 
 
-  const userhandleSubmite = () => {
-    console.log(inputField)
-    setInputField({
-      name: "",
-      email: "",
-      password: "",
-    })
+  const userhandleSubmite = async(e) => {
+e.preventDefault()
+const data = await AdminLoginService(inputField)
+    console.log(data.data)
+    if(data.data.status === 400){
+   alert("err");
+    }else{
+      const objString = JSON.stringify(data.data);
+      localStorage.setItem("user" ,objString)
+      navigate("/admin")
+    }
+  
+  // const data= await  AdminLoginService()
+
   }
 
   return (
-    // <Formik
-    // initialValues={{
-    //     firstName: '',
-    //     lastName: '',
-    //     userName: '',
-    //     }}
-    //     onSubmit={ response => {
 
-    //         response = Object.assign(response)
-
-    //         console.log(response,"kkkkkkkkkk");
-    //         if ( response===firstName) {
-    //             toast.success("Student Registered Successfully")
-
-
-    //         } else {
-    //             toast.error(data.error.response.data.message.error)
-
-    //         }
-
-    //    }}>
-    //    <div>
-    //    {/* <ToastContainer /> */}
-    // {/* //    <Form> */}
-    //     <h1 className="heding">User Login</h1>
-    //     <div className="main-div">
-    //         <div>
-    //         <label className="lab-div">Name</label>
-    //         <input type='text' name="name" value={inputField.name} onChange={handelOnchange} required/>
-    //         </div>
-
-    //         <label className="lab-div-emsil">Email</label>
-    //         <input type='text'  name="email"  value={inputField.email} onChange={handelOnchange} required />
-    //         <label className="lab-div">Password</label>
-    //         <input type='text'  name="password" value={inputField.password} onChange={handelOnchange} required/>
-
-    //         <button className="junaid" onClick={userhandleSubmite} ><a>Login</a></button> 
-
-
-    //     </div>
-    //     {/* </Form> */}
-    //     </div>
-    // </Formik>
 
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       {/* <div
@@ -95,7 +62,7 @@ const Login = () => {
         <h2 className="text-3xl font-bold tracking-tight text-1C6FB sm:text-4xl font-sans mb-2">User Login</h2>
       </div>
       <div className=" border border-1C6FB p-8">
-        <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+        <form  className="mx-auto mt-16 max-w-xl sm:mt-20" onSubmit={userhandleSubmite}>
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 
 
@@ -105,10 +72,12 @@ const Login = () => {
               </label>
               <div className="mt-2.5">
                 <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  autoComplete="email"
+                  type="text"
+                  name="name"
+                  id="name"
+                  autoComplete="name"
+                  
+                  onChange={handelOnchange}
                   className="block w-full rounded-md  px-3.5 py-2 text-1C6FB shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 border border-1C6FB"
                 />
               </div>
@@ -122,7 +91,9 @@ const Login = () => {
                   type="email"
                   name="email"
                   id="email"
+                  value={inputField.email}
                   autoComplete="email"
+                  onChange={handelOnchange}
                   className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-1C6FB shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -133,10 +104,12 @@ const Login = () => {
               </label>
               <div className="mt-2.5">
                 <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  autoComplete="email"
+                  type="password"
+                  name="password"
+                  id="password"
+                  value={inputField.password}
+                  onChange={handelOnchange}
+                  autoComplete="password"
                   className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-1C6FB shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>

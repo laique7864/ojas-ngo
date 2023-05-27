@@ -6,7 +6,7 @@ import img4 from '../images/location.png'
 import img5 from '../images/server.png'
 import img6 from "../images/sms.png"
 import img7 from '../images/phone.png'
-import img8 from '../../Navbarlogo/5x5h-removebg-preview.png'
+import img8 from '../../assets/Navbarlogo/5x5h-removebg-preview.png'
 
 function Footer() {
   return (

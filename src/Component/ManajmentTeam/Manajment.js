@@ -1,12 +1,12 @@
 import React from 'react'
 import './Manajment.css'
-import MoinSir from '../../Navbarlogo/JK-MKS.png'
-import Aruna from '../../Navbarlogo/JK-ARUNA.png'
-import Nitin from '../../Navbarlogo/JK-SEJAL.png'
-import Baba from '../../Navbarlogo/jk-baba.png'
-import ADV from '../../Navbarlogo/JK-WAKIL.png'
-import ped from '../../Navbarlogo/JK-NITIN.png'
-import gutay from '../../Navbarlogo/JK-SHRINIVAS.png'
+import MoinSir from '../../assets/Navbarlogo/JK-MKS.png'
+import Aruna from '../../assets/Navbarlogo/JK-ARUNA.png'
+import Nitin from '../../assets/Navbarlogo/JK-SEJAL.png'
+import Baba from '../../assets/Navbarlogo/jk-baba.png'
+import ADV from '../../assets/Navbarlogo/JK-WAKIL.png'
+import ped from '../../assets/Navbarlogo/JK-NITIN.png'
+import gutay from '../../assets/Navbarlogo/JK-SHRINIVAS.png'
 
 
 
@@ -17,7 +17,7 @@ const ManagementTeam=()=> {
     return (
         <div className='container flex items-center flex-col p-8 gap-8'>
             <div>
-                <h3 className='h3'>ManagementTeam</h3>
+                <h3 className='h3'>Management Team</h3>
             </div>
             <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20  '>
                 <div className='sub-main-cards'>
@@ -35,9 +35,9 @@ const ManagementTeam=()=> {
                         <div className='profile'>
                             <img src={Aruna}/>
                         </div>
-                        <p>MISS. ARUNA MUNDHEOJAS LMC PRESIDENT</p>
-                        <p>Parbhani</p>
-                        <p>Maharashtra</p>
+                        <p className='text-black'>MISS. ARUNA MUNDHEOJAS LMC PRESIDENT</p>
+                        <p className='text-black'>Parbhani</p>
+                        <p className='text-black'>Maharashtra</p>
                     </div>
                 </div> 
                 <div className='sub-main-cards'>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from '../../Navbarlogo/Ellipse 28.png'
+import Img from '../../assets/Navbarlogo/Ellipse 28.png'
 
 const  Admin=()=> {
   return (

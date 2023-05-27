@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import './Contain.css'
-import img from '../../Navbarlogo/Ellipse 4.png'
-import img2 from '../../Navbarlogo/5x5h-removebg-preview.png'
-import freeMedicl from '../../Navbarlogo/free medical chek up.png'
-import urineTest from '../../Navbarlogo/blod and urine test.jpg'
-import foodDistribution from '../../Navbarlogo/food distribution ngo.jpg'
-import creerguidance from '../../Navbarlogo/career guidance.jpeg'
-import road from '../../Navbarlogo/road ngo.jpg'
-import Sir from '../../Navbarlogo/JK-SAWAND.png'
-import Sejal from '../../Navbarlogo/JK-SEJAL.png'
+import img from '../../assets/Navbarlogo/Ellipse 4.png'
+import img2 from '../../assets/Navbarlogo/5x5h-removebg-preview.png'
+import freeMedicl from '../../assets/Navbarlogo/free medical chek up.png'
+import urineTest from '../../assets/Navbarlogo/blod and urine test.jpg'
+import foodDistribution from '../../assets/Navbarlogo/food distribution ngo.jpg'
+import creerguidance from '../../assets/Navbarlogo/career guidance.jpeg'
+import road from '../../assets/Navbarlogo/road ngo.jpg'
+import Sir from '../../assets/Navbarlogo/JK-SAWAND.png'
+import Sejal from '../../assets/Navbarlogo/JK-SEJAL.png'
 import { IconButton } from '@mui/material'
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
 
@@ -28,7 +28,7 @@ const Contain = () => {
     return (
         <>
             <div className="flex justify-center items-center h-600 w-1440">
-                <img src={require('../../Navbarlogo/Rectangle.png')} className="h-full w-full object-cover" alt="image description" />
+                <img src={require('../../assets/Navbarlogo/Rectangle.png')} className="h-full w-full object-cover" alt="image description" />
                 <p className="absolute text-center text-white sm:z-10 font-sans w-80 text-4xl z-0">Your small help can light up someone’s life</p>
             </div>
             <div>

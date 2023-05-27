@@ -11,11 +11,17 @@ function AdminRoutes() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const theme = useTheme();
     const colors = tokens(theme.mode);
+    const storedObj = localStorage.getItem('user');
+
+// Parse the retrieved string back into an object
+const token = JSON.parse(storedObj);
+console.log(token);
   return (
     <>
 
      <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
       <Sidebar
+      user={token}
         isNonMobile={isNonMobile}
         drawerWidth="250px"
         isSidebarOpen={isSidebarOpen}
