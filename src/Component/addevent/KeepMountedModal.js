@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Input, InputLabel, TextField } from '@mui/material';
 import './CreateModal.css'
+import { addEvent } from '../../services/admin.service';
 // import { adminServices } from '../services/admin.services'
 const style = {
     position: 'absolute',
@@ -27,8 +28,9 @@ const style = {
 
 export default function KeepMountedModal() {
     const [name, setName] = useState('')
-    const [adminid, setAdminId] = useState('6416bb61115dc8d869fde3e1')
+    const [location, setLocation] = useState('6416bb61115dc8d869fde3e1')
     const [img, setImg] = useState('')
+    const [date ,setDate] = useState('')
     const [tostMessage, setTostMessage] = useState('')
     const [response, setResponse] = useState(null)
     const [open, setOpen] = useState(false);
@@ -42,21 +44,22 @@ export default function KeepMountedModal() {
         const formData = new FormData();
         formData.append("image", img)
         formData.append("name", name)
-        formData.append("adminid", adminid)
-        // const data = await adminServices.addCategory(formData).then((res) => {
-        //     setResponse(res)
-        //     console.log("this is status.......", res.status)
-        //     if (res.status === 201 || res.status === 200) {
-        //         notify = () => { toast("Category Added Successfully") }
-        //         notify()
-        //     } else {
-        //         console.log('something went wrong')
-        //     }
-        // }).catch((error) => {
-        //     console.log("this is an error....", error)
-        //     notify = () => { toast("An Error Occured") }
-        //     notify()
-        // })
+        formData.append("location", location)
+        formData.append("date", date)
+        const data = await addEvent(formData).then((res) => {
+            setResponse(res)
+            console.log("this is status.......", res.status)
+            if (res.status === 201 || res.status === 200) {
+                notify = () => { toast("Category Added Successfully") }
+                notify()
+            } else {
+                console.log('something went wrong')
+            }
+        }).catch((error) => {
+            console.log("this is an error....", error)
+            notify = () => { toast("An Error Occured") }
+            notify()
+        })
     }
 
     return (
@@ -90,11 +93,11 @@ export default function KeepMountedModal() {
                             </div>
                             <div style={{ textAlign: "center", marginBottom: "1rem" }}>
                                 <InputLabel htmlFor='name'>Location</InputLabel>
-                                <TextField style={{ padding: "0.2rem" }} onChange={(e) => setName(e.target.value)} required id='adminid' vatiant=' outlined' placeholder="" />
+                                <TextField style={{ padding: "0.2rem" }} onChange={(e) => setLocation(e.target.value)} required id='adminid' vatiant=' outlined' placeholder="" />
                             </div>
                             <div style={{ textAlign: "center", marginBottom: "1rem" }}>
                                 <InputLabel htmlFor='name'>Date</InputLabel>
-                                <TextField style={{ padding: "0.2rem" }} type="date" onChange={(e) => setName(e.target.value)} required id='adminid' vatiant=' outlined' placeholder="" />
+                                <TextField style={{ padding: "0.2rem" }} type="date" onChange={(e) => setDate(e.target.value)} required id='adminid' vatiant=' outlined' placeholder="" />
                             </div>
                             {/* <div style={{ textAlign: "center", marginBottom: "1rem" }}>
                                 <InputLabel htmlFor='adminid'>Admin Id</InputLabel>

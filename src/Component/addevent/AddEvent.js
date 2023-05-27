@@ -8,31 +8,34 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import KeepMountedModal from './KeepMountedModal';
+import { getEventAll } from '../../services/admin.service';
 
 const columns = [
     { id: 'name', label: 'Name', minWidth: 170 },
-    { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
+    { id: 'location', label: 'ISO\u00a0Code', minWidth: 100 },
     {
-        id: 'population',
-        label: 'Population',
+        id: 'img',
+        label: 'Image',
         minWidth: 170,
         align: 'right',
-        format: (value) => value.toLocaleString('en-US'),
+        format: (value) =>{
+            console.log(value,'data');
+            return <img src={value} width='50px' height='50px'/>
+        }  ,
     },
+    
     {
-        id: 'size',
-        label: 'Size\u00a0(km\u00b2)',
+        id: 'date',
+        label: 'Date',
         minWidth: 170,
         align: 'right',
-        format: (value) => value.toLocaleString('en-US'),
     },
     {
-        id: 'density',
-        label: 'Density',
+        id: 'Status',
+        label: 'Status',
         minWidth: 170,
-        align: 'right',
-        format: (value) => value.toFixed(2),
-    },
+        align: 'right'
+        },
 ];
 
 function createData(name, code, population, size) {
@@ -45,9 +48,17 @@ const rows = [
     createData('Italy', 'IT', 60483973, 301340),
 ];
 
+
 const AddEvent = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const [dataRow,setDataRow] = React.useState([])
+
+    const fetchData = async() =>{
+        const data = await getEventAll()
+        console.log(data.data);
+        setDataRow(data.data.Events);
+       }
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -57,6 +68,10 @@ const AddEvent = () => {
         setRowsPerPage(+event.target.value);
         setPage(0);
     };
+
+    React.useEffect(() => {
+        fetchData()
+    },[])
     return (
         <>
             <div className="isolate bg-white px-6 py-24 sm:py-3 lg:px-8">
@@ -93,16 +108,17 @@ const AddEvent = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {rows
-                                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                {dataRow
+                                    ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                     .map((row) => {
+                                        console.log(row);
                                         return (
                                             <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                                                 {columns.map((column) => {
                                                     const value = row[column.id];
                                                     return (
                                                         <TableCell key={column.id} align={column.align}>
-                                                            {column.format && typeof value === 'number'
+                                                            {column.format 
                                                                 ? column.format(value)
                                                                 : value}
                                                         </TableCell>
@@ -117,7 +133,7 @@ const AddEvent = () => {
                     <TablePagination
                         rowsPerPageOptions={[10, 25, 100]}
                         component="div"
-                        count={rows.length}
+                        count={dataRow?.length}
                         rowsPerPage={rowsPerPage}
                         page={page}
                         onPageChange={handleChangePage}

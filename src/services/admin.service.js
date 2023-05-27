@@ -48,28 +48,37 @@ export const deleteCourseByID = async (values) => {
   }
 };
 
-export const getUser = async (values) => {
-  console.log(values);
+export const addEvent = async (values) => {
   try {
+    const storedObj = localStorage.getItem('user');
+
+    const token = JSON.parse(storedObj).token;
+    console.log(token);
     return await axios.post(
-      `${baseUrl}/student`,
-      values
+      `${baseUrl}/api/addEvent`,
+      values,
+      {
+        headers: { Authorization: token },
+      }
     );
   } catch (error) {
     return { error };
   }
 };
 
-export const getUserAll = async (token) => {
+export const getEventAll = async () => {
   // console.log(values);
-  try {
+  const storedObj = localStorage.getItem('user');
+
+  const token = JSON.parse(storedObj).token;
+  console.log(token);
+    try {
     const { data } = await axios.get(
-      `${baseUrl}/admissionlist`,
+      `${baseUrl}/api/getEvents`,
       {
         headers: { Authorization: token },
       }
     );
-    console.log(data);
     return data;
   } catch (error) {
     return { error };
