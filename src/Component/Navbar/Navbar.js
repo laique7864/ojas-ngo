@@ -13,6 +13,7 @@ const Navbar = () => {
     { name: 'Home', href: '#' },
     { name: 'Verified Members', href: '#' },
     { name: 'Events', href: 'Events' },
+    { name: 'ragistrationform', href: 'ragistrationform' },
     { name: 'Donors list', href: 'DonorList' },
     // { name: 'President Desk', href: '#' },
     { name: 'Manajment ', href: 'Manajment' },
