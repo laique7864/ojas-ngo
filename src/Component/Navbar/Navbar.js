@@ -16,7 +16,7 @@ const Navbar = () => {
     { name: 'ragistrationform', href: 'ragistrationform' },
     { name: 'Donors list', href: 'DonorList' },
     // { name: 'President Desk', href: '#' },
-    { name: 'Manajment ', href: 'Manajment' },
+    { name: 'LMC-BODY ', href: 'Manajment' },
     { name: 'Contact us', href: 'Contact' },
     { name: 'Login', href: 'Login' },
    
