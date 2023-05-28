@@ -61,13 +61,13 @@ const ManagementTeam=()=> {
                         <p className='font-sans text-1C6FB font-bold'> OJAS LMC SECRETARY</p>
                     </div>
                 </div>
-          
+       
                 <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile'>
                             <img src={ADV}/>
                         </div>
-                        <p className='font-sans text-1C6FB font-boldmt-4'>ADV.SHAIKH MOHSIN</p>
+                        <p className='font-sans text-1C6FB font-bold mt-4'>ADV.SHAIKH MOHSIN</p>
                         <p className='font-sans text-1C6FB font-bold'>lAWYER BASMATH COURT</p>
                         <p className='font-sans text-1C6FB font-bold'> Maharashtra</p>
                       
@@ -100,6 +100,7 @@ const ManagementTeam=()=> {
                      
                     </div>
                 </div>
+     
                
             </div>
             {/* <div className='main-cards'>

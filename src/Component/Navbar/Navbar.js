@@ -11,13 +11,13 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   const navigation = [
     { name: 'Home', href: '#' },
-    { name: 'Verified Members', href: '#' },
+    { name: 'VerifiedMembers', href: '#' },
     { name: 'Events', href: 'Events' },
-    { name: 'ragistrationform', href: 'ragistrationform' },
-    { name: 'Donors list', href: 'DonorList' },
+    { name: 'RegistrationForm', href: 'RegistrationForm' },
+    { name: 'Donorslist', href: 'DonorList' },
     // { name: 'President Desk', href: '#' },
     { name: 'LMC-BODY ', href: 'Manajment' },
-    { name: 'Contact us', href: 'Contact' },
+    { name: 'ContactUs', href: 'Contact' },
     { name: 'Login', href: 'Login' },
    
   ];
