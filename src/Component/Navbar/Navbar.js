@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   const navigation = [
     { name: 'Home', href: '#' },
-    { name: 'VerifiedMembers', href: '#' },
+    { name: 'VerifiedMember', href: 'VerifiedMember' },
     { name: 'Events', href: 'Events' },
     { name: 'RegistrationForm', href: 'RegistrationForm' },
     { name: 'Donorslist', href: 'DonorList' },

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function RagistrationForm() {
+function RegistrationForm() {
        
     const [inputField, setInputField] = useState({
         name: '',
@@ -460,4 +460,4 @@ function RagistrationForm() {
     )
 }
 
-export default RagistrationForm
+export default RegistrationForm
