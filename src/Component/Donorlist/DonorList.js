@@ -4,18 +4,19 @@ import './Donorlist.css'
 const DonorList=()=> {
     return (
         <>
-<div className="container flex items-center flex-col p-8">
+     
+<div className="container flex items-center flex-col p-8 mt-4">
             <div>
-                <h3 className='text-1C6FB font-sans'>Donor's list</h3>
+                <h3 className='text-1C6FB font-sans text-3xl font-bold'>Donor's list</h3>
             </div>
             
-            <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  ">
+            <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 ">
   <div> <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile'>
                         </div>
                         <p className='text-black'>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
+                        <p className>ammount:3000</p>
                         <p>Maharashtra</p>
                     </div>
                 </div></div>

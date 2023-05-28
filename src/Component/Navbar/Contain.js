@@ -312,7 +312,7 @@ useEffect(()=>{
                             [NGO Name] equipped me with the tools to enhance my skills, broaden my horizons, and unlock new possibilities. They believed in my potential and empowered me to dream bigger, helping me shape a brighter future for myself and my family.</p>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                         <div >
-                          <img className='w-100 h-28  rounded-full'src={Sir}/>
+                          <img className='w-100 h-28  rounded-full'src={Sejal}/>
                         </div>
                         <p className='mt-24 ml-5 text-blue-500'>Prof. Sambhaji Sawandkar</p>
                     </div> 

@@ -1,10 +1,10 @@
 import React from 'react'
 import  './verfied.css'
-const  verfied=()=> {
+const  VerfiedMember=()=> {
   return (
     <>
     <div>
-        <h3 className='h3'>Verified Members</h3>
+        <h3 className='h3 text-3xl font-bold '>Verified Members</h3>
     </div>
     <div className='main-cards'>
         <div className='sub-main-cards'>
@@ -123,4 +123,4 @@ const  verfied=()=> {
   )
 }
 
-export default verfied
+export default VerfiedMember
