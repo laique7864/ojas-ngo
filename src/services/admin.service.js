@@ -36,11 +36,11 @@ export const AdminSingService = async (values) => {
     return { error };
   }
 };
-export const deleteCourseByID = async (values) => {
+export const getEventByQuery = async (values) => {
   try {
     return await (
       await axios.get(
-        `${baseUrl}/deleteCourse?id=${values}`
+        `${baseUrl}/api/getCompletedEvents?Status=${values}`
       )
     ).data;
   } catch (error) {
@@ -84,19 +84,33 @@ export const getEventAll = async () => {
     return { error };
   }
 };
+export const getCompletedEvent = async () => {
+  // console.log(values);
+  const storedObj = localStorage.getItem('user');
 
-export const getEditableData = async (token, editedParams) => {
+  const token = JSON.parse(storedObj).token;
+  console.log(token);
+    try {
+    const { data } = await axios.get(
+      `${baseUrl}/api/getEvents`,
+      {
+        headers: { Authorization: token },
+      }
+    );
+    return data;
+  } catch (error) {
+    return { error };
+  }
+};
+
+export const CompleteEvent = async (id) => {
+  console.log(id ,'skdmls');
 // console.log(editedParams);
 //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
   try {
    return await axios
       .put(
-        `${baseUrl}/updateFeesStatus`,
-        editedParams,
-
-        {
-          headers: { Authorization: token },
-        }
+        `${baseUrl}/api/CompleteEvent?id=${id}`
       )
       .then((response) => {
        return response

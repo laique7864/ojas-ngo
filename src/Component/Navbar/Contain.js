@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Contain.css'
 import img from '../../assets/Navbarlogo/Ellipse 4.png'
 import img2 from '../../assets/Navbarlogo/5x5h-removebg-preview.png'
@@ -9,13 +9,30 @@ import creerguidance from '../../assets/Navbarlogo/career guidance.jpeg'
 import road from '../../assets/Navbarlogo/road ngo.jpg'
 import Sir from '../../assets/Navbarlogo/JK-SAWAND.png'
 import Sejal from '../../assets/Navbarlogo/JK-SEJAL.png'
-import { IconButton } from '@mui/material'
+import { IconButton, useMediaQuery } from '@mui/material'
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
+import { getEventByQuery } from '../../services/admin.service'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import { useTheme } from '@emotion/react'
 
 
 
 const Contain = () => {
     const [next,setNext]=useState(false)
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+    const [completedEvent ,setCompletedEvent] = useState([])
+    const [upcomingEvent ,setUpcomingEvent] = useState([])
+    
     const imageStyle = {
         backgroundImage: "url('../../Navbarlogo/JK-SEJAL.png')",
         backgroundRepeat: 'no-repeat',
@@ -24,7 +41,20 @@ const Contain = () => {
       const sliderHandler =()=>{
         setNext(!next)
       }
+const getComletedEvent = async()=>{
+ const data =await getEventByQuery("Completed")
+ setCompletedEvent(data.data.Events);
+}
+const getUpcominEvent = async()=>{
+  const data =await getEventByQuery("Upcoming")
 
+  console.log(data.data.Events);
+ }
+
+useEffect(()=>{
+  getUpcominEvent()
+  getComletedEvent()
+},[])
     return (
         <>
             <div className="flex justify-center items-center h-600 w-1440">
@@ -34,19 +64,59 @@ const Contain = () => {
             <div>
                 <h3 className='Main-Contain-text text-center font-bold mt-8  text-blue-600/100'>Upcoming Events</h3>
             </div>
-            <div class="flex justify-center mb-4 flex-col sm:flex-row items-center mt-4">
-                <div className='w-10/12 pl-8 mb-8 h-80'>
-                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
-                <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>
+            <div class="  mt-4">
+
+              {/* {completedEvent.map((item)=>{
+                console.log(item);
+                return (
+<div className='w-10/12 pl-8 mb-8 h-80'>
+                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"> 
+                <img src={item.img} className='h-full'/>
+                  </div>
+                <p className='text-025FB5 w-10/12 font-sans text-center'>{item.name}</p>
                 </div>
-                <div className='w-10/12 pl-8 mb-8 h-80'>
+                )
+              })
+
+              } */}
+               <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      // spaceBetween={50}
+      slidesPerView={isMobile ? 2 : 3}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <div class="grid grid-cols-2 sm:grid-cols-3  mt-4">
+      {completedEvent.map((item)=>{
+                return (
+                  <SwiperSlide>
+<div className='w-10/12 pl-8 mb-8 h-80'>
+                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"> 
+                <img src={item.img} className='h-full'/>
+                  </div>
+                <p className='text-025FB5 w-10/12 font-sans text-center'>{item.name}</p>
+                </div>
+                </SwiperSlide>
+                )
+              })
+
+              }
+  </div>
+      ...
+    </Swiper>
+                
+                {/* <div className='w-10/12 pl-8 mb-8 h-80'>
                 <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
                 <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>
                 </div>
                 <div className='w-10/12 pl-8 mb-8 h-80'>
                 <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
                 <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>    
-                </div>
+                </div> */}
        
                 {/* <div class="w-30per h-80 bg-FFFFFF border mb-8 border-1C6FB"></div>
                 <div class="w-30per h-80 bg-FFFFFF border mb-8 border-1C6FB"></div> */}
@@ -98,11 +168,34 @@ const Contain = () => {
         <FaArrowRight />
       </Button> */}
                 <h4 className='flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans'>Our Objective</h4>
-              {!next ?  <div className="flex justify-center mb-4 flex-col sm:flex-row items-center">
-              <IconButton style={{position:'absolute',top:'0px' ,left:"0px"  , color:'black'}} onClick={sliderHandler}>
-                    <ChevronLeft />
+              {!next ?  <div className="flex justify-center mb-4 ">
+              <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      // spaceBetween={50}
+      slidesPerView={isMobile ? 2 : 4}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      {completedEvent.map((item)=>{
+                return (
+                  <SwiperSlide>
+    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+                        <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
+                        <p className='text-025FB5 font-sans text-center'>Free Meical Chek Up</p>
+                    </div>
+                    
+                </SwiperSlide>
+                )
+              })
 
-                  </IconButton>  <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+              }
+      ...
+    </Swiper>
+     {/* <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
                         <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
                         <p className='text-025FB5 font-sans text-center'>Free Meical Chek Up</p>
                     </div>
@@ -122,17 +215,37 @@ const Contain = () => {
                     <img className='w-60 h-60  mr-3.5 rounded-full' src={road}/>
                     <p className='text-025FB5 font-sans text-center'>Road Rules Awareness For Student</p>
                     </div>
-                    <IconButton style={{position:'absolute',top:'0px' ,left:"0px"  , color:'black'}} onClick={sliderHandler}>
-                    <ChevronRight />
-
-                  </IconButton> 
+              */}
                 </div> :
-                <div className="flex justify-center mb-4 flex-col sm:flex-row items-center">
-                       <IconButton style={{position:'absolute',top:'0px' ,left:"0px"  , color:'black'}} onClick={sliderHandler}>
-                    <ChevronLeft />
+                <div className=" mb-4 ">
+       <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      // spaceBetween={50}
+      slidesPerView={isMobile ? 2 : 4}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <div class="grid grid-cols-2 sm:grid-cols-3  mt-4">
+      {completedEvent.map((item)=>{
+                return (
+                  <SwiperSlide>
+   <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+                        <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
+                        <p className='text-025FB5 font-sans text-center'>Free </p>
+                    </div>
+                </SwiperSlide>
+                )
+              })
 
-                  </IconButton> 
-                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+              }
+  </div>
+      ...
+    </Swiper>
+                    {/* <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
                         <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
                         <p className='text-025FB5 font-sans text-center'>Free </p>
                     </div>
@@ -151,11 +264,8 @@ const Contain = () => {
                     <div class="w-60 h-60 border mb-8  border-1C6FB rounded-full">
                     <img className='w-60 h-60  mr-3.5 rounded-full'  src={urineTest}/>
                     <p className='text-025FB5 font-sans text-center'>For Student</p>
-                    </div>
-                    <IconButton style={{position:'absolute',top:'0px' ,left:"0px"  , color:'black'}} onClick={sliderHandler}>
-                    <ChevronRight />
-
-                  </IconButton> 
+                    </div> */}
+               
                 </div>
                 
 

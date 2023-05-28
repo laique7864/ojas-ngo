@@ -26,7 +26,7 @@ const style = {
     justifyContent: 'center'
 };
 
-export default function KeepMountedModal() {
+export default function KeepMountedModal({refetch}) {
     const [name, setName] = useState('')
     const [location, setLocation] = useState('6416bb61115dc8d869fde3e1')
     const [img, setImg] = useState('')
@@ -50,8 +50,10 @@ export default function KeepMountedModal() {
             setResponse(res)
             console.log("this is status.......", res.status)
             if (res.status === 201 || res.status === 200) {
-                notify = () => { toast("Category Added Successfully") }
+                notify = () => { toast("Event Added Successfully") }
                 notify()
+                handleClose()
+                refetch()
             } else {
                 console.log('something went wrong')
             }
