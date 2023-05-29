@@ -65,7 +65,7 @@ const navItems = [
   },
 
   {
-    text: "Donors List",
+    text: "admindonerlist",
     icon: <Diversity1Icon />,
   },
   {
@@ -73,7 +73,7 @@ const navItems = [
     icon: <Groups2Outlined />,
   },
   {
-    text: "Contact Us",
+    text: "Contact",
     icon: <CallOutlinedIcon />,
   },
   {

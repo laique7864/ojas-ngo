@@ -1,126 +1,126 @@
 import React from 'react'
 import './Donorlist.css'
 
-const DonorList=()=> {
-    return (
-        <>
-     
-<div className="container flex items-center flex-col p-8 mt-4">
-            <div>
-                <h3 className='text-1C6FB font-sans text-3xl font-bold'>Donor's list</h3>
+const DonorList = () => {
+  return (
+    <>
+
+      <div className="container flex items-center flex-col p-8 mt-4">
+        <div>
+          <h3 className='text-1C6FB font-sans text-3xl font-bold'>Donor's list</h3>
+        </div>
+
+        <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 ">
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p className='text-black'>Mr.raj shukla</p>
+              <p className>ammount:3000</p>
+              <p>Maharashtra</p>
             </div>
-            
-            <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 ">
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p className='text-black'>Mr.raj shukla</p>
-                        <p className>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-  <div> <div className='sub-main-cards'>
-                    <div className='card-1'>
-                        <div className='profile'>
-                        </div>
-                        <p>Mr.raj shukla</p>
-                        <p>ammount:3000</p>
-                        <p>Maharashtra</p>
-                    </div>
-                </div></div>
-</div>
-            {/* <div className='main-cards'>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+          <div> <div className='sub-main-cards'>
+            <div className='card-1'>
+              <div className='profile'>
+              </div>
+              <p>Mr.raj shukla</p>
+              <p>ammount:3000</p>
+              <p>Maharashtra</p>
+            </div>
+          </div></div>
+        </div>
+        {/* <div className='main-cards'>
                 <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile'>
@@ -210,7 +210,7 @@ const DonorList=()=> {
                     </div>
                 </div>
             </div> */}
-            {/* <div className='main-cards'>
+        {/* <div className='main-cards'>
           <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile'>
@@ -265,18 +265,18 @@ const DonorList=()=> {
                     </div>
                 </div>
             </div> */}
-            <div className='bottom-heading'>
-                <p>want to donate to a NGO?</p>
-                <button>Donate</button>
-            </div> 
+        <div className='bottom-heading'>
+          <p>want to donate to a NGO?</p>
+          <button>Donate</button>
+        </div>
 
 
-     
-     
-     {/* junaid khan convert css in tailwind */}
 
-     
-{/* <div>
+
+        {/* junaid khan convert css in tailwind */}
+
+
+        {/* <div>
         <h3 className=" text-center text-sky-600 font-mono">volunteers</h3>
       </div>
       <div className="flex justify-evenly mt-16">
@@ -430,9 +430,9 @@ const DonorList=()=> {
           Donate
         </button>
       </div> */}
-</div>
-        </>
-    )
+      </div>
+    </>
+  )
 }
 
 export default DonorList
