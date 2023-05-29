@@ -20,6 +20,7 @@ import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import { useMode } from './theme';
 import AddEvent from './Component/addevent/AddEvent';
+import DonerListAdmin from './Component/adminDonerList/DonerListAdmin';
 
 
 
@@ -61,7 +62,7 @@ function App() {
 
         <Route element={<AdminRoutes />}>
           <Route path='/admin' element={<h6>hello world</h6>} />
-          <Route path='/categories' element={<h2>sandansk</h2>} />
+          <Route path='/admindonerlist' element={<DonerListAdmin/>} />
           <Route path='/event' element={<AddEvent/>} />
         </Route>
 
