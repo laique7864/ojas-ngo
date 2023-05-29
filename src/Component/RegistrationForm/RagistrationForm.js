@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
+import { RegistrationMember, addEvent } from '../../services/admin.service'
+import { ToastContainer, toast } from 'react-toastify'
+import {CloudinaryImage} from '@cloudinary/url-gen';
+
 
 function RegistrationForm() {
+  const  [profile ,setProfile]= useState()
+
        
     const [inputField, setInputField] = useState({
         name: '',
@@ -36,14 +42,15 @@ function RegistrationForm() {
     async function handleOnSubmit(e) {
       e.preventDefault()
       const formData = new FormData();
+      
       formData.append("name", inputField.name)
       formData.append("address", inputField.address)
       formData.append("email", inputField.email)
       formData.append("bloodgroup", inputField.bloodGroup)
       formData.append("state", inputField.state)
-      formData.append("profile", inputField.profile)
-      formData.append("otherDocument", inputField.otherDocument)
-      formData.append("voterId", inputField.voterId)
+      formData.append("image", profile)
+      // formData.append("otherDocument", inputField.otherDocument)
+      // formData.append("voterId", inputField.voterId)
       formData.append("adharCard", inputField.adharCard)
       formData.append("alternatNo", inputField.alternatNo)
       formData.append("mobileNo", inputField.mobileNo)
@@ -52,6 +59,22 @@ function RegistrationForm() {
       formData.append("gender",inputField.gender)
       formData.append('dateOfBirth' , inputField.dateOfBirth)
       formData.append('fatherName' , inputField.fatherName)
+      for (const [key, value] of formData.entries()) {
+        console.log(key, value);
+      }
+      const data = await RegistrationMember(formData).then((res) => {
+        console.log("this is status.......", res.status)
+        if (res.status === 201 || res.status === 200) {
+       toast("Successfully Registred") 
+        } else {
+            console.log('something went wrong')
+        }
+    }).catch((error) => {
+        console.log("this is an error....", error)
+   toast("An Error Occured") 
+    })
+
+      console.log(formData,'formData');
 
       
   }
@@ -63,6 +86,7 @@ function RegistrationForm() {
 
            
     <div className="isolate bg-white px-6 py-24 sm:py-3 lg:px-8">
+    <ToastContainer />
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-1C6FB sm:text-4xl font-sans mb-2">Registration Form</h2>
         </div>
@@ -94,7 +118,7 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.fatherName}
                     type="text"
-                    name="mobileNo"
+                    name="fatherName"
                     id="last-name"
                     autoComplete="family-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -110,7 +134,7 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.dateOfBirth} 
                     type="email"
-                    name="email"
+                    name="dateOfBirth"
                     id="last-name"
                     autoComplete="family-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -123,15 +147,26 @@ function RegistrationForm() {
                 Gender* :
                 </label>
                 <div className="mt-2.5">
-                  <input
+                  {/* <input
                   onChange={handelOnchange}
                   value={inputField.gender}
                     type="text"
-                    name="name"
+                    name="gender"
                     id="first-name"
                     autoComplete="given-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
+                  /> */}
+                    <select
+                  id="country"
+                  name="gender"
+                  onChange={handelOnchange}
+
+                  className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  >
+                  <option value="Male">Male</option>
+                  <option value={"Female"}>Female</option>
+                  <option value={"Other"}>Other</option>
+                </select>
                 </div>
               </div>
               <div>
@@ -143,7 +178,7 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.profession}
                     type="text"
-                    name="mobileNo"
+                    name="profession"
                     id="last-name"
                     autoComplete="family-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -159,7 +194,7 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.bloodGroup}
                     type="text"
-                    name="topic"
+                    name="bloodGroup"
                     id="last-name"
                     autoComplete="family-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -176,7 +211,7 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.state}
                     type="text"
-                    name="name"
+                    name="state"
                     id="first-name"
                     autoComplete="given-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -192,8 +227,7 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.district}
                     type="text"
-                    name="mobileNo"
-                    id="last-name"
+                    name="district"
                     autoComplete="family-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -209,7 +243,7 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.mobileNo} 
                     type="number"
-                    name="name"
+                    name="mobileNo"
                     id="first-name"
                     autoComplete="given-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -225,7 +259,7 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.alternatNo}
                     type="number"
-                    name="mobileNo"
+                    name="alternatNo"
                     id="last-name"
                     autoComplete="family-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -241,7 +275,7 @@ function RegistrationForm() {
                   <textarea
                   onChange={handelOnchange}
                   value={inputField.address}
-                    name="description"
+                    name="address"
                     id="message"
                     rows={4}
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -259,7 +293,7 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.pincode}
                     type="number"
-                    name="name"
+                    name="pincode"
                     id="first-name"
                     autoComplete="given-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -275,7 +309,7 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.email}
                     type="text"
-                    name="mobileNo"
+                    name="email"
                     id="last-name"
                     autoComplete="family-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -288,10 +322,9 @@ function RegistrationForm() {
                 </label>
                 <div className="mt-2.5">
                   <input
-                  onChange={handelOnchange}
-                  value={inputField.profile}
-                    type="text"
-                    name="name"
+onChange={(e) => setProfile(e.target.files[0])}       
+                    type="file"
+                    name="profile"
                     id="first-name"
                     autoComplete="given-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -307,14 +340,14 @@ function RegistrationForm() {
                   onChange={handelOnchange}
                   value={inputField.adharCard} 
                     type="number"
-                    name="mobileNo"
+                    name="adharCard"
                     id="last-name"
                     autoComplete="family-name"
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
-              <div>
+              {/* <div>
                 <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-1C6FB">
                 Voter Id* :
                 </label>
@@ -329,23 +362,8 @@ function RegistrationForm() {
                     className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
-              </div>
-              <div>
-                <label htmlFor="last-name" className="block text-sm font-semibold leading-6 text-1C6FB">
-                Other Document :
-                </label>
-                <div className="mt-2.5">
-                  <input
-                  onChange={handelOnchange}
-                  value={inputField.otherDocument}
-                    type="number"
-                    name="mobileNo"
-                    id="last-name"
-                    autoComplete="family-name"
-                    className="block w-full rounded-md border border-1C6FB px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
-              </div>
+              </div> */}
+            
 
             </div>
             <div className="mt-10">

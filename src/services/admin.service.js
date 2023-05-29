@@ -65,6 +65,18 @@ export const addEvent = async (values) => {
     return { error };
   }
 };
+export const RegistrationMember = async (values) => {
+  try {
+
+    return await axios.post(
+      `${baseUrl}/api/memberRegistration`,
+      values,
+   
+    );
+  } catch (error) {
+    return { error };
+  }
+};
 
 export const getEventAll = async () => {
   // console.log(values);
