@@ -1,12 +1,13 @@
 import React from 'react'
 import './Manajment.css'
-import MoinSir from '../../assets/Navbarlogo/JK-MKS.png'
-import Aruna from '../../assets/Navbarlogo/JK-ARUNA.png'
-import Nitin from '../../assets/Navbarlogo/JK-SEJAL.png'
-import Baba from '../../assets/Navbarlogo/jk-baba.png'
-import ADV from '../../assets/Navbarlogo/JK-WAKIL.png'
-import ped from '../../assets/Navbarlogo/JK-NITIN.png'
-import gutay from '../../assets/Navbarlogo/JK-SHRINIVAS.png'
+import MoinSir from '../../assets/Navbarlogo/LMC1.png'
+import Aruna from '../../assets/Navbarlogo/LMC2.png'
+import Nitin from '../../assets/Navbarlogo/LMC3.png'
+import Baba from '../../assets/Navbarlogo/LMC4.png'
+import ADV from '../../assets/Navbarlogo/LMC5.png'
+import ped from '../../assets/Navbarlogo/LMC6.png'
+import gutay from '../../assets/Navbarlogo/LMC7.png'
+import ADVSIR from '../../assets/Navbarlogo/LMC8.png'
 
 
 
@@ -87,13 +88,27 @@ const ManagementTeam=()=> {
                      
                     
                     </div>
-                </div> <div className='sub-main-cards'>
+                </div> 
+                <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile'>
                             <img src={gutay}/>
                         </div>
                         <p className='font-sans text-1C6FB font-bold mt-4'>MR. SHRINIVAS GUTTE (SDK DEVELOPER SILICON, HYDERABAD)</p>
                         <p className='font-sans text-1C6FB font-bold'> LMC OJAS PROJECT MANAGER</p>
+                        <p className='font-sans text-1C6FB font-bold'> Maharashtra</p>
+                       
+                     
+                     
+                    </div>
+                </div>
+                <div className='sub-main-cards'>
+                    <div className='card-1'>
+                        <div className='profile'>
+                            <img src={ADVSIR}/>
+                        </div>
+                        <p className='font-sans text-1C6FB font-bold mt-4'>MR. SANTOSH DADKE GUTTE </p>
+                        <p className='font-sans text-1C6FB font-bold'> LMC OJAS ADVISOR</p>
                         <p className='font-sans text-1C6FB font-bold'> Maharashtra</p>
                        
                      
