@@ -122,7 +122,6 @@ console.log(data ,'data');
 
     const fetchData = async() =>{
         const data = await getEventAll()
-        console.log(data.data);
         setDataRow(data.data.Events);
        }
 

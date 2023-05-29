@@ -12,7 +12,7 @@ import Sejal from '../../assets/Navbarlogo/JK-SEJAL.png'
 import { IconButton, useMediaQuery } from '@mui/material'
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
 import { getEventByQuery } from '../../services/admin.service'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y ,Autoplay } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -81,16 +81,19 @@ useEffect(()=>{
               } */}
                <Swiper
       // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
       // spaceBetween={50}
       slidesPerView={isMobile ? 2 : 3}
       navigation
+      mousewheel={{  
+        forceToAxis: true,
+       }}
+      autoplay={{ delay: 2000}}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      <div class="grid grid-cols-2 sm:grid-cols-3  mt-4">
       {completedEvent.map((item)=>{
                 return (
                   <SwiperSlide>
@@ -105,7 +108,6 @@ useEffect(()=>{
               })
 
               }
-  </div>
       ...
     </Swiper>
                 
@@ -175,6 +177,7 @@ useEffect(()=>{
       // spaceBetween={50}
       slidesPerView={isMobile ? 2 : 4}
       navigation
+      autoplay={{ delay: 2000}}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
@@ -220,13 +223,15 @@ useEffect(()=>{
                 <div className=" mb-4 ">
        <Swiper
       // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
       // spaceBetween={50}
       slidesPerView={isMobile ? 2 : 4}
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
+      onSwiper={(swiper) => console.log(swiper)}    autoplay={{ delay: 2000}}
+
+
       onSlideChange={() => console.log('slide change')}
     >
       <div class="grid grid-cols-2 sm:grid-cols-3  mt-4">
