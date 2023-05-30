@@ -56,7 +56,7 @@ const navItems = [
     icon: <HomeOutlined />,
   },
   {
-    text: "Verified Members",
+    text: "VerifiedMembers",
     icon: <HowToRegIcon />,
   },
   {

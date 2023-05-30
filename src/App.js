@@ -21,6 +21,7 @@ import { CssBaseline } from '@mui/material';
 import { useMode } from './theme';
 import AddEvent from './Component/addevent/AddEvent';
 import DonerListAdmin from './Component/adminDonerList/DonerListAdmin';
+import VerifiedMembers from './Component/verifiedmembers/VerifiedMembers';
 
 
 
@@ -39,45 +40,46 @@ function App() {
       <Route>
         <Route element={<Root />}>
           <Route path='/' element={<Contain />} />
-           <Route path='/VerifiedMember' element={<VerifiedMember />} /> 
+          <Route path='/VerifiedMember' element={<VerifiedMember />} />
           <Route path='/Contact' element={<Contact />} />
-          <Route path='/Donation' element={<Donation/>} />
-          <Route path='/DonorList' element={<DonorList/>} />
-          <Route path='/Login' element={<Login/>} />
-          <Route path='/Registrationform' element={<Registrationform/>} />
+          <Route path='/Donation' element={<Donation />} />
+          <Route path='/DonorList' element={<DonorList />} />
+          <Route path='/Login' element={<Login />} />
+          <Route path='/Registrationform' element={<Registrationform />} />
           {/* <Route path='/Event' element={<Event/>} /> */}
 
-         
-          <Route path='/Manajment' element={<Manajment/>} />
+
+          <Route path='/Manajment' element={<Manajment />} />
 
 
-        
-          <Route path='/Icard' element={<Icard/>} />
 
-       
-          <Route path='/events' element={<Events/>} />
+          <Route path='/Icard' element={<Icard />} />
 
-                
+
+          <Route path='/events' element={<Events />} />
+
+
         </Route>
 
         <Route element={<AdminRoutes />}>
           <Route path='/admin' element={<h6>hello world</h6>} />
-          <Route path='/admindonerlist' element={<DonerListAdmin/>} />
-          <Route path='/event' element={<AddEvent/>} />
+          <Route path='/admindonerlist' element={<DonerListAdmin />} />
+          <Route path='/event' element={<AddEvent />} />
+          <Route path='/VerifiedMembers' element={<VerifiedMembers />} />
         </Route>
 
       </Route>
-
+      // VerifiedMembers
     )
   )
-  return(
+  return (
     <>
-       <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
-    <RouterProvider router={router}>
-    
-    </RouterProvider>
-    </ThemeProvider>
+        <RouterProvider router={router}>
+
+        </RouterProvider>
+      </ThemeProvider>
     </>
   );
 }
