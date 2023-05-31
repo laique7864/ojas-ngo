@@ -1,6 +1,6 @@
 import axios from "axios";
 import { parse, stringify } from "flatted";
-const baseUrl = process.env.REACT_APP_API_URL_DEV  || "http://localhost:5002"
+const baseUrl = process.env.REACT_APP_API_URL_LOCAL  || "http://localhost:5002"
 console.log(`${baseUrl}`,'baseUrl');
 export const postStudentData = async (values) => {
   try {
@@ -131,18 +131,15 @@ export const CompleteEvent = async (id) => {
     return error;
   }
 };
-export const uploadResultId = async (token ,EditabledData) => {
-  console.log(EditabledData ,'EditabledData');
+export const deleteEventId = async (value) => {
   //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
     try {
+      const storedObj = localStorage.getItem('user');
+
+      const token = JSON.parse(storedObj).token;
      return await axios
-        .post(
-          `${baseUrl}/addResult`,
-          EditabledData,
-  
-          {
-            headers: { Authorization: token },
-          }
+        .put(
+          `${baseUrl}/api/removeEvent?eventId=${value}`
         )
         .then((response) => {
          return response
