@@ -21,11 +21,8 @@ import { CssBaseline } from '@mui/material';
 import { useMode } from './theme';
 import AddEvent from './Component/addevent/AddEvent';
 import DonerListAdmin from './Component/adminDonerList/DonerListAdmin';
-<<<<<<< HEAD
 import DonationForm from './Component/donation-form/DonationForm';
-=======
 import VerifiedMembers from './Component/verifiedmembers/VerifiedMembers';
->>>>>>> 9067364b0131918297009f4627151e013f59f033
 
 
 
