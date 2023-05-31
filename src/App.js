@@ -39,13 +39,13 @@ function App() {
     createRoutesFromElements(
 
       <Route>
+         <Route path='/Login' element={<Login/>} />
         <Route element={<Root />}>
           <Route path='/' element={<Contain />} />
           <Route path='/VerifiedMember' element={<VerifiedMember />} />
           <Route path='/Contact' element={<Contact />} />
           <Route path='/Donation' element={<Donation/>} />
           <Route path='/DonorList' element={<DonorList/>} />
-          <Route path='/Login' element={<Login/>} />
           <Route path='/Registrationform' element={<Registrationform/>} />
           <Route path='/DonationForm' element={<DonationForm/>} />
           {/* <Route path='/Event' element={<Event/>} /> */}

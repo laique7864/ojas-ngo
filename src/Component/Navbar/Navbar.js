@@ -17,9 +17,7 @@ const Navbar = () => {
     { name: 'Donorslist', href: 'DonorList' },
     // { name: 'President Desk', href: '#' },
     { name: 'LMC-BODY ', href: 'Manajment' },
-    { name: 'ContactUs', href: 'Contact' },
-    { name: 'Login', href: 'Login' },
-   
+    { name: 'ContactUs', href: 'Contact' }   
   ];
   const [current, setCurrent] = useState(0);
   const [currentState, setCurrentState] = useState(false);
