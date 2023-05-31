@@ -1,6 +1,6 @@
 import axios from "axios";
 import { parse, stringify } from "flatted";
-const baseUrl = process.env.REACT_APP_API_URL_LOCAL  || "http://localhost:5002"
+const baseUrl = process.env.REACT_APP_API_URL_DEV  || "http://localhost:5002"
 console.log(`${baseUrl}`,'baseUrl');
 export const postStudentData = async (values) => {
   try {

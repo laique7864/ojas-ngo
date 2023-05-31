@@ -21,6 +21,7 @@ import { CssBaseline } from '@mui/material';
 import { useMode } from './theme';
 import AddEvent from './Component/addevent/AddEvent';
 import DonerListAdmin from './Component/adminDonerList/DonerListAdmin';
+import DonationForm from './Component/donation-form/DonationForm';
 
 
 
@@ -45,6 +46,7 @@ function App() {
           <Route path='/DonorList' element={<DonorList/>} />
           <Route path='/Login' element={<Login/>} />
           <Route path='/Registrationform' element={<Registrationform/>} />
+          <Route path='/DonationForm' element={<DonationForm/>} />
           {/* <Route path='/Event' element={<Event/>} /> */}
 
          
