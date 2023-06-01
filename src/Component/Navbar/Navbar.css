@@ -162,9 +162,9 @@ color: whitesmoke;
 .sidenav {
   height: 70%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
-  z-index: 9999;
+  /* z-index: 9999; */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
+  z-index: 99; /* Stay on top */
   top: 0;
   left: 0;
   background-color: whitesmoke; /* Black*/

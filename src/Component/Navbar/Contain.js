@@ -83,7 +83,7 @@ useEffect(()=>{
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
       // spaceBetween={50}
-      slidesPerView={isMobile ? 2 : 3}
+      slidesPerView={isMobile ? 1 : 3}
       navigation
       mousewheel={{  
         forceToAxis: true,
@@ -99,7 +99,7 @@ useEffect(()=>{
                   <SwiperSlide>
 <div className='w-10/12 pl-8 mb-8 h-80'>
                 <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"> 
-                <img src={item.img} className='h-full'/>
+                <img src={item.img} className='h-full '/>
                   </div>
                 <p className='text-025FB5 w-10/12 font-sans text-center'>{item.name}</p>
                 </div>
@@ -225,7 +225,7 @@ useEffect(()=>{
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
       // spaceBetween={50}
-      slidesPerView={isMobile ? 2 : 4}
+      slidesPerView={isMobile ? 1 : 4}
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
