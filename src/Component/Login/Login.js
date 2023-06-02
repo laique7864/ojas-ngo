@@ -1,53 +1,47 @@
 import React, { useState } from "react";
-import './Login.scss'
+import "./Login.scss";
 import { AdminLoginService } from "../../services/admin.service";
 import { useNavigate } from "react-router-dom";
 // import { Formik, Form } from 'formik';
 // import { ToastContainer, toast } from 'react-toastify';
 
-
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 const Login = () => {
-  const navigate =useNavigate()
+  const navigate = useNavigate();
 
   const [inputField, setInputField] = useState({
     email: "",
     password: "",
-  })
+  });
 
   const handelOnchange = (event) => {
-
     setInputField((prev) => {
-      let helper = { ...prev }
-      helper[event.target.name] = event.target.value
-      return helper
-    })
+      let helper = { ...prev };
+      helper[event.target.name] = event.target.value;
+      return helper;
+    });
+  };
+  const [agreed, setAgreed] = useState(false);
 
-  }
-  const [agreed, setAgreed] = useState(false)
-
-
-  const userhandleSubmite = async(e) => {
-e.preventDefault()
-const data = await AdminLoginService(inputField)
-    console.log(data.data)
-    if(data.data.status === 400){
-   alert("err");
-    }else{
+  const userhandleSubmite = async (e) => {
+    e.preventDefault();
+    const data = await AdminLoginService(inputField);
+    console.log(data.data);
+    if (data.data.status === 400) {
+      alert("err");
+    } else {
       const objString = JSON.stringify(data.data);
-      localStorage.setItem("user" ,objString)
-      navigate("/admin")
+      localStorage.setItem("user", objString);
+      navigate("/admin");
     }
-  
-  // const data= await  AdminLoginService()
 
-  }
+    // const data= await  AdminLoginService()
+  };
+  
 
   return (
-
-
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       {/* <div
           className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
@@ -59,15 +53,21 @@ const data = await AdminLoginService(inputField)
           />
         </div> */}
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-1C6FB sm:text-4xl font-sans mb-2">User Login</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-1C6FB sm:text-4xl font-sans mb-2">
+          User Login
+        </h2>
       </div>
       <div className=" border border-1C6FB p-8">
-        <form  className="mx-auto mt-16 max-w-xl sm:mt-20" onSubmit={userhandleSubmite}>
+        <form
+          className="mx-auto mt-16 max-w-xl sm:mt-20"
+          onSubmit={userhandleSubmite}
+        >
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-
-
             <div className="sm:col-span-2">
-              <label htmlFor="email" className="block text-sm font-semibold leading-6 text-1C6FB">
+              <label
+                htmlFor="email"
+                className="block text-sm font-semibold leading-6 text-1C6FB"
+              >
                 Username
               </label>
               <div className="mt-2.5">
@@ -76,14 +76,16 @@ const data = await AdminLoginService(inputField)
                   name="name"
                   id="name"
                   autoComplete="name"
-                  
                   onChange={handelOnchange}
                   className="block w-full rounded-md  px-3.5 py-2 text-1C6FB shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 border border-1C6FB"
                 />
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="email" className="block text-sm font-semibold leading-6 text-1C6FB">
+              <label
+                htmlFor="email"
+                className="block text-sm font-semibold leading-6 text-1C6FB"
+              >
                 Email
               </label>
               <div className="mt-2.5">
@@ -99,7 +101,10 @@ const data = await AdminLoginService(inputField)
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="email" className="block text-sm font-semibold leading-6 text-1C6FB">
+              <label
+                htmlFor="email"
+                className="block text-sm font-semibold leading-6 text-1C6FB"
+              >
                 Password
               </label>
               <div className="mt-2.5">
@@ -114,8 +119,6 @@ const data = await AdminLoginService(inputField)
                 />
               </div>
             </div>
-
-
           </div>
           <div className="flex justify-center">
             <button
@@ -128,8 +131,7 @@ const data = await AdminLoginService(inputField)
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-
-export default Login
+export default Login;

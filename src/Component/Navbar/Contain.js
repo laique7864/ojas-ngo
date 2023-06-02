@@ -12,7 +12,7 @@ import Sejal from '../../assets/Navbarlogo/LMC3.png'
 import { IconButton, useMediaQuery } from '@mui/material'
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
 import { getEventByQuery } from '../../services/admin.service'
-import { Navigation, Pagination, Scrollbar, A11y ,Autoplay } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -26,47 +26,47 @@ import { useTheme } from '@emotion/react'
 
 
 const Contain = () => {
-    const [next,setNext]=useState(false)
-    const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [next, setNext] = useState(false)
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-    const [completedEvent ,setCompletedEvent] = useState([])
-    const [upcomingEvent ,setUpcomingEvent] = useState([])
-    
-    const imageStyle = {
-        backgroundImage: "url('../../Navbarlogo/JK-SEJAL.png')",
-        backgroundRepeat: 'no-repeat',
-      };
+  const [completedEvent, setCompletedEvent] = useState([])
+  const [upcomingEvent, setUpcomingEvent] = useState([])
 
-      const sliderHandler =()=>{
-        setNext(!next)
-      }
-const getComletedEvent = async()=>{
- const data =await getEventByQuery("Completed")
- setCompletedEvent(data.data.Events);
-}
-const getUpcominEvent = async()=>{
-  const data =await getEventByQuery("Upcoming")
+  const imageStyle = {
+    backgroundImage: "url('../../Navbarlogo/JK-SEJAL.png')",
+    backgroundRepeat: 'no-repeat',
+  };
 
-  console.log(data.data.Events);
- }
+  const sliderHandler = () => {
+    setNext(!next)
+  }
+  const getComletedEvent = async () => {
+    const data = await getEventByQuery("Completed")
+    setCompletedEvent(data.data.Events);
+  }
+  const getUpcominEvent = async () => {
+    const data = await getEventByQuery("Upcoming")
 
-useEffect(()=>{
-  getUpcominEvent()
-  getComletedEvent()
-},[])
-    return (
-        <>
-            <div className="flex justify-center items-center h-600 w-1440">
-                <img src={require('../../assets/Navbarlogo/Rectangle.png')} className="h-full w-full object-cover" alt="image description" />
-                <p className="absolute text-center text-white sm:z-10 font-sans w-80 text-4xl z-0">Your small help can light up someone’s life</p>
-            </div>
-            <div>
-                <h3 className='Main-Contain-text text-center font-bold mt-8  text-blue-600/100'>Upcoming Events</h3>
-            </div>
-            <div class="  mt-4">
+    console.log(data.data.Events);
+  }
 
-              {/* {completedEvent.map((item)=>{
+  useEffect(() => {
+    getUpcominEvent()
+    getComletedEvent()
+  }, [])
+  return (
+    <>
+      <div className="flex justify-center items-center h-600 w-1440">
+        <img src={require('../../assets/Navbarlogo/Rectangle.png')} className="h-full w-full object-cover" alt="image description" />
+        <p className="absolute text-center text-white sm:z-10 font-sans w-80 text-4xl z-0">Your small help can light up someone’s life</p>
+      </div>
+      <div>
+        <h3 className='Main-Contain-text text-center font-bold mt-8  text-blue-600/100'>Upcoming Events</h3>
+      </div>
+      <div class="  mt-4">
+
+        {/* {completedEvent.map((item)=>{
                 console.log(item);
                 return (
 <div className='w-10/12 pl-8 mb-8 h-80'>
@@ -79,39 +79,39 @@ useEffect(()=>{
               })
 
               } */}
-               <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
-      // spaceBetween={50}
-      slidesPerView={isMobile ? 2 : 3}
-      navigation
-      mousewheel={{  
-        forceToAxis: true,
-       }}
-      autoplay={{ delay: 2000}}
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-    >
-      {completedEvent.map((item)=>{
-                return (
-                  <SwiperSlide>
-<div className='w-10/12 pl-8 mb-8 h-80'>
-                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"> 
-                <img src={item.img} className='h-full'/>
+        <Swiper
+          // install Swiper modules
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          // spaceBetween={50}
+          slidesPerView={isMobile ? 2 : 3}
+          navigation
+          mousewheel={{
+            forceToAxis: true,
+          }}
+          autoplay={{ delay: 2000 }}
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+        >
+          {completedEvent.map((item) => {
+            return (
+              <SwiperSlide>
+                <div className='w-10/12 pl-8 mb-8 h-80'>
+                  <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB">
+                    <img src={item.img} className='h-full' />
                   </div>
-                <p className='text-025FB5 w-10/12 font-sans text-center'>{item.name}</p>
+                  <p className='text-025FB5 w-10/12 font-sans text-center'>{item.name}</p>
                 </div>
-                </SwiperSlide>
-                )
-              })
+              </SwiperSlide>
+            )
+          })
 
-              }
-      ...
-    </Swiper>
-                
-                {/* <div className='w-10/12 pl-8 mb-8 h-80'>
+          }
+          ...
+        </Swiper>
+
+        {/* <div className='w-10/12 pl-8 mb-8 h-80'>
                 <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
                 <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>
                 </div>
@@ -119,28 +119,198 @@ useEffect(()=>{
                 <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
                 <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>    
                 </div> */}
-       
-                {/* <div class="w-30per h-80 bg-FFFFFF border mb-8 border-1C6FB"></div>
+
+        {/* <div class="w-30per h-80 bg-FFFFFF border mb-8 border-1C6FB"></div>
                 <div class="w-30per h-80 bg-FFFFFF border mb-8 border-1C6FB"></div> */}
 
-                {/* <div class="w-96 h-1/5 border-2 border-blue-500"></div>
+        {/* <div class="w-96 h-1/5 border-2 border-blue-500"></div>
                 <div class="w-96 h-1/5 border-2 border-blue-500"></div>
                 <div class="w-96 h-1/5 border-2 border-blue-500"></div> */}
-                {/* <div className='text'>
+        {/* <div className='text'>
 
                 </div> */}
 
-            </div>
-            <div >
-                <div className='Latest-Text text-center'>
-                    <h3 className='text-blue-600/100  font-bold'>Latest Activity</h3>
+      </div>
+      <div >
+        <div className='Latest-Text text-center'>
+          <h3 className='text-blue-600/100  font-bold'>Latest Activity</h3>
+        </div>
+        <div class="flex flex-col overflow-scroll gap-12 items-center justify-center w-full h-1211 mx-auto border-2 rounded-lg border-0966BB mt-2">\
+          <div className="relative bg-white w-3/4 h-80">
+            <div className="pb-28 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+              <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+                <div className="sm:max-w-lg">
+                  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                    Summer styles are finally here
+                  </h1>
+                  <p className="mt-4 text-xl text-gray-500">
+                    This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care
+                    if you live or die.
+                  </p>
                 </div>
-                <div class="flex flex-col items-center justify-center w-full h-1211 mx-auto border-2 rounded-lg border-0966BB mt-2">
+                <div>
+                  <div className="mt-10">
+                    {/* Decorative image grid */}
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
+                    >
+                      <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                        <div className="flex items-center space-x-6 lg:space-x-8">
+                          {/* <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div> */}
+                          <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                            {/* <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div> */}
+                            {/* <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div> */}
+                            <div className="mt-24 mb-24 rounded-lg">
+                              <img
+                                src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+                                alt=""
+                                className="h-full w-full object-cover object-center"
+                              />
+                            </div>
+                          </div>
+                          {/* <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+          <div className="relative bg-white w-3/4 h-80">
+            <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+              <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+                <div className="sm:max-w-lg">
+                  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                    Summer styles are finally here
+                  </h1>
+                  <p className="mt-4 text-xl text-gray-500">
+                    This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care
+                    if you live or die.
+                  </p>
+                </div>
+                <div>
+                  <div className="mt-10">
+                    {/* Decorative image grid */}
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
+                    >
+                      <div className="absolute transform mt-60 sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                        <div className="flex items-center space-x-6 lg:space-x-8">
+                          {/* <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div> */}
+                          <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                            {/* <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div> */}
+                            {/* <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div> */}
+                            <div className=" rounded-lg">
+                              <img
+                                src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+                                alt=""
+                                className="h-full w-full object-cover object-center"
+                              />
+                            </div>
+                          </div>
+                          {/* <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <img
+                          src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div> */}
+                        </div>
+                      </div>
+                    </div>
 
-            <div className='flex items-center justify-center font-sans text-025FB5 text-2xl mb-10'>Abouts Us</div>
-            {/* <div className='Abouts-Main-contain'>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div className='flex items-center justify-center font-sans text-025FB5 text-2xl mb-10'>Abouts Us</div>
+      {/* <div className='Abouts-Main-contain'>
                 <div className='flex items-center flex-col sm:flex-row'>
                     <img src={img} className='Abouts-Img' />
                     <p className='overflow-hidden  text-1.6'> MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
@@ -149,56 +319,56 @@ useEffect(()=>{
                 </div>
           
             </div> */}
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-  <div className="md:flex">
-    <div className="md:shrink-0 flex items-center justify-center">
-      <img className="h-48" src={img} alt="Modern building architecture" />
-    </div>
-    <div className="p-8">
-      <p className="mt-2 text-slate-500">MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
-                        and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
-                        An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity</p>
-    </div>
-  </div>
-</div>
-            <div>
-      {/* <Button className="carousel-button carousel-button-left">
+      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div className="md:flex">
+          <div className="md:shrink-0 flex items-center justify-center">
+            <img className="h-48" src={img} alt="Modern building architecture" />
+          </div>
+          <div className="p-8">
+            <p className="mt-2 text-slate-500">MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
+              and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
+              An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        {/* <Button className="carousel-button carousel-button-left">
         <FaArrowLeft />
       </Button>
 
       <Button className="carousel-button carousel-button-right">
         <FaArrowRight />
       </Button> */}
-                <h4 className='flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans'>Our Objective</h4>
-              {!next ?  <div className="flex justify-center mb-4 ">
-              <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      // spaceBetween={50}
-      slidesPerView={isMobile ? 2 : 4}
-      navigation
-      autoplay={{ delay: 2000}}
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-    >
-      {completedEvent.map((item)=>{
-                return (
-                  <SwiperSlide>
-    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                        <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
-                        <p className='text-025FB5 font-sans text-center'>Free Meical Chek Up</p>
-                    </div>
-                    
-                </SwiperSlide>
-                )
-              })
+        <h4 className='flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans'>Our Objective</h4>
+        {!next ? <div className="flex justify-center mb-4 ">
+          <Swiper
+            // install Swiper modules
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            // spaceBetween={50}
+            slidesPerView={isMobile ? 2 : 4}
+            navigation
+            autoplay={{ delay: 2000 }}
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log('slide change')}
+          >
+            {completedEvent.map((item) => {
+              return (
+                <SwiperSlide>
+                  <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+                    <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl} />
+                    <p className='text-025FB5 font-sans text-center'>Free Meical Chek Up</p>
+                  </div>
 
-              }
-      ...
-    </Swiper>
-     {/* <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+                </SwiperSlide>
+              )
+            })
+
+            }
+            ...
+          </Swiper>
+          {/* <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
                         <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
                         <p className='text-025FB5 font-sans text-center'>Free Meical Chek Up</p>
                     </div>
@@ -219,38 +389,38 @@ useEffect(()=>{
                     <p className='text-025FB5 font-sans text-center'>Road Rules Awareness For Student</p>
                     </div>
               */}
-                </div> :
-                <div className=" mb-4 ">
-       <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
-      // spaceBetween={50}
-      slidesPerView={isMobile ? 2 : 4}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}    autoplay={{ delay: 2000}}
+        </div> :
+          <div className=" mb-4 ">
+            <Swiper
+              // install Swiper modules
+              modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+              // spaceBetween={50}
+              slidesPerView={isMobile ? 2 : 4}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              onSwiper={(swiper) => console.log(swiper)} autoplay={{ delay: 2000 }}
 
 
-      onSlideChange={() => console.log('slide change')}
-    >
-      <div class="grid grid-cols-2 sm:grid-cols-3  mt-4">
-      {completedEvent.map((item)=>{
-                return (
-                  <SwiperSlide>
-   <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                        <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
+              onSlideChange={() => console.log('slide change')}
+            >
+              <div class="grid grid-cols-2 sm:grid-cols-3  mt-4">
+                {completedEvent.map((item) => {
+                  return (
+                    <SwiperSlide>
+                      <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+                        <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl} />
                         <p className='text-025FB5 font-sans text-center'>Free </p>
-                    </div>
-                </SwiperSlide>
-                )
-              })
+                      </div>
+                    </SwiperSlide>
+                  )
+                })
 
-              }
-  </div>
-      ...
-    </Swiper>
-                    {/* <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
+                }
+              </div>
+              ...
+            </Swiper>
+            {/* <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
                         <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
                         <p className='text-025FB5 font-sans text-center'>Free </p>
                     </div>
@@ -270,61 +440,61 @@ useEffect(()=>{
                     <img className='w-60 h-60  mr-3.5 rounded-full'  src={urineTest}/>
                     <p className='text-025FB5 font-sans text-center'>For Student</p>
                     </div> */}
-               
-                </div>
-                
+
+          </div>
+
 
         }
-                {/* <div className='flex items-center justify-evenly mb-8'>
+        {/* <div className='flex items-center justify-evenly mb-8'>
                     <p className='text-025FB5 font-sans'>Free Meical Chek Up</p>
                     <p className='text-025FB5 font-sans'>Free Blood And Urine Test</p>
                     <p className='text-025FB5 font-sans'>Food Distribution</p>
                     <p className='text-025FB5 font-sans'>Career Guidance To Youth</p>
                     <p className='text-025FB5 font-sans'>Road Rules Awareness For Student</p>
                 </div> */}
-            </div>
-            <div className='flex items-center justify-center font-sans text-025FB5 text-2xl mb-10'>Testimonial</div>
-            <div className='flex justify-center flex-col mb-11 sm:flex-row'>
-                <div class="sm:w-2/5 h-80 w-full bg-FFFFFF border border-1C6FB mr-3.5 flex flex-col justify-between">
-                <div className="sliding-element">
-  <p>This element will slide in when first rendered.</p>
-</div>
-                 {/* <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-6"></div>
+      </div>
+      <div className='flex items-center justify-center font-sans text-025FB5 text-2xl mb-10'>Testimonial</div>
+      <div className='flex justify-center flex-col mb-11 sm:flex-row'>
+        <div class="sm:w-2/5 h-80 w-full bg-FFFFFF border border-1C6FB mr-3.5 flex flex-col justify-between">
+          <div className="sliding-element">
+            <p>This element will slide in when first rendered.</p>
+          </div>
+          {/* <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-6"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
 
                     <div class="border-b-2 border-gray-400 w-4/5 ml-6"></div> */}
-                    <p className='mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden'>Testimonial : I am honored to share my heartfelt testimonial about my life-changing experience with OJAS. From the very beginning, this remarkable organization has
-                         been dedicated to transforming lives and communities through its unwavering commitment to social justice and sustainable development. Today, I stand as a proud testament to their 
-                         incredible work, and I cannot thank them enough for the profound impact they have had on my life.</p>
-                         
+          <p className='mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden'>Testimonial : I am honored to share my heartfelt testimonial about my life-changing experience with OJAS. From the very beginning, this remarkable organization has
+            been dedicated to transforming lives and communities through its unwavering commitment to social justice and sustainable development. Today, I stand as a proud testament to their
+            incredible work, and I cannot thank them enough for the profound impact they have had on my life.</p>
 
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <div >
-                          <img className='w-100 h-28  rounded-full'src={Sir}/>
-                        </div>
-                        <p className='mt-24 ml-5 text-blue-500'>Prof. Sambhaji Sawandkar</p>
-                    </div> 
-                    
-                </div>
-                 <div class="sm:w-2/5 h-80 w-full bg-FFFFFF border border-1C6FB  mr-3.5 flex flex-col justify-between sm:mt-0 mt-1.5">
-                    {/* <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-11"></div>
+
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div >
+              <img className='w-100 h-28  rounded-full' src={Sir} />
+            </div>
+            <p className='mt-24 ml-5 text-blue-500'>Prof. Sambhaji Sawandkar</p>
+          </div>
+
+        </div>
+        <div class="sm:w-2/5 h-80 w-full bg-FFFFFF border border-1C6FB  mr-3.5 flex flex-col justify-between sm:mt-0 mt-1.5">
+          {/* <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 ml-11"></div> */}
-                            <p className='mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden' >Testimonial : [ Empowerment and Education ] Education is the cornerstone of progress, and OJAS understands this fundamental truth. They provided me with opportunities for personal 
-                            and professional growth through educational programs tailored to my needs. Whether it was vocational training, scholarships, or mentorship programs,
-                            [NGO Name] equipped me with the tools to enhance my skills, broaden my horizons, and unlock new possibilities. They believed in my potential and empowered me to dream bigger, helping me shape a brighter future for myself and my family.</p>
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <div >
-                          <img className='w-100 h-28  rounded-full'src={Sejal}/>
-                        </div>
-                        <p className='mt-24 ml-5 text-blue-500'>Prof. Sambhaji Sawandkar</p>
-                    </div> 
-                </div> 
+          <p className='mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden' >Testimonial : [ Empowerment and Education ] Education is the cornerstone of progress, and OJAS understands this fundamental truth. They provided me with opportunities for personal
+            and professional growth through educational programs tailored to my needs. Whether it was vocational training, scholarships, or mentorship programs,
+            [NGO Name] equipped me with the tools to enhance my skills, broaden my horizons, and unlock new possibilities. They believed in my potential and empowered me to dream bigger, helping me shape a brighter future for myself and my family.</p>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div >
+              <img className='w-100 h-28  rounded-full' src={Sejal} />
             </div>
-        </>
-    )
+            <p className='mt-24 ml-5 text-blue-500'>Prof. Sambhaji Sawandkar</p>
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default Contain

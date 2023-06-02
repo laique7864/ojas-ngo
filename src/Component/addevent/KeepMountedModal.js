@@ -26,11 +26,11 @@ const style = {
     justifyContent: 'center'
 };
 
-export default function KeepMountedModal({refetch}) {
+export default function KeepMountedModal({ refetch }) {
     const [name, setName] = useState('')
     const [location, setLocation] = useState('6416bb61115dc8d869fde3e1')
     const [img, setImg] = useState('')
-    const [date ,setDate] = useState('')
+    const [date, setDate] = useState('')
     const [tostMessage, setTostMessage] = useState('')
     const [response, setResponse] = useState(null)
     const [open, setOpen] = useState(false);
