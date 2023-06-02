@@ -79,27 +79,27 @@ const Contain = () => {
               })
 
               } */}
-        <Swiper
-          // install Swiper modules
-          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          // spaceBetween={50}
-          slidesPerView={isMobile ? 2 : 3}
-          navigation
-          mousewheel={{
-            forceToAxis: true,
-          }}
-          autoplay={{ delay: 2000 }}
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
-        >
-          {completedEvent.map((item) => {
-            return (
-              <SwiperSlide>
-                <div className='w-10/12 pl-8 mb-8 h-80'>
-                  <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB">
-                    <img src={item.img} className='h-full' />
+               <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
+      // spaceBetween={50}
+      slidesPerView={isMobile ? 2 : 3}
+      navigation
+      mousewheel={{  
+        forceToAxis: true,
+       }}
+      autoplay={{ delay: 2000}}
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      {completedEvent.map((item)=>{
+                return (
+                  <SwiperSlide>
+<div className='w-10/12 pl-8 mb-8 h-80'>
+                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"> 
+                <img src={item.img} className='h-full'/>
                   </div>
                   <p className='text-025FB5 w-10/12 font-sans text-center'>{item.name}</p>
                 </div>
@@ -389,17 +389,17 @@ const Contain = () => {
                     <p className='text-025FB5 font-sans text-center'>Road Rules Awareness For Student</p>
                     </div>
               */}
-        </div> :
-          <div className=" mb-4 ">
-            <Swiper
-              // install Swiper modules
-              modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-              // spaceBetween={50}
-              slidesPerView={isMobile ? 2 : 4}
-              navigation
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
-              onSwiper={(swiper) => console.log(swiper)} autoplay={{ delay: 2000 }}
+                </div> :
+                <div className=" mb-4 ">
+       <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
+      // spaceBetween={50}
+      slidesPerView={isMobile ? 2 : 4}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}    autoplay={{ delay: 2000}}
 
 
               onSlideChange={() => console.log('slide change')}
