@@ -5,30 +5,50 @@ const DonationForm = () => {
   const [amount, setAmount] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [accountNo, setAccountNo] = useState('');
+  const [IfcsCode, setIfscCode] = useState('');
+  const [img, setImg] = useState('')
+const [mobile, setMobile] = useState(null)
 
 
   const checkoutHandler = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("image", img)
+    formData.append("name", name)
+    formData.append("amount", amount)
+    formData.append("email", email)
+    formData.append("mobile", mobile)
+    formData.append("accountNo", accountNo)
+    formData.append("IfcsCode", IfcsCode)
     const { data: { key } } = await axios.get("http://www.localhost:5002/api/getkey")
-console.log(key);
-    const  {data} = await axios.post("http://localhost:5002/api/checkout", {
-        amount
-    })
-    console.log(data);
+    const  {data} = await axios.post("http://localhost:5002/api/checkout", formData)
+
 
     const options = {
         key,
         amount: data.data.order.amount,
         currency: "INR",
-        name: "6 Pack Programmer",
+        name: "Ojas NGO",
         description: "Tutorial of RazorPay",
-        image: "https://avatars.githubusercontent.com/u/25058652?v=4",
+        image: "https://res.cloudinary.com/dhb8194g1/image/upload/v1685601809/xuaje00bhabfiq14acvt.png",
         order_id: data.data.order.id,
-        callback_url: "http://localhost:5002/api/paymentverification",
-        prefill: {
+        handler: async function (response){
+          // alert(response.razorpay_payment_id);
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature)
+          const payLoad = {
+            razorpay_order_id :response.razorpay_order_id,
+            razorpay_payment_id:response.razorpay_payment_id , 
+            razorpay_signature:response.razorpay_signature  
+          }
+          const  {data} = await axios.post("http://localhost:5002/api/paymentverification", payLoad)
+          console.log(data);
+
+      },        prefill: {
             name: name,
             email: email,
-            contact: "9975040577"
+            contact: mobile
         },
         notes: {
             "address": "Razorpay Corporate Office"
@@ -78,12 +98,12 @@ console.log(key);
 //   };
 
   return (
-    <div className="max-w-md mx-auto mt-8">
-      <h1 className="text-2xl font-bold mb-4">Make a Donation</h1>
+    <div className="max-w-md mx-auto mt-2 p-2">
+      <h1 className="text-2xl font-bold mb-4 text-1C6FB text-center ">Make a Donation</h1>
       <form onSubmit={checkoutHandler} className="space-y-4">
         <div>
           <label htmlFor="amount" className="block text-sm font-medium text-gray-700">
-            Amount (in INR)
+            Amount (in INR) <span class="text-yellow-500 text-2xl">*</span>
           </label>
           <input
             type="number"
@@ -96,7 +116,8 @@ console.log(key);
         </div>
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-            Name
+            Name <span class="text-yellow-500 text-2xl">*</span>
+
           </label>
           <input
             type="text"
@@ -108,8 +129,38 @@ console.log(key);
           />
         </div>
         <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            Account No <span class="text-yellow-500 text-2xl">*</span>
+
+          </label>
+          <input
+            type="text"
+            id="name"
+            value={accountNo}
+            onChange={(e) => setAccountNo(e.target.value)}
+            required
+            className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-700"
+          />
+        </div>
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            IFSC Code <span class="text-yellow-500 text-2xl">*</span>
+
+          </label>
+          <input
+            type="text"
+            id="name"
+            value={IfcsCode}
+            onChange={(e) => setIfscCode(e.target.value)}
+            required
+            className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-700"
+          />
+        </div>
+        
+        <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-            Email Address
+            Email Address <span class="text-yellow-500 text-2xl">*</span>
+
           </label>
           <input
             type="email"
@@ -120,6 +171,31 @@ console.log(key);
             className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-700"
           />
         </div>
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+             Contact No <span class="text-yellow-500 text-2xl">*</span>
+          </label>
+          <input
+            type="number"
+            id="email"
+            value={mobile}
+            onChange={(e) => setMobile(e.target.value)}
+            required
+            className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-700"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700"  >
+            Profile 
+          </label>
+          <input
+            type="file"
+            id="email"
+            onChange={(e) => setImg(e.target.files[0])}
+            className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-700"
+          />
+        </div>
+        
         <div>
           <button
             type="submit"
