@@ -40,6 +40,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import InputIcon from '@mui/icons-material/Input';
 import { styled } from '@mui/system'
+import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 
 import { tokens } from "../../theme";
 
@@ -65,8 +66,8 @@ const navItems = [
   },
 
   {
-    text: "admindonerlist",
-    icon: <Diversity1Icon />,
+    text: "Posts",
+    icon: <FeedOutlinedIcon />,
   },
   {
     text: "Management Team",

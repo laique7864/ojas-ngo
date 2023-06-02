@@ -64,6 +64,23 @@ export const addEvent = async (values) => {
     return { error };
   }
 };
+export const addPost = async (values) => {
+  try {
+    const storedObj = localStorage.getItem('user');
+
+    const token = JSON.parse(storedObj).token;
+    console.log(token);
+    return await axios.post(
+      `${baseUrl}/api/addPost`,
+      values,
+      {
+        headers: { Authorization: token },
+      }
+    );
+  } catch (error) {
+    return { error };
+  }
+};
 export const RegistrationMember = async (values) => {
   try {
 
@@ -86,6 +103,24 @@ export const getEventAll = async () => {
     try {
     const { data } = await axios.get(
       `${baseUrl}/api/getEvents`,
+      {
+        headers: { Authorization: token },
+      }
+    );
+    return data;
+  } catch (error) {
+    return { error };
+  }
+};
+export const getPostsAll = async () => {
+  // console.log(values);
+  const storedObj = localStorage.getItem('user');
+
+  const token = JSON.parse(storedObj).token;
+  console.log(token);
+    try {
+    const { data } = await axios.get(
+      `${baseUrl}/api/getPost`,
       {
         headers: { Authorization: token },
       }
@@ -147,6 +182,24 @@ export const deleteEventId = async (value) => {
       return error;
     }
   };
+  
+  export const deletePostId = async (value) => {
+    //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
+      try {
+        const storedObj = localStorage.getItem('user');
+  
+        const token = JSON.parse(storedObj).token;
+       return await axios
+          .put(
+            `${baseUrl}/api/removePost?eventId=${value}`
+          )
+          .then((response) => {
+           return response
+          });
+      } catch (error) {
+        return error;
+      }
+    };
 
   export const uploadResultOnly = async (token ,EditabledData) => {
     //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time

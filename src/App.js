@@ -23,6 +23,7 @@ import AddEvent from './Component/addevent/AddEvent';
 import DonerListAdmin from './Component/adminDonerList/DonerListAdmin';
 import DonationForm from './Component/donation-form/DonationForm';
 import VerifiedMembers from './Component/verifiedmembers/VerifiedMembers';
+import AddPost from './Component/add-post/AddPost';
 
 
 
@@ -67,6 +68,7 @@ function App() {
           <Route path='/admin' element={<h6>hello world</h6>} />
           <Route path='/admindonerlist' element={<DonerListAdmin />} />
           <Route path='/event' element={<AddEvent />} />
+          <Route path='/Posts' element={<AddPost />} />
           <Route path='/VerifiedMembers' element={<VerifiedMembers />} />
         </Route>
 

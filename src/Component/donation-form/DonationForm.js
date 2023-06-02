@@ -42,8 +42,39 @@ const [mobile, setMobile] = useState(null)
             razorpay_payment_id:response.razorpay_payment_id , 
             razorpay_signature:response.razorpay_signature  
           }
-          const  {data} = await axios.post("http://localhost:5002/api/paymentverification", payLoad)
+          const  {data} = await axios.post("http://localhost:5002/api/paymentverification", payLoad,{
+            headers:{
+              responseType: 'blob'
+            }
+          }) 
           console.log(data);
+          // const link = document.createElement('a');
+          // const blob = new Blob([data], { type: 'application/pdf' });
+          // const blobUrl = URL.createObjectURL(blob);
+          // window.open(blobUrl, '_blank');
+          const url = window.URL.createObjectURL(new Blob([data]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute(
+            "download",
+            `Recipt.pdf`
+        );
+        document.body.appendChild(link);
+        link.click();
+
+        // Clean up and remove the link
+        link.parentNode.removeChild(link);
+
+          // link.target = '_blank'; // Open the file in a new tab/window
+
+          // link.href = blobUrl;
+          // link.download = "Recipt.pdf";
+          
+          // Simulate a click on the link to trigger the download
+          // link.click();
+          // URL.revokeObjectURL(blobUrl);
+
+          // console.log(data);
 
       },        prefill: {
             name: name,

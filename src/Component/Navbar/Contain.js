@@ -11,7 +11,7 @@ import Sir from '../../assets/Navbarlogo/LMC.BODY.png'
 import Sejal from '../../assets/Navbarlogo/LMC3.png'
 import { IconButton, useMediaQuery } from '@mui/material'
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
-import { getEventByQuery } from '../../services/admin.service'
+import { getEventByQuery, getPostsAll } from '../../services/admin.service'
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -28,10 +28,12 @@ import { useTheme } from '@emotion/react'
 const Contain = () => {
   const [next, setNext] = useState(false)
   const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  // const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery("(max-width: 600px)");
 
   const [completedEvent, setCompletedEvent] = useState([])
   const [upcomingEvent, setUpcomingEvent] = useState([])
+  const [dataRow,setDataRow] = useState([])
 
   const imageStyle = {
     backgroundImage: "url('../../Navbarlogo/JK-SEJAL.png')",
@@ -51,7 +53,15 @@ const Contain = () => {
     console.log(data.data.Events);
   }
 
+  const fetchData = async () => {
+
+    const data = await getPostsAll()
+
+    setDataRow(data.data.Events);
+}
+
   useEffect(() => {
+    fetchData()
     getUpcominEvent()
     getComletedEvent()
   }, [])
@@ -83,7 +93,7 @@ const Contain = () => {
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
       // spaceBetween={50}
-      slidesPerView={isMobile ? 2 : 3}
+      slidesPerView={isMobile ? 1 : 3}
       navigation
       mousewheel={{  
         forceToAxis: true,
@@ -97,7 +107,7 @@ const Contain = () => {
       {completedEvent.map((item)=>{
                 return (
                   <SwiperSlide>
-<div className='w-10/12 pl-8 mb-8 h-80'>
+<div className=' pl-14 mb-8 h-80'>
                 <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"> 
                 <img src={item.img} className='h-full'/>
                   </div>
@@ -133,13 +143,38 @@ const Contain = () => {
       </div>
       <div >
         <div className='Latest-Text text-center'>
-          <h3 className='text-blue-600/100  font-bold'>Latest Activity</h3>
+          <h3 className='text-blue-600/100   font-bold'>Latest Activity</h3>
         </div>
-        <div class="flex flex-col overflow-scroll gap-12 items-center justify-center w-full h-1211 mx-auto border-2 rounded-lg border-0966BB ">\
-        <div className="max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-3xl mt-8">
+        <div class="grid flex-col bg-teal-500 overflow-scroll gap-12 items-center justify-center w-full h-1211 p-4 mx-auto border-2 rounded-lg border-0966BB ">
+          {dataRow.map((item)=>{
+            return (
+              <>
+
+              
+              <div className="max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-3xl mt-8">
+              <h1 className='text-blue-600/100  font-bold text-center'>{item.name}</h1>
+
+              <div className="md:flex">
+                
+                <div className="md:shrink-0 flex items-center justify-center">
+                  <img className="h-80" src={item.img} alt="Modern building architecture" />
+                </div>
+                <div className="p-8">
+                  <p className="mt-2 text-slate-500">{item.description}</p>
+                </div>
+              </div>
+            </div>
+            </>
+
+            )
+          })
+
+          }
+      
+      {/* <div className="max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-3xl">
         <div className="md:flex">
           <div className="md:shrink-0 flex items-center justify-center">
-            <img className="h-48" src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg" alt="Modern building architecture" />
+            <img className="h-80" src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg" alt="Modern building architecture" />
           </div>
           <div className="p-8">
             <p className="mt-2 text-slate-500">MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
@@ -151,7 +186,7 @@ const Contain = () => {
       <div className="max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-3xl">
         <div className="md:flex">
           <div className="md:shrink-0 flex items-center justify-center">
-            <img className="h-48" src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg" alt="Modern building architecture" />
+            <img className="h-80" src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg" alt="Modern building architecture" />
           </div>
           <div className="p-8">
             <p className="mt-2 text-slate-500">MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
@@ -159,19 +194,7 @@ const Contain = () => {
               An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity</p>
           </div>
         </div>
-      </div>
-      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-3xl">
-        <div className="md:flex">
-          <div className="md:shrink-0 flex items-center justify-center">
-            <img className="h-48" src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg" alt="Modern building architecture" />
-          </div>
-          <div className="p-8">
-            <p className="mt-2 text-slate-500">MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
-              and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
-              An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity</p>
-          </div>
-        </div>
-      </div>
+      </div> */}
 
         </div>
       </div>
@@ -199,20 +222,14 @@ const Contain = () => {
         </div>
       </div>
       <div>
-        {/* <Button className="carousel-button carousel-button-left">
-        <FaArrowLeft />
-      </Button>
 
-      <Button className="carousel-button carousel-button-right">
-        <FaArrowRight />
-      </Button> */}
         <h4 className='flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans'>Our Objective</h4>
-        {!next ? <div className="flex justify-center mb-4 ">
+      <div className=" mb-4 ">
           <Swiper
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             // spaceBetween={50}
-            slidesPerView={isMobile ? 2 : 4}
+            slidesPerView={isMobile ? 1 : 4}
             navigation
             autoplay={{ delay: 2000 }}
             pagination={{ clickable: true }}
@@ -222,10 +239,11 @@ const Contain = () => {
           >
             {completedEvent.map((item) => {
               return (
-                <SwiperSlide>
-                  <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl} />
-                    <p className='text-025FB5 font-sans text-center'>Free Meical Chek Up</p>
+                <SwiperSlide             style={{display:"flex",justifyContent: "center"}}
+                >
+                  <div class="sm:w-60 w-80  sm:h-60 h-80    mb-8 ">
+                    <img className='sm:w-60 w-80  sm:h-60 h-80  rounded-full' src={freeMedicl} />
+                    <p className='text-025FB5 font-sans text-center mt-4'>Free Meical Chek Up</p>
                   </div>
 
                 </SwiperSlide>
@@ -233,7 +251,7 @@ const Contain = () => {
             })
 
             }
-            ...
+          
           </Swiper>
           {/* <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
                         <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
@@ -256,70 +274,15 @@ const Contain = () => {
                     <p className='text-025FB5 font-sans text-center'>Road Rules Awareness For Student</p>
                     </div>
               */}
-                </div> :
-                <div className=" mb-4 ">
-       <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
-      // spaceBetween={50}
-      slidesPerView={isMobile ? 2 : 4}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}    autoplay={{ delay: 2000}}
+                </div> 
+  
 
 
-              onSlideChange={() => console.log('slide change')}
-            >
-              <div class="grid grid-cols-2 sm:grid-cols-3  mt-4">
-                {completedEvent.map((item) => {
-                  return (
-                    <SwiperSlide>
-                      <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                        <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl} />
-                        <p className='text-025FB5 font-sans text-center'>Free </p>
-                      </div>
-                    </SwiperSlide>
-                  )
-                })
-
-                }
-              </div>
-              ...
-            </Swiper>
-            {/* <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                        <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
-                        <p className='text-025FB5 font-sans text-center'>Free </p>
-                    </div>
-                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={road} />
-                    <p className='text-025FB5 font-sans text-center'> Blood </p>
-                    </div>
-                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={foodDistribution}/>
-                    <p className='text-025FB5 font-sans text-center'> Distribution</p>
-                    </div>
-                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={creerguidance}/>
-                    <p className='text-025FB5 font-sans text-center'> Youth</p>
-                    </div>
-                    <div class="w-60 h-60 border mb-8  border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full'  src={urineTest}/>
-                    <p className='text-025FB5 font-sans text-center'>For Student</p>
-                    </div> */}
-
-          </div>
+           </div>
 
 
-        }
-        {/* <div className='flex items-center justify-evenly mb-8'>
-                    <p className='text-025FB5 font-sans'>Free Meical Chek Up</p>
-                    <p className='text-025FB5 font-sans'>Free Blood And Urine Test</p>
-                    <p className='text-025FB5 font-sans'>Food Distribution</p>
-                    <p className='text-025FB5 font-sans'>Career Guidance To Youth</p>
-                    <p className='text-025FB5 font-sans'>Road Rules Awareness For Student</p>
-                </div> */}
-      </div>
+        
+ 
       <div className='flex items-center justify-center font-sans text-025FB5 text-2xl mb-10'>Testimonial</div>
       <div className='flex justify-center flex-col mb-11 sm:flex-row'>
         <div class="sm:w-2/5 h-80 w-full bg-FFFFFF border border-1C6FB mr-3.5 flex flex-col justify-between">
