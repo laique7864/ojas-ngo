@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import fileDownload from 'react-file-download';
+
 
 const DonationForm = () => {
   const [amount, setAmount] = useState('');
@@ -11,8 +13,38 @@ const DonationForm = () => {
 const [mobile, setMobile] = useState(null)
 
 
+
+
   const checkoutHandler = async (e) => {
     e.preventDefault();
+    const downloadPDF =async (id) => {
+      const url = `http://localhost:5002/pdf/${id}`; // Replace with your server URL
+      axios({
+        url,
+        method: 'GET',
+        responseType: 'blob', // Set the response type to blob
+      })
+        .then((response) => {
+          // Create a URL object from the blob data
+          const url = URL.createObjectURL(new Blob([response.data]));
+    
+          // Create a temporary link element
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', 'filename.pdf'); // Set the desired file name
+    
+          // Append the link element to the DOM and trigger the download
+          document.body.appendChild(link);
+          link.click();
+    
+          // Clean up the URL object and remove the link element
+          URL.revokeObjectURL(url);
+          document.body.removeChild(link);
+        })
+        .catch((error) => {
+          console.error('Error downloading PDF:', error);
+        });
+    };
     const formData = new FormData();
     formData.append("image", img)
     formData.append("name", name)
@@ -48,22 +80,27 @@ const [mobile, setMobile] = useState(null)
             }
           }) 
           console.log(data);
+        const documentPdf= await  downloadPDF(data)
+          // const blob = new Blob([data], { type: 'application/pdf' });
+          // console.log(blob,'response');
+          // fileDownload(data, "Recipt.pdf");
+          // console.log(data);
           // const link = document.createElement('a');
           // const blob = new Blob([data], { type: 'application/pdf' });
           // const blobUrl = URL.createObjectURL(blob);
           // window.open(blobUrl, '_blank');
-          const url = window.URL.createObjectURL(new Blob([data]));
-        const link = document.createElement("a");
-        link.href = url;
-        link.setAttribute(
-            "download",
-            `Recipt.pdf`
-        );
-        document.body.appendChild(link);
-        link.click();
+        //   const url = window.URL.createObjectURL(new Blob([data]));
+        // const link = document.createElement("a");
+        // link.href = url;
+        // link.setAttribute(
+        //     "download",
+        //     `Recipt.pdf`
+        // );
+        // document.body.appendChild(link);
+        // link.click();
 
         // Clean up and remove the link
-        link.parentNode.removeChild(link);
+        // link.parentNode.removeChild(link);
 
           // link.target = '_blank'; // Open the file in a new tab/window
 
@@ -73,6 +110,13 @@ const [mobile, setMobile] = useState(null)
           // Simulate a click on the link to trigger the download
           // link.click();
           // URL.revokeObjectURL(blobUrl);
+          // const url = window.URL.createObjectURL(new Blob([data]));
+          // console.log(url);
+          // const link = document.createElement('a');
+          // link.href = url;
+          // link.setAttribute('download', 'file.pdf'); //or any other extension
+          // document.body.appendChild(link);
+          // link.click();
 
           // console.log(data);
 
