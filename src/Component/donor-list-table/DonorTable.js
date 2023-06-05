@@ -105,8 +105,14 @@ const DonorTable = () => {
     const exportPdf = async () => {
         const doc = new jsPDF({ orientation: "landscape" });
         const headers = createHeaders(['name', 'email','mobileNo','accountNo'])
-    
-        doc.table(1,1,dataRow,headers )
+    const tableData = dataRow.map((row) =>({
+        id: row._id,
+        name: row.name,
+        email: row.email,
+        mobileNo: row.mobileNo,
+        accountNo: row.accountNo
+    }))
+        doc.table(1,1,tableData,headers)
     
         doc.save("report.pdf");
       };
