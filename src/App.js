@@ -24,6 +24,7 @@ import DonerListAdmin from './Component/adminDonerList/DonerListAdmin';
 import DonationForm from './Component/donation-form/DonationForm';
 import VerifiedMembers from './Component/verifiedmembers/VerifiedMembers';
 import AddPost from './Component/add-post/AddPost';
+import DonorTable from './Component/donor-list-table/DonorTable';
 
 
 
@@ -49,7 +50,6 @@ function App() {
           <Route path='/DonorList' element={<DonorList/>} />
           <Route path='/Registrationform' element={<Registrationform/>} />
           <Route path='/DonationForm' element={<DonationForm/>} />
-          {/* <Route path='/Event' element={<Event/>} /> */}
 
 
           <Route path='/Manajment' element={<Manajment />} />
@@ -70,6 +70,8 @@ function App() {
           <Route path='/event' element={<AddEvent />} />
           <Route path='/Posts' element={<AddPost />} />
           <Route path='/VerifiedMembers' element={<VerifiedMembers />} />
+          <Route path='/DonorTable' element={<DonorTable/>} />
+
         </Route>
 
       </Route>
