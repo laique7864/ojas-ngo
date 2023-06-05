@@ -35,7 +35,7 @@ const DonorTable = () => {
             align: 'right',
         },
         {
-            id: 'mobileNo',
+            id: 'mobile',
             label: 'Created Date',
             minWidth: 170,
             align: 'right'
@@ -104,13 +104,14 @@ const DonorTable = () => {
 
     const exportPdf = async () => {
         const doc = new jsPDF({ orientation: "landscape" });
-        const headers = createHeaders(['id','name', 'email','mobileNo','accountNo'])
+        const headers = createHeaders(['id','name',"amount", 'email','mobile','accountNo'])
     const tableData = dataRow.map((row) =>({
         id: row._id,
         name: row.name,
         email: row.email,
-        mobileNo: row.mobileNo,
-        accountNo: row.accountNo
+        mobile: row.mobile,
+        accountNo: row.accountNo,
+        amount: row.amount
     }))
         doc.table(1,1,tableData,headers,{autoSize: true})
     
