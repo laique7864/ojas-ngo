@@ -114,7 +114,7 @@ export default function KeepMountedModal({ refetch }) {
                         </div>
                     </Box >
 
-                </Modal >
+                </Modal>
             </div >
             <ToastContainer />
         </>

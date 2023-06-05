@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import { jsPDF } from "jspdf";
 import KeepMountedModal from './KeepMountedModal';
 import { CompleteEvent, deleteEventId, deletePostId, getEventAll, getPostsAll } from '../../services/admin.service';
 import { ToastContainer, toast } from 'react-toastify';
@@ -101,9 +102,30 @@ const AddPost = () => {
         setPage(0);
     };
 
+    const exportPdf = async () => {
+        const doc = new jsPDF({ orientation: "landscape" });
+    
+        doc.table(1,1,dataRow, )
+    
+        // doc.save("mypdf.pdf");
+      };
+    const createHeaders= (keys) =>{
+        const result = [];
+
+        for (let key of keys) {
+        result.push({
+            id: key,
+            name: key,
+            prompt: key,
+        });
+        }
+        return result;
+    };
+
     React.useEffect(() => {
         fetchData()
     }, [])
+ 
     return (
         <>
             <ToastContainer />

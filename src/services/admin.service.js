@@ -130,6 +130,24 @@ export const getPostsAll = async () => {
     return { error };
   }
 };
+export const getDonorAll = async () => {
+  // console.log(values);
+  const storedObj = localStorage.getItem('user');
+
+  const token = JSON.parse(storedObj).token;
+  console.log(token);
+    try {
+    const { data } = await axios.get(
+      `${baseUrl}/api/getDonarAllList`,
+      {
+        headers: { Authorization: token },
+      }
+    );
+    return data;
+  } catch (error) {
+    return { error };
+  }
+};
 export const getCompletedEvent = async () => {
   // console.log(values);
   const storedObj = localStorage.getItem('user');
