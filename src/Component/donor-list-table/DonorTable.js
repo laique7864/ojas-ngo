@@ -9,7 +9,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { jsPDF } from "jspdf";
 import KeepMountedModal from './KeepMountedModal';
-import { CompleteEvent, deleteEventId, deletePostId, getEventAll, getPostsAll } from '../../services/admin.service';
+import { CompleteEvent, deleteEventId, deletePostId, getDonorAll, getEventAll, getPostsAll } from '../../services/admin.service';
 import { ToastContainer, toast } from 'react-toastify';
 
 
@@ -89,7 +89,7 @@ const DonorTable = () => {
     const [dataRow, setDataRow] = React.useState([])
 
     const fetchData = async () => {
-        const data = await getPostsAll()
+        const data = await getDonorAll()
         setDataRow(data.data.Events);
     }
 
