@@ -16,11 +16,11 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const AddPost = () => {
     const columns = [
-        { id: 'name', label: 'Name', minWidth: 170 },
+        { id: 'name', label: 'Name', minWidth: 50 },
         {
             id: 'img',
             label: 'Image',
-            minWidth: 170,
+            minWidth: 50,
             align: 'right',
             format: (value) => {
                 console.log(value, 'data');
@@ -31,19 +31,19 @@ const AddPost = () => {
         {
             id: 'description',
             label: 'description',
-            minWidth: 10,
+            minWidth: 250,
             align: 'right',
         },
         {
             id: 'date',
             label: 'Created Date',
-            minWidth: 170,
+            minWidth: 10,
             align: 'right'
         },
         {
             id: '_id',
             label: 'Action',
-            minWidth: 170,
+            minWidth: 50,
             align: 'right',
             format: (value) => {
                 console.log(value, 'data');
@@ -148,14 +148,14 @@ const AddPost = () => {
                 </div> */}
                 <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                     <TableContainer sx={{ maxHeight: 440 }}>
-                        <Table stickyHeader aria-label="sticky table">
+                        <Table stickyHeader aria-label="table">
                             <TableHead>
                                 <TableRow>
                                     {columns.map((column) => (
                                         <TableCell
                                             key={column.id}
                                             align={column.align}
-                                            style={{ minWidth: column.minWidth , whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}
+                                            style={{ width: column.minWidth  ,overflow: 'hidden'}}
                                         >
                                             {column.label}
                                         </TableCell>
@@ -172,10 +172,13 @@ const AddPost = () => {
                                                 {columns.map((column) => {
                                                     const value = row[column.id];
                                                     return (
-                                                        <TableCell key={column.id} align={column.align}>
+                                                        <TableCell key={column.id}  align={column.align} title={column.format
+                                                            ? " "
+                                                            : value}  style={{ maxWidth: column.minWidth ,overflow:'hidden'}} >
                                                             {column.format
                                                                 ? column.format(value)
                                                                 : value}
+                                                              
                                                         </TableCell>
                                                     );
                                                 })}

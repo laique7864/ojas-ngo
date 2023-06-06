@@ -8,7 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { ToastContainer, toast } from 'react-toastify';
-import { CompleteEvent, getEventAll } from '../../services/admin.service';
+import { CompleteEvent, getEventAll, getMembersAll } from '../../services/admin.service';
+import Tooltip from '@mui/material/Tooltip';
 
 const columns = [
     { id: 'name', label: 'Name', minWidth: 170 },
@@ -56,7 +57,7 @@ const columns = [
 function VerifiedMembers() {
     const columns = [
         { id: 'name', label: 'Name', minWidth: 170 },
-        { id: 'location', label: 'ISO\u00a0Code', minWidth: 100 },
+        { id: 'email', label: 'ISO\u00a0Code', minWidth: 100 },
         // {
         //     id: 'img',
         //     label: 'Image',
@@ -69,14 +70,48 @@ function VerifiedMembers() {
         // },
 
         {
-            id: 'date',
-            label: 'Date',
+            id: 'mobileNo',
+            label: 'Mobile No',
             minWidth: 170,
             align: 'right',
         },
         {
-            id: 'Status',
-            label: 'Status',
+            id: 'state',
+            label: 'State',
+            minWidth: 170,
+            align: 'right'
+        },
+        {
+            id: 'profile',
+            label: 'Profile',
+            minWidth: 10,
+            align: 'right',
+            format: (value) => {
+                console.log(value, 'data');
+                return <img src={value} width='50px' height='50px' />
+            },
+        },
+        {
+            id: 'adharCard',
+            label: 'adharCard',
+            minWidth: 170,
+            align: 'right'
+        },
+        {
+            id: 'district',
+            label: 'district',
+            minWidth: 170,
+            align: 'right'
+        },
+        {
+            id: 'profession',
+            label: 'profession',
+            minWidth: 170,
+            align: 'right'
+        },
+        {
+            id: 'profession',
+            label: 'profession',
             minWidth: 170,
             align: 'right'
         },
@@ -89,7 +124,7 @@ function VerifiedMembers() {
                 console.log(value, 'data');
                 return (
                     <div className='flex gap-1'>
-                        <button className="block  rounded-md bg-1C6FB px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={() => onClickDetails(value)} >Complete</button>
+                        <button className="block  rounded-md bg-1C6FB px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={() => onClickDetails(value)} >Verify</button>
                         <button className="block  rounded-md bg-red-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" >Delete</button>
                     </div>
                 )
@@ -116,7 +151,7 @@ function VerifiedMembers() {
     const [dataRow, setDataRow] = React.useState([])
 
     const fetchData = async () => {
-        const data = await getEventAll()
+        const data = await getMembersAll()
         setDataRow(data.data.Events);
     }
 
@@ -137,6 +172,8 @@ function VerifiedMembers() {
             <ToastContainer />
             <div className="isolate bg-white px-6 py-24 sm:py-3 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
+                {/* <Tooltip title='value' > hi</Tooltip> */}
+
                     <h2 className="text-3xl font-bold tracking-tight text-1C6FB sm:text-4xl font-sans mb-2">Verified Members</h2>
                 </div>
                 {/* <div className='addCategoryDiv' style={{ textAlign: 'right', marginBottom: '1rem', marginRight: '1.4rem' }}>
@@ -161,7 +198,7 @@ function VerifiedMembers() {
                                         <TableCell
                                             key={column.id}
                                             align={column.align}
-                                            style={{ minWidth: column.minWidth }}
+                                            style={{ width: column.minWidth }}
                                         >
                                             {column.label}
                                         </TableCell>
@@ -172,16 +209,20 @@ function VerifiedMembers() {
                                 {dataRow
                                     ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                     .map((row) => {
-                                        console.log(row);
                                         return (
                                             <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                                                 {columns.map((column) => {
                                                     const value = row[column.id];
                                                     return (
-                                                        <TableCell key={column.id} align={column.align}>
+                                                        <TableCell key={column.id} width={50} align={column.align} title={column.format
+                                                            ? " "
+                                                            : value}  style={{ maxWidth: column.minWidth ,overflow:'hidden'}} >
                                                             {column.format
                                                                 ? column.format(value)
                                                                 : value}
+                                                                {/*  Add Tooltip component */}
+                      {/* <span>{column.format ? column.format(value) : value}</span> */}
+                    {/* </Tooltip> */}
                                                         </TableCell>
                                                     );
                                                 })}

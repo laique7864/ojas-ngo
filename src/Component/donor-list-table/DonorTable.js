@@ -181,10 +181,13 @@ const DonorTable = () => {
                                                 {columns.map((column) => {
                                                     const value = row[column.id];
                                                     return (
-                                                        <TableCell key={column.id} align={column.align}>
+                                                        <TableCell key={column.id} width={50} align={column.align} title={column.format
+                                                            ? " "
+                                                            : value}  style={{ maxWidth: column.minWidth ,overflow:'hidden'}} >
                                                             {column.format
                                                                 ? column.format(value)
                                                                 : value}
+                                                             
                                                         </TableCell>
                                                     );
                                                 })}
