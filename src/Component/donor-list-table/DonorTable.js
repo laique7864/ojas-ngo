@@ -35,7 +35,7 @@ const DonorTable = () => {
             align: 'right',
         },
         {
-            id: 'mobile',
+            id: 'mobileNo',
             label: 'Created Date',
             minWidth: 170,
             align: 'right'
@@ -104,12 +104,12 @@ const DonorTable = () => {
 
     const exportPdf = async () => {
         const doc = new jsPDF({ orientation: "landscape" });
-        const headers = createHeaders(['id','name',"amount", 'email','mobile','accountNo'])
+        const headers = createHeaders(['id','name',"amount", 'email','mobileNo','accountNo'])
     const tableData = dataRow.map((row) =>({
         id: row._id,
         name: row.name,
         email: row.email,
-        mobile: row.mobile,
+        mobileNo: row.mobileNo.toString(),
         accountNo: row.accountNo,
         amount: row.amount
     }))
@@ -139,7 +139,7 @@ const DonorTable = () => {
             <ToastContainer />
             <div className="isolate bg-white px-6 py-24 sm:py-3 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-1C6FB sm:text-4xl font-sans mb-2">Events LIst</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-1C6FB sm:text-4xl font-sans mb-2">Donor List</h2>
                 </div>
                 <div className='addCategoryDiv' style={{ textAlign: 'right', marginBottom: '1rem', marginRight: '1.4rem' }}>
                     <div className='addCategoryButton'>

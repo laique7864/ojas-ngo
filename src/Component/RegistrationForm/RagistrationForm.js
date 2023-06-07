@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { RegistrationMember, addEvent } from '../../services/admin.service'
 import { ToastContainer, toast } from 'react-toastify'
-import { CloudinaryImage } from '@cloudinary/url-gen';
 
 
 function RegistrationForm() {
