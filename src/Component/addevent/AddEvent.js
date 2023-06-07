@@ -171,14 +171,14 @@ const AddEvent = () => {
                 </div> */}
                 <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                     <TableContainer sx={{ maxHeight: 440 }}>
-                        <Table stickyHeader aria-label="sticky table">
-                            <TableHead>
+                        <Table aria-label=" table">
+                            <TableHead style={{background:'blue'}}>
                                 <TableRow>
                                     {columns.map((column) => (
                                         <TableCell
                                             key={column.id}
                                             align={column.align}
-                                            style={{ minWidth: column.minWidth }}
+                                            style={{ minWidth: column.minWidth,}}
                                         >
                                             {column.label}
                                         </TableCell>
@@ -195,10 +195,13 @@ const AddEvent = () => {
                                                 {columns.map((column) => {
                                                     const value = row[column.id];
                                                     return (
-                                                        <TableCell key={column.id} align={column.align}>
+                                                        <TableCell key={column.id} width={50} align={column.align} title={column.format
+                                                            ? " "
+                                                            : value}  style={{ maxWidth: column.minWidth ,overflow:'hidden'}} >
                                                             {column.format
                                                                 ? column.format(value)
                                                                 : value}
+                                                               
                                                         </TableCell>
                                                     );
                                                 })}

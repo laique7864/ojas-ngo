@@ -148,6 +148,18 @@ export const getDonorAll = async () => {
     return { error };
   }
 };
+export const getMembersAll = async () => {
+  // console.log(values);
+
+    try {
+    const { data } = await axios.get(
+      `${baseUrl}/api/getMembers`,
+    );
+    return data;
+  } catch (error) {
+    return { error };
+  }
+};
 export const getCompletedEvent = async () => {
   // console.log(values);
   const storedObj = localStorage.getItem('user');
