@@ -1,9 +1,19 @@
 import React from 'react'
 import './Donorlist.css'
 import { useNavigate } from 'react-router-dom'
+import { getDonorAll } from '../../services/admin.service'
 
 const DonorList = () => {
+  const [dataRow, setDataRow] = React.useState([])
+
   const navigate = useNavigate()
+  const fetchData = async () => {
+    const data = await getDonorAll()
+    setDataRow(data.data.Events);
+}
+React.useEffect(() => {
+  fetchData()
+}, [])
   return (
     <>
 

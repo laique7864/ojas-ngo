@@ -160,6 +160,18 @@ export const getMembersAll = async () => {
     return { error };
   }
 };
+export const getMemberVerified = async () => {
+  // console.log(values);
+
+    try {
+    const { data } = await axios.get(
+      `${baseUrl}/api/getMembersVeriefid`,
+    );
+    return data;
+  } catch (error) {
+    return { error };
+  }
+};
 export const getCompletedEvent = async () => {
   // console.log(values);
   const storedObj = localStorage.getItem('user');
@@ -187,6 +199,22 @@ export const CompleteEvent = async (id) => {
    return await axios
       .put(
         `${baseUrl}/api/CompleteEvent?id=${id}`
+      )
+      .then((response) => {
+       return response
+      });
+  } catch (error) {
+    return error;
+  }
+};
+export const CompleteMember = async (id) => {
+  console.log(id ,'skdmls');
+// console.log(editedParams);
+//  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
+  try {
+   return await axios
+      .put(
+        `${baseUrl}/api/verifiedMember?id=${id}`
       )
       .then((response) => {
        return response

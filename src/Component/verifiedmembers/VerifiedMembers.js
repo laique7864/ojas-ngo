@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { ToastContainer, toast } from 'react-toastify';
-import { CompleteEvent, getEventAll, getMembersAll } from '../../services/admin.service';
+import { CompleteEvent, CompleteMember, getEventAll, getMembersAll } from '../../services/admin.service';
 import Tooltip from '@mui/material/Tooltip';
 
 const columns = [
@@ -132,7 +132,7 @@ function VerifiedMembers() {
         },
     ];
     const onClickDetails = async (Id) => {
-        const data = await CompleteEvent(Id)
+        const data = await CompleteMember(Id)
         console.log(data, 'daata');
         if (data.status === 201 || data.status === 200) {
             console.log('daata');
