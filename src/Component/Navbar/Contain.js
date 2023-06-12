@@ -68,8 +68,8 @@ const Contain = () => {
   return (
     <>
       <div className="flex justify-center items-center h-600 w-1440">
-        <img src={require('../../assets/Navbarlogo/Rectangle.png')} className="h-full w-full object-cover" alt="image description" />
-        <p className="absolute text-center text-white sm:z-10 font-sans w-80 text-4xl z-0">Your small help can light up someone’s life</p>
+        <img src={require('../../assets/Navbarlogo/Slide1 (7).PNG')} className="h-full w-full object-cover" alt="image description" />
+        {/* <p className="absolute text-center text-white sm:z-10 font-sans w-80 text-4xl z-0">Your small help can light up someone’s life</p> */}
       </div>
       <div>
         <h3 className='Main-Contain-text text-center font-bold mt-8  text-blue-600/100'>Upcoming Events</h3>
@@ -215,9 +215,11 @@ const Contain = () => {
             <img className="h-48" src={img} alt="Modern building architecture" />
           </div>
           <div className="p-8">
-            <p className="mt-2 text-slate-500">MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
-              and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
-              An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity</p>
+            <p className="mt-2 text-slate-500">OJAS (a Hindi word that means “Energy”) is an NGO, We are a
+             not-for-profit Organization registered in June 2020 under 
+            The Indian Trust Act 1882. We have been on a philanthropic journey since June 2020 
+            and operating at scale since August 2020. We have already completed three years in June 2023.</p>
+            <p className=" text-slate-500">Our areas of intervention include: Health & Nutrition, Awreness of Safe Drinking Water, Clean Environment, Sanitation & Hygiene, Women Empowerment, Child & Women Education, Art and Culture; Sports and Emergency Preparedness and Response, & Work in Various Programs on Health & Education.</p>
           </div>
         </div>
       </div>
@@ -285,7 +287,7 @@ const Contain = () => {
  
       <div className='flex items-center justify-center font-sans text-025FB5 text-2xl mb-10'>Testimonial</div>
       <div className='flex justify-center flex-col mb-11 sm:flex-row'>
-        <div class="sm:w-2/5 h-80 w-full bg-FFFFFF border border-1C6FB mr-3.5 flex flex-col justify-between">
+        <div class="sm:w-2/5 w-full bg-FFFFFF border border-1C6FB mr-3.5 flex flex-col justify-between">
           <div className="sliding-element">
             <p>This element will slide in when first rendered.</p>
           </div>
@@ -294,9 +296,9 @@ const Contain = () => {
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
 
                     <div class="border-b-2 border-gray-400 w-4/5 ml-6"></div> */}
-          <p className='mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden'>Testimonial : I am honored to share my heartfelt testimonial about my life-changing experience with OJAS. From the very beginning, this remarkable organization has
+          <p className=' italic text-sky-400 ml-4 text-2.6 overflow-hidden'>Testimonial : I am honored to share my heartfelt testimonial about my life-changing experience with OJAS. From the very beginning, this remarkable organization has
             been dedicated to transforming lives and communities through its unwavering commitment to social justice and sustainable development. Today, I stand as a proud testament to their
-            incredible work, and I cannot thank them enough for the profound impact they have had on my life.</p>
+            incredible work, and I cannot thank them enough for the profound impact they have had on my life, being as a Social Activist.</p>
 
 
           <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -307,19 +309,19 @@ const Contain = () => {
           </div>
 
         </div>
-        <div class="sm:w-2/5 h-80 w-full bg-FFFFFF border border-1C6FB  mr-3.5 flex flex-col justify-between sm:mt-0 mt-1.5">
+        <div class="sm:w-2/5  w-full bg-FFFFFF border border-1C6FB  mr-3.5 flex flex-col justify-between sm:mt-0 mt-1.5">
           {/* <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 ml-11"></div> */}
           <p className='mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden' >Testimonial : [ Empowerment and Education ] Education is the cornerstone of progress, and OJAS understands this fundamental truth. They provided me with opportunities for personal
             and professional growth through educational programs tailored to my needs. Whether it was vocational training, scholarships, or mentorship programs,
-            [NGO Name] equipped me with the tools to enhance my skills, broaden my horizons, and unlock new possibilities. They believed in my potential and empowered me to dream bigger, helping me shape a brighter future for myself and my family.</p>
+           OJAS NGO equipped me with the tools to enhance my skills, broaden my horizons, and unlock new possibilities. They believed in my potential and empowered me to dream bigger, helping me shape a brighter future for myself and my family.</p>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div >
               <img className='w-100 h-28  rounded-full' src={Sejal} />
             </div>
-            <p className='mt-24 ml-5 text-blue-500'>Prof. Sambhaji Sawandkar</p>
+            <p className='mt-24 ml-5 text-blue-500'>Miss Sejal Matra</p>
           </div>
         </div>
       </div>

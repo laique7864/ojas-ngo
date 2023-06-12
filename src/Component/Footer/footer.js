@@ -6,14 +6,14 @@ import img4 from '../images/location.png'
 import img5 from '../images/server.png'
 import img6 from "../images/sms.png"
 import img7 from '../images/phone.png'
-import img8 from '../../assets/Navbarlogo/5x5h-removebg-preview.png'
+import img8 from '../../assets/Navbarlogo/OJAS.png'
 
 function Footer() {
   return (
     <>
       <div className='bg-blue-500 flex sm:justify-around justify-between  flex-col sm:flex-row items-center rounded-t-3xl gap-1'>
         {/* <div className='w-24 h-24 rounded-tr-3xl rounded-tl-3xl'></div> */}
-        <div style={{ width: '100px', height: '100px', borderRadius: '50px', backgroundColor: 'white' }} className='my-0.5'>
+        <div className='my-0.5'>
           <img  className='h-24 min-h-full' src={img8}/>
         </div>
         <div className='text-white'>Terms & Conditions</div>
@@ -25,29 +25,30 @@ function Footer() {
           </div>
           <div>
             <p className='mb-1 text-white cursor-pointer text-1.6 '>Privacy Policy</p>
-            <p className='text-white cursor-pointer text-1.6 '>All rights reserved</p>
+            <p className='text-white cursor-pointer text-1.6 '>Copyright Reserved for OJAS.B.U.S.B.S PBN</p>
+            <p className='mr-6 text-white text-1.6 '>Disclaimer</p>
           </div>
         </div>
         <div className='flex'>
-          <p className='mr-6 text-white text-1.6 '>Disclaimer</p>
-          <p className='text-white text-1.6 '>Refund Policy</p>
+        
+          {/* <p className='text-white text-1.6 '>Refund Policy</p> */}
         </div>
         <div className='flex justify-center place-items-center  flex-col gap-1'>
           <div className='flex mb-2'>
             <img src={img4} alt='' className='mr-3' />
-            <p className='text-white text-1.6 '>Office Address</p>
+            <p className='text-white text-1.6 '>H.S 1146, Rameshwar Plot, Parbhani-431401(MH)</p>
           </div>
           <div className='flex mb-2'>
             <img src={img5} alt='' className='mr-3' />
-            <p className='text-white text-1.6 '>www.ngo.com</p>
+            <p className='text-white text-1.6 '>www.ojaspbn.in</p>
           </div>
           <div className='flex mb-2'>
             <img src={img6} alt='' className='mr-3' />
-            <p className='text-white text-1.6 '>ngo@abcfoundation.org</p>
+            <p className='text-white text-1.6 '>ojassansthapbn@gmail.com</p>
           </div>
           <div className='flex mb-2'>
             <img src={img7} alt='' className='mr-3' />
-            <p className='text-white text-1.6 '>9876543210</p>
+            <p className='text-white text-1.6 '> +91-9420114282</p>
           </div>
         </div>
       </div>

@@ -68,14 +68,15 @@ useEffect(()=>{
           <div className='hidden sm:flex items-center w-2/6'>
             <a href='!' className='mr-14 text-white'>Follow Us</a>
             <div className='contents '>
-              <img src={img} alt='' className=' mr-6 cursor-pointer' />
-              <img src={img2} alt='' className='mr-6 cursor-pointer' />
+            <a href=' https://www.instagram.com/busbsanstha/' target='blank'> <img src={img} alt='' className=' mr-6 cursor-pointer' /></a>
+            <a href='https://www.facebook.com/profile.php?id=100064853946110&mibextid=ZbWKwL' target='blank'> <img src={img2} alt='' className='mr-6 cursor-pointer' /></a> 
               <img src={img3} alt='' className='mr-6 cursor-pointer' />
+            
             </div>
           </div>
           <div className='w-24  flex flex-col' >
-            <span className='mr-7 text-white'>Contact:22548963</span>
-            <span className='text-white'>helpdesk@xyz.com</span>
+            <span className='mr-7 text-white'>Contact:9420114282</span>
+            <span className='text-white'>Email:ojassansthapbn@gmail.com</span>
           </div>
           <div className='sm:hidden block'>
 
