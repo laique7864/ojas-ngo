@@ -141,17 +141,17 @@ const Contain = () => {
                 </div> */}
 
       </div>
-      <div >
+      <div className='p-2' >
         <div className='Latest-Text text-center'>
           <h3 className='text-blue-600/100   font-bold'>Latest Activity</h3>
         </div>
-        <div class="grid flex-col bg-teal-500 overflow-scroll gap-12 items-center justify-center w-full h-1211 p-4 mx-auto border-2 rounded-lg border-0966BB ">
+        <div class="grid flex-col bg-white overflow-scroll gap-12 items-center justify-center w-full h-1211 p-4 mx-auto border-2 rounded-lg border-0966BB ">
           {dataRow.map((item)=>{
             return (
               <>
 
               
-              <div className="max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-3xl mt-8">
+              <div className="max-w-md mx-auto bg-slate-50 rounded-xl   md:max-w-3xl mt-8" style={{boxShadow:"rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px"}}>
               <h1 className='text-blue-600/100  font-bold text-center'>{item.name}</h1>
 
               <div className="md:flex">
@@ -231,7 +231,7 @@ const Contain = () => {
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             // spaceBetween={50}
-            slidesPerView={isMobile ? 1 : 4}
+            slidesPerView={isMobile ? 2 : 4}
             navigation
             autoplay={{ delay: 2000 }}
             pagination={{ clickable: true }}
@@ -243,8 +243,8 @@ const Contain = () => {
               return (
                 <SwiperSlide             style={{display:"flex",justifyContent: "center"}}
                 >
-                  <div class="sm:w-60 w-80  sm:h-60 h-80    mb-8 ">
-                    <img className='sm:w-60 w-80  sm:h-60 h-80  rounded-full' src={freeMedicl} />
+                  <div class="mb-8 ">
+                    <img className='rounded-full w-40 h-40' alt='' src={freeMedicl} />
                     <p className='text-025FB5 font-sans text-center mt-4'>Free Meical Chek Up</p>
                   </div>
 

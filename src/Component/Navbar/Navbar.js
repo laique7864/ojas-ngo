@@ -54,7 +54,7 @@ useEffect(()=>{
     <>
       <div>
         
-        <div className='bg-blue-500 flex items-center justify-around sm:h-14 h-20	'>
+        <div className='bg-blue-500 flex items-center justify-end sm:h-14 h-20	'>
           
           <div className='flex items-center '>
          
@@ -66,7 +66,7 @@ useEffect(()=>{
           {/* <div></div> */}
     
           <div className='hidden sm:flex items-center w-2/6'>
-            <a href='!' className='mr-14 text-white'>Follow Us</a>
+            {/* <div href='!' className=' text-white'></div> */}
             <div className='contents '>
             <a href=' https://www.instagram.com/busbsanstha/' target='blank'> <img src={img} alt='' className=' mr-6 cursor-pointer' /></a>
             <a href='https://www.facebook.com/profile.php?id=100064853946110&mibextid=ZbWKwL' target='blank'> <img src={img2} alt='' className='mr-6 cursor-pointer' /></a> 
@@ -74,17 +74,18 @@ useEffect(()=>{
             
             </div>
           </div>
-          <div className='w-24  flex flex-col' >
-            <span className='mr-7 text-white'>Contact:9420114282</span>
-            <span className='text-white'>Email:ojassansthapbn@gmail.com</span>
-          </div>
+
+<div >
+             <p className=' text-white'>Contact:9420114282</p>
+  <p className='text-white'>Email:ojassansthapbn@gmail.com</p>
+</div>
           <div className='sm:hidden block'>
 
-          <label className="burger left-4 "  for="burger"  >
+          <label className="burger right-1 "  for="burger"  >
                   <input type="checkbox" id="burger" checked={currentState} onChange={openNav}/>
                 <span className='bg-orange-500' ></span>
               <span className='bg-white'></span>
-                   <span className='bg-green-600'></span>
+                   <span className='bg-orange-500'></span>
              </label>
           </div>
         
@@ -92,7 +93,6 @@ useEffect(()=>{
         <div className='h-24 hidden sm:flex   items-center justify-end shadow-md'>
           {/* Navigation Links */}
           <div className="hidden sm:block ">
-            <div className="flex space-x-4">
               {navigation.map((item, index) => (
                 <Link
                   to={`/${item.href}`}
@@ -113,7 +113,7 @@ useEffect(()=>{
             </div>
           </div>
         </div>
-        <div id="mySidenav" className="sidenav  sm:hidden" style={{ top: "10vh"}}>
+        <div id="mySidenav" className="sidenav  sm:hidden">
   {/* <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a> */}
   {navigation.map((item, index) => (
                 <Link
@@ -141,7 +141,6 @@ useEffect(()=>{
 {/* <!-- Use any element to open the sidenav --> */}
 {/* <span onClick={openNav}><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" width="40px" style={{paddingTop: "40px", paddingLeft: '40px'}} /></span> */}
 
-      </div>
       {/* <Contain/> */}
     </>
   )

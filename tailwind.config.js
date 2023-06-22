@@ -10,7 +10,8 @@ module.exports = {
       },
       colors:{
         "025FB5": "#025FB5",
-        '1C6FB'   :"#1C6FBB",
+        "51ABFF":"#51ABFF",
+        '1C6FB' :"#1C6FBB",
         "FFFFFF":"#FFFFFF",
         "0966BB":"#0966BB",
         "000000":"#000000"
@@ -31,6 +32,7 @@ module.exports = {
         "1.6": "1.4vh",
         "2.6":"2vh"
       }
+    
     },
   },
   plugins: [],
