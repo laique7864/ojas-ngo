@@ -10,6 +10,9 @@ const DonorList = () => {
   const fetchData = async () => {
     const data = await getDonorAll()
     setDataRow(data.data.Events);
+
+
+    
 }
 React.useEffect(() => {
   fetchData()

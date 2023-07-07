@@ -70,7 +70,7 @@ function Footer() {
                   {/* <h2 class="mb-6 text-sm font-semibold  uppercase text-white">Legal</h2> */}
                   <ul className="  font-medium">
                       <li className="mb-1">
-                          <a href="#" class="hover:underline">Privacy Policy</a>
+                          <a href="https://res.cloudinary.com/dhb8194g1/image/upload/v1687965846/gtu7txldkr5tdh8xom1w.pdf" download='pdfdownload.pdf'  class="hover:underline">Privacy Policy</a>
                       </li>
                       <li className="mb-1">
                           <a href="#" class="hover:underline">Terms &amp; Conditions</a>

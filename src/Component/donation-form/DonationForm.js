@@ -17,15 +17,15 @@ const [mobile, setMobile] = useState(null)
   const checkoutHandler = async (e) => {
     e.preventDefault();
     const downloadPDF =async (id) => {
-      const url = `http://localhost:5002/pdf/${id}`; // Replace with your server URL
-      axios({
-        url,
-        method: 'GET',
-        responseType: 'blob', // Set the response type to blob
-      })
-        .then((response) => {
+      // const url = `http://localhost:5002/pdf/${id}`; // Replace with your server URL
+      // axios({
+      //   url,
+      //   method: 'GET',
+      //   responseType: 'blob', // Set the response type to blob
+      // })
+      //   .then((response) => {
           // Create a URL object from the blob data
-          const url = URL.createObjectURL(new Blob([response.data]));
+          const url = id;
     
           // Create a temporary link element
           const link = document.createElement('a');
@@ -39,21 +39,17 @@ const [mobile, setMobile] = useState(null)
           // Clean up the URL object and remove the link element
           URL.revokeObjectURL(url);
           document.body.removeChild(link);
-        })
-        .catch((error) => {
-          console.error('Error downloading PDF:', error);
-        });
     };
     const formData = new FormData();
-    formData.append("image", img)
+    formData.append("image", img || 'image2')
     formData.append("name", name)
     formData.append("amount", amount)
     formData.append("email", email)
     formData.append("mobile", mobile)
     formData.append("accountNo", accountNo)
     formData.append("IfcsCode", IfcsCode)
-    const { data: { key } } = await axios.get("http://www.localhost:5002/api/getkey")
-    const  {data} = await axios.post("http://localhost:5002/api/checkout", formData)
+    const { data: { key } } = await axios.get("https://cloudy-kimono-toad.cyclic.app/api/getkey")
+    const  {data} = await axios.post("https://cloudy-kimono-toad.cyclic.app/api/checkout", formData)
 
 
     const options = {
@@ -65,6 +61,7 @@ const [mobile, setMobile] = useState(null)
         image: "https://res.cloudinary.com/dhb8194g1/image/upload/v1685601809/xuaje00bhabfiq14acvt.png",
         order_id: data.data.order.id,
         handler: async function (response){
+          console.log(response);
           // alert(response.razorpay_payment_id);
           // alert(response.razorpay_order_id);
           // alert(response.razorpay_signature)
@@ -73,11 +70,7 @@ const [mobile, setMobile] = useState(null)
             razorpay_payment_id:response.razorpay_payment_id , 
             razorpay_signature:response.razorpay_signature  
           }
-          const  {data} = await axios.post("http://localhost:5002/api/paymentverification", payLoad,{
-            headers:{
-              responseType: 'blob'
-            }
-          }) 
+          const  {data} = await axios.post("https://cloudy-kimono-toad.cyclic.app/api/paymentverification", payLoad) 
           console.log(data);
         const documentPdf= await  downloadPDF(data)
           // const blob = new Blob([data], { type: 'application/pdf' });
@@ -119,7 +112,8 @@ const [mobile, setMobile] = useState(null)
 
           // console.log(data);
 
-      },        prefill: {
+      },     
+         prefill: {
             name: name,
             email: email,
             contact: mobile
