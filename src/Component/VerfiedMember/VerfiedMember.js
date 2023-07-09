@@ -8,7 +8,7 @@ const VerfiedMember = () => {
     const navigate = useNavigate()
     const fetchData = async () => {
         const data = await getMemberVerified()
-        console.log(data,'data')
+        console.log(data,'data');
         setDataRow(data.data.Events);
     }
     React.useEffect(() => {
@@ -16,22 +16,31 @@ const VerfiedMember = () => {
     }, [])
     return (
         <>
-            <div className="container flex items-center flex-col p-8 mt-4">
+            <div className="flex items-center flex-col p-8 mt-4">
                 <div>
                     <h3 className='text-1C6FB font-sans text-3xl font-bold'>Verified Members</h3>
                 </div>
 
+
                 <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 ">
-                        <div className='sub-main-cards'>
+                    {dataRow.length > 0 && dataRow.map((item)=>{
+                        return (
+                            <div className='sub-main-cards'>
                             <div className='card-1'>
                                 <div className='profile'>
+                                    <img src={item.profile}  className='rounded-full' alt='' style={{    height: "120px", width: "120px"}}/>
                                 </div>
-                                <p className='font-sans text-1C6FB font-bold mt-4'>MR. SANTOSH DADKE GUTTE </p>
-                                <p className='font-sans text-1C6FB font-bold'> LMC OJAS ADVISOR</p>
-                                <p className='font-sans text-1C6FB font-bold'> Maharashtra</p>
+                                <p className='font-sans text-1C6FB font-bold mt-4'>{item.name} </p>
+                                <p className='font-sans text-1C6FB font-bold'>{item.district}</p>
+                                <p className='font-sans text-1C6FB font-bold'> {item.state}</p>
 
                             </div>
                         </div>
+                        )
+                    })
+
+                    }
+                       
                         
                  
                 </div>

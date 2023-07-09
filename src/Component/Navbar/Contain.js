@@ -6,6 +6,11 @@ import freeMedicl from '../../assets/Navbarlogo/free medical chek up.png'
 import urineTest from '../../assets/Navbarlogo/blod and urine test.jpg'
 import foodDistribution from '../../assets/Navbarlogo/food distribution ngo.jpg'
 import creerguidance from '../../assets/Navbarlogo/career guidance.jpeg'
+import ima1 from '../../assets/Navbarlogo/fisrtslide.png'
+import ima2 from '../../assets/Navbarlogo/secondSlide.png'
+import ima3 from '../../assets/Navbarlogo/thirdSlide.png'
+import ima4 from '../../assets/Navbarlogo/FourthSlide.png'
+import ima5 from '../../assets/Navbarlogo/fifthSlide.png'
 import road from '../../assets/Navbarlogo/road ngo.jpg'
 import Sir from '../../assets/Navbarlogo/LMC.BODY.png'
 import Sejal from '../../assets/Navbarlogo/LMC3.png'
@@ -23,6 +28,15 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { useTheme } from '@emotion/react'
 
+const mainImageSlider =[
+  ima1,
+  ima2,
+  ima3,
+  ima4,
+  ima5,
+
+
+]
 
 
 const Contain = () => {
@@ -32,7 +46,6 @@ const Contain = () => {
   const isMobile = useMediaQuery("(max-width: 600px)");
 
   const [completedEvent, setCompletedEvent] = useState([])
-  const [upcomingEvent, setUpcomingEvent] = useState([])
   const [dataRow,setDataRow] = useState([])
 
   const imageStyle = {
@@ -67,33 +80,12 @@ const Contain = () => {
   }, [])
   return (
     <>
-      <div className="flex justify-center items-center h-600 w-1440">
-        <img src={require('../../assets/Navbarlogo/Slide1 (7).PNG')} className="h-full w-full object-cover" alt="image description" />
-        {/* <p className="absolute text-center text-white sm:z-10 font-sans w-80 text-4xl z-0">Your small help can light up someone’s life</p> */}
-      </div>
-      <div>
-        <h3 className='Main-Contain-text text-center font-bold mt-8  text-blue-600/100'>Upcoming Events</h3>
-      </div>
-      <div class="  mt-4">
-
-        {/* {completedEvent.map((item)=>{
-                console.log(item);
-                return (
-<div className='w-10/12 pl-8 mb-8 h-80'>
-                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"> 
-                <img src={item.img} className='h-full'/>
-                  </div>
-                <p className='text-025FB5 w-10/12 font-sans text-center'>{item.name}</p>
-                </div>
-                )
-              })
-
-              } */}
-               <Swiper
+      <div className="flex justify-center items-center h-600 w-1440 custimise-swipe">
+      <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y ,Autoplay]}
       // spaceBetween={50}
-      slidesPerView={isMobile ? 1 : 3}
+      slidesPerView={1}
       navigation
       mousewheel={{  
         forceToAxis: true,
@@ -102,43 +94,21 @@ const Contain = () => {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
     >
-      {completedEvent.map((item)=>{
-                return (
-                  <SwiperSlide>
-<div className=' pl-14 mb-8 h-80'>
-                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"> 
-                <img src={item.img} className='h-full'/>
-                  </div>
-                  <p className='text-025FB5 w-10/12 font-sans text-center'>{item.name}</p>
-                </div>
-              </SwiperSlide>
-            )
-          })
-
-          }
+     {mainImageSlider.map((item, index) => (
+  <SwiperSlide key={index}  >
+    <img src={item} className="h-full w-full object-cover" alt="image description" />
+  </SwiperSlide>
+))}
           ...
         </Swiper>
+      </div>
+      <div>
+        <h3 className='Main-Contain-text text-center font-bold mt-8  text-blue-600/100'>Upcoming Events</h3>
+      </div>
+      <div class="  mt-4">
 
-        {/* <div className='w-10/12 pl-8 mb-8 h-80'>
-                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
-                <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>
-                </div>
-                <div className='w-10/12 pl-8 mb-8 h-80'>
-                <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"></div>
-                <p className='text-025FB5 w-10/12 font-sans text-center'>Free Meical Chek Up</p>    
-                </div> */}
-
-        {/* <div class="w-30per h-80 bg-FFFFFF border mb-8 border-1C6FB"></div>
-                <div class="w-30per h-80 bg-FFFFFF border mb-8 border-1C6FB"></div> */}
-
-        {/* <div class="w-96 h-1/5 border-2 border-blue-500"></div>
-                <div class="w-96 h-1/5 border-2 border-blue-500"></div>
-                <div class="w-96 h-1/5 border-2 border-blue-500"></div> */}
-        {/* <div className='text'>
-
-                </div> */}
+  
 
       </div>
       <div className='p-2' >
@@ -170,45 +140,13 @@ const Contain = () => {
           })
 
           }
-      
-      {/* <div className="max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-3xl">
-        <div className="md:flex">
-          <div className="md:shrink-0 flex items-center justify-center">
-            <img className="h-80" src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg" alt="Modern building architecture" />
-          </div>
-          <div className="p-8">
-            <p className="mt-2 text-slate-500">MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
-              and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
-              An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity</p>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-3xl">
-        <div className="md:flex">
-          <div className="md:shrink-0 flex items-center justify-center">
-            <img className="h-80" src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg" alt="Modern building architecture" />
-          </div>
-          <div className="p-8">
-            <p className="mt-2 text-slate-500">MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
-              and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
-              An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity</p>
-          </div>
-        </div>
-      </div> */}
+    
 
         </div>
       </div>
 
       <div className='flex items-center justify-center font-sans text-025FB5 text-2xl mb-10'>Abouts Us</div>
-      {/* <div className='Abouts-Main-contain'>
-                <div className='flex items-center flex-col sm:flex-row'>
-                    <img src={img} className='Abouts-Img' />
-                    <p className='overflow-hidden  text-1.6'> MainU.S. However, should an NGO wish to obtain legal benefits such as exemption from state
-                        and federal taxes, it should incorporate and register as an NGO under the relevant laws of the state in which it's located.
-                        An NGO doesn't have to incorporate. For instance, to form a charitable NGO, all that's required  (as is for any charitable trust) is a legal contract and deed that conveys property.While no federal government involvement comes into play, states in the U.S.  may require NGOs with religious, educational, or charitable missions that may ask for donations to register with a state charity.</p>
-                </div>
-          
-            </div> */}
+     
       <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
         <div className="md:flex">
           <div className="md:shrink-0 flex items-center justify-center">
@@ -255,27 +193,7 @@ const Contain = () => {
             }
           
           </Swiper>
-          {/* <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                        <img className='w-60 h-60  mr-3.5  rounded-full' src={freeMedicl}/>
-                        <p className='text-025FB5 font-sans text-center'>Free Meical Chek Up</p>
-                    </div>
-                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={urineTest}/>
-                    <p className='text-025FB5 font-sans text-center'>Free Blood And Urine Test</p>
-                    </div>
-                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={foodDistribution}/>
-                    <p className='text-025FB5 font-sans text-center'>Food Distribution</p>
-                    </div>
-                    <div class="w-60 h-60 border mr-3.5 mb-8 border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={creerguidance}/>
-                    <p className='text-025FB5 font-sans text-center'>Career Guidance To Youth</p>
-                    </div>
-                    <div class="w-60 h-60 border mb-8  border-1C6FB rounded-full">
-                    <img className='w-60 h-60  mr-3.5 rounded-full' src={road}/>
-                    <p className='text-025FB5 font-sans text-center'>Road Rules Awareness For Student</p>
-                    </div>
-              */}
+
                 </div> 
   
 

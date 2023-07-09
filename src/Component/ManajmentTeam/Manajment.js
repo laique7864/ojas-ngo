@@ -16,7 +16,7 @@ import ADVSIR from '../../assets/Navbarlogo/LMC8.png'
 
 const ManagementTeam=()=> {
     return (
-        <div className='container flex items-center flex-col p-8 gap-8'>
+        <div className='flex items-center flex-col p-8 gap-8 '>
             <div>
                 <h3 className='h3 text-1C6FB font-sans text-3xl font-bold'>Management Team</h3>
             </div>

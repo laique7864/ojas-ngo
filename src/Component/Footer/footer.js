@@ -75,9 +75,9 @@ function Footer() {
                       <li className="mb-1">
                           <a href="#" class="hover:underline">Terms &amp; Conditions</a>
                       </li>
-                      <li>
+                      {/* <li>
                           <a href="#" class="hover:underline">Refund Policy</a>
-                      </li>
+                      </li> */}
                   </ul>
               </div>
               <div className='col-span-12 md:col-auto'>

@@ -75,7 +75,7 @@ useEffect(()=>{
             </div>
           </div>
 
-<div >
+<div className='m-2' >
              <p className=' text-white'>Contact:9420114282</p>
   <p className='text-white'>Email:ojassansthapbn@gmail.com</p>
 </div>

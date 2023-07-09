@@ -8,51 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { ToastContainer, toast } from 'react-toastify';
-import { CompleteEvent, CompleteMember, getEventAll, getMembersAll } from '../../services/admin.service';
-import Tooltip from '@mui/material/Tooltip';
+import { CompleteEvent, CompleteMember, getEventAll, getMembersAll  ,deleteMemberId} from '../../services/admin.service';
 
-const columns = [
-    { id: 'name', label: 'Name', minWidth: 170 },
-    { id: 'location', label: 'ISO\u00a0Code', minWidth: 100 },
-    // {
-    //     id: 'img',
-    //     label: 'Image',
-    //     minWidth: 170,
-    //     align: 'right',
-    //     format: (value) => {
-    //         console.log(value, 'data');
-    //         return <img src={value} width='50px' height='50px' />
-    //     },
-    // },
-
-    {
-        id: 'date',
-        label: 'Date',
-        minWidth: 170,
-        align: 'right',
-    },
-    {
-        id: 'Status',
-        label: 'Status',
-        minWidth: 170,
-        align: 'right'
-    },
-    {
-        id: 'Action',
-        label: 'Image',
-        minWidth: 170,
-        align: 'right',
-        format: (value) => {
-            console.log(value, 'data');
-            return (
-                <>
-                    <button>Complete</button>
-                    <button style={{ background: 'red' }} >Delete</button>
-                </>
-            )
-        },
-    },
-];
 
 function VerifiedMembers() {
     const columns = [
@@ -125,7 +82,7 @@ function VerifiedMembers() {
                 return (
                     <div className='flex gap-1'>
                         <button className="block  rounded-md bg-1C6FB px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={() => onClickDetails(value)} >Verify</button>
-                        <button className="block  rounded-md bg-red-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" >Delete</button>
+                        <button className="block  rounded-md bg-red-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={() => deleteEvent(value)}  >Delete</button>
                     </div>
                 )
             },
@@ -136,7 +93,7 @@ function VerifiedMembers() {
         console.log(data, 'daata');
         if (data.status === 201 || data.status === 200) {
             console.log('daata');
-            toast("Event Added Successfully")
+            toast("Member Added Successfully")
 
             fetchData()
 
@@ -145,6 +102,19 @@ function VerifiedMembers() {
         }
 
         console.log(data, 'data');
+    }
+    const deleteEvent = async (Id) => {
+        const data = await deleteMemberId(Id)
+        if (data.status === 201 || data.status === 200) {
+            console.log('daata');
+            toast("Member Added Successfully")
+
+            fetchData()
+
+        } else {
+            console.log('something went wrong')
+        }
+
     }
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);

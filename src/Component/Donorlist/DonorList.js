@@ -17,7 +17,7 @@ React.useEffect(() => {
   return (
     <>
 
-      <div className="container flex items-center flex-col p-8 mt-4">
+      <div className="flex items-center flex-col p-8 mt-4">
         <div>
           <h3 className='text-1C6FB font-sans text-3xl font-bold'>Donor's list</h3>
         </div>

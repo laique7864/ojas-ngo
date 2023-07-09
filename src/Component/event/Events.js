@@ -34,7 +34,7 @@ function Events() {
           </div>
         </div>
       </di> */}
-      <div class="container flex justify-center place-items-center p-3  sm:p-8 flex-col gap-6" >
+      <div class="flex justify-center place-items-center p-3  sm:p-8 flex-col gap-6" >
     {dataRow.map((item)=>{
       return (
         <div class="grid grid-cols-1 sm:grid-cols-2  gap-6  border border-0966BB w-3/4">
