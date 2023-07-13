@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://cloudy-kimono-toad.cyclic.app"  
+const baseUrl = process.env.REACT_APP_API_URL_LOCAL 
 console.log(`${baseUrl}`,'baseUrl');
 export const postStudentData = async (values) => {
   try {

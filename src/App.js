@@ -12,6 +12,7 @@ import Contain from './Component/Navbar/Contain';
 import Registrationform from './Component/RegistrationForm/RagistrationForm';
 import Manajment from './Component/ManajmentTeam/Manajment';
 import Icard from './Component/I-card/Icard';
+import 'react-responsive-pagination/themes/classic.css';
 
 
 import Events from './Component/event/Events';

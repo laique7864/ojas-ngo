@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../side-bar/sideBar'
-import { Box, useMediaQuery,  useTheme} from '@mui/material'
+import { Box, useMediaQuery,  useTheme ,IconButton} from '@mui/material'
 import { tokens } from "../../theme";
+import {ChevronRight} from '@mui/icons-material'
+
 
 // import Navbar from '../Navbar/Navbar'
 
@@ -20,6 +22,10 @@ console.log(token);
     <>
 
      <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
+     <IconButton style={{  top: '0px', left: "5%", color: colors.blueAccent[100] ,position:'sticky' }} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+        <ChevronRight style={{fontSize:'3rem'}}/>
+
+      </IconButton>
       <Sidebar
       user={token}
         isNonMobile={isNonMobile}

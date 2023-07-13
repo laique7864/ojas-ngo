@@ -15,6 +15,10 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 const AddPost = () => {
+    const [currentPage, setCurrentPage] = React.useState(1);
+    const [dataRow, setDataRow] = React.useState([])
+
+
     const columns = [
         { id: 'name', label: 'Name', minWidth: 50 },
         {
@@ -53,6 +57,23 @@ const AddPost = () => {
             },
         },
     ];
+    const onPageChange =(event)=>{
+        if(event === '+'){
+            const lastPage = Math.ceil(dataRow.length / itemPerPage);
+
+            if (currentPage < lastPage) {
+                setCurrentPage((prev) => prev + 1);
+              }
+          
+
+        }else{
+            setCurrentPage((prev)=> prev === 1 ? 1 : prev - 1); 
+        }
+    }
+    const itemPerPage = 10;
+    const indexOfLastItem = itemPerPage * currentPage
+    const indexOfFirstItem = indexOfLastItem - itemPerPage
+    const CurrentData = dataRow?.slice(indexOfFirstItem ,indexOfLastItem)
     
     const onClickDetails = async (Id) => {
         const data = await CompleteEvent(Id)
@@ -84,23 +105,15 @@ const AddPost = () => {
 
         console.log(data, 'data');
     }
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
-    const [dataRow, setDataRow] = React.useState([])
+ 
 
     const fetchData = async () => {
         const data = await getPostsAll()
         setDataRow(data.data.Events);
     }
 
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-    };
 
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(+event.target.value);
-        setPage(0);
-    };
+
 
     const exportPdf = async () => {
         const doc = new jsPDF({ orientation: "landscape" });
@@ -146,7 +159,7 @@ const AddPost = () => {
                         Add Event
                     </button>
                 </div> */}
-                <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+                {/* <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                     <TableContainer sx={{ maxHeight: 440 }}>
                         <Table stickyHeader aria-label="table">
                             <TableHead>
@@ -197,7 +210,81 @@ const AddPost = () => {
                         onPageChange={handleChangePage}
                         onRowsPerPageChange={handleChangeRowsPerPage}
                     />
-                </Paper>
+                </Paper> */}
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Image
+                </th>
+                <th scope="col" class="px-6 py-3">
+                description
+                </th>
+                <th scope="col" class="px-6 py-3">
+                   Date
+                </th>
+                <th scope="col" class="px-6 py-3">
+                   Action
+                </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            {CurrentData.length > 1 && CurrentData.map((item)=>(
+ <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+ <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+     {item.name}
+ </th>
+ <td class="px-6 py-4">
+    <img src={item?.img} width='50px'/>
+ 
+ </td>
+ <td class="px-6 py-4">
+    <p> {item.description}</p>
+
+ </td>
+ <td class="px-6 py-4">
+ {item.date}
+ </td>
+ <td class="px-6 py-4">
+ <button className="block  rounded-md bg-red-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={()=> deleteEvent(item._id)} >Delete</button>
+
+ </td>
+</tr>
+            ))
+
+            }
+           
+        </tbody>
+    </table>
+    
+    </div>
+    
+    <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+  <div class="flex  sm:items-center sm:justify-between">
+    <div>
+      <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+        <a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" onClick={()=>onPageChange("-")}>
+          <span >Previous</span>
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+          </svg>
+        </a>
+
+        <a  class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" onClick={()=>onPageChange("+")}>
+          <span  >Next</span>
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </div>
+</div>
             </div>
         </>
     )

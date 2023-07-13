@@ -49,8 +49,8 @@ const Contain = () => {
   }
   const getUpcominEvent = async () => {
     const data = await getEventByQuery("Upcoming")
+    setCompletedEvent(data.data.Events);
 
-    console.log(data.data.Events);
   }
 
   const fetchData = async () => {

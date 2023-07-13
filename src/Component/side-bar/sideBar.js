@@ -74,6 +74,10 @@ const navItems = [
     icon: <Groups2Outlined />,
   },
   {
+    text:'DonorTable',
+    icon: <Groups2Outlined/>
+  },
+  {
     text: "Contact",
     icon: <CallOutlinedIcon />,
   },
@@ -103,11 +107,8 @@ const Sidebar = ({
   }, [pathname]);
 
   return (
-    <Box component="nav">
-      <IconButton style={{ position: 'absolute', top: '0px', left: "0px", color: colors.blueAccent[100] }} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-        <ChevronRight />
-
-      </IconButton>
+    <Box component="nav" overflow={"hidden"}>
+    
 
       {isSidebarOpen && (
         <Drawer

@@ -16,12 +16,12 @@ import ADVSIR from '../../assets/Navbarlogo/LMC8.png'
 
 const ManagementTeam=()=> {
     return (
-        <div className='container flex items-center flex-col p-8 gap-8'>
+        <div className='flex items-center flex-col p-8 gap-8'>
             <div>
                 <h3 className='h3 text-1C6FB font-sans text-3xl font-bold'>Management Team</h3>
             </div>
-            <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20  '>
-                <div className='sub-main-cards'>
+            <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+                {/* <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile '>
                             <img src={MoinSir}/>
@@ -30,8 +30,96 @@ const ManagementTeam=()=> {
                         <p className='font-sans text-1C6FB font-bold'>Parbhani</p>
                         <p className='font-sans text-1C6FB font-bold'>Maharashtra</p>
                     </div>
-                </div>
-                <div className='sub-main-cards'>
+                </div> */}
+                   <div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={MoinSir} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">M.K. SHAIKH  PRESIDENT (OJAS.B.U.S.B.S)</h5>
+        <span class="font-sans text-1C6FB font-bold">Parbhani</span>
+        <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
+    
+    </div>
+</div>
+<div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={Aruna} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">MISS. ARUNA MUNDHEOJAS LMC PRESIDENT</h5>
+        <span class="font-sans text-1C6FB font-bold">Parbhani</span>
+        <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
+    
+    </div>
+</div>
+<div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={Nitin} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">KU.SEJAL G. MATRA</h5>
+        <span class="font-sans text-1C6FB font-bold">(RESEARCHER NATIONAL CHEMICAL LAB PUNE)</span>
+        <span class="font-sans text-1C6FB font-bold">OJAS LMC PROJECT-JOIN DIRECTOR</span>
+    
+    </div>
+</div>
+<div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={Baba} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4">MR. BABA PATHAN</h5>
+        <span class="font-sans text-1C6FB font-bold">(BJP STATE VICE-PRESIDENT MINORITY CELL)</span>
+        <span class="font-sans text-1C6FB font-bold"> OJAS LMC SECRETARY</span>
+    
+    </div>
+</div>
+<div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={ADV} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4">ADV.SHAIKH MOHSIN</h5>
+        <span class="font-sans text-1C6FB font-bold">lAWYER BASMATH COURT</span>
+        <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
+    
+    </div>
+</div>
+<div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={ADV} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4">ADV.SHAIKH MOHSIN</h5>
+        <span class="font-sans text-1C6FB font-bold">lAWYER BASMATH COURT</span>
+        <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
+    
+    </div>
+</div>
+<div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={ped} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4">MR.NITIN PEDGAOKAR</h5>
+        <span class="font-sans text-1C6FB font-bold">OJAS LMC P.R.O</span>
+        <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
+    
+    </div>
+</div>
+<div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={gutay} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4 text-[10px]">MR. SHRINIVAS GUTTE (SDK DEVELOPER SILICON, HYDERABAD)</h5>
+        <span class="font-sans text-1C6FB font-bold">Parbhani</span>
+        <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
+    
+    </div>
+</div>
+<div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={ADVSIR} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4">MR. SANTOSH DADKE GUTTE </h5>
+        <span class="font-sans text-1C6FB font-bold">LMC OJAS ADVISOR</span>
+        <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
+    
+    </div>
+</div>
+                {/* <div className='sub-main-cards'>
                     <div className='card-1'>
                         <div className='profile'>
                             <img src={Aruna}/>
@@ -114,7 +202,7 @@ const ManagementTeam=()=> {
                      
                      
                     </div>
-                </div>
+                </div> */}
      
                
             </div>

@@ -11,10 +11,15 @@ import { jsPDF } from "jspdf";
 import KeepMountedModal from './KeepMountedModal';
 import { CompleteEvent, deleteEventId, deletePostId, getDonorAll, getEventAll, getPostsAll } from '../../services/admin.service';
 import { ToastContainer, toast } from 'react-toastify';
+import ResponsivePagination from 'react-responsive-pagination';
+
 
 
 
 const DonorTable = () => {
+    const [currentPage, setCurrentPage] = React.useState(1);
+    const [dataRow, setDataRow] = React.useState([])
+
     const columns = [
         { id: 'name', label: 'Name', minWidth: 170 },
         {
@@ -53,21 +58,26 @@ const DonorTable = () => {
             align: 'right'
         },
     ];
-    
-    const onClickDetails = async (Id) => {
-        const data = await CompleteEvent(Id)
-        console.log(data, 'daata');
-        if (data.status === 201 || data.status === 200) {
-            console.log('daata');
-            toast("Event Added Successfully")
+   
 
-            fetchData()
 
-        } else {
-            console.log('something went wrong')
+    const itemPerPage = 10;
+    const indexOfLastItem = itemPerPage * currentPage
+    const indexOfFirstItem = indexOfLastItem - itemPerPage
+    const CurrentData = dataRow?.slice(indexOfFirstItem ,indexOfLastItem)
+    const onPageChange =(event)=>{
+        if(event === '+'){
+            const lastPage = Math.ceil(dataRow.length / itemPerPage);
+
+            console.log(lastPage ,"last page changed");
+            if (currentPage < lastPage) {
+                setCurrentPage((prev) => prev + 1);
+              }
+          
+
+        }else{
+            setCurrentPage((prev)=> prev === 1 ? 1 : prev - 1); 
         }
-
-        console.log(data, 'data');
     }
     const deleteEvent = async (Id) => {
         const data = await deletePostId(Id)
@@ -83,33 +93,22 @@ const DonorTable = () => {
         }
 
     }
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
-    const [dataRow, setDataRow] = React.useState([])
+
 
     const fetchData = async () => {
         const data = await getDonorAll()
         setDataRow(data.data.Events);
     }
 
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-    };
-
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(+event.target.value);
-        setPage(0);
-    };
-
     const exportPdf = async () => {
         const doc = new jsPDF({ orientation: "landscape" });
-        const headers = createHeaders(['id','name',"amount", 'email','mobileNo','accountNo'])
+        const headers = createHeaders(['id','name',"amount", 'email','mobile','Account No'])
     const tableData = dataRow.map((row) =>({
         id: row._id,
         name: row.name,
         email: row.email,
-        mobileNo: row.mobileNo.toString(),
-        accountNo: row.accountNo,
+        mobile: row.mobile.toString(),
+        "Account No": row.accountNo,
         amount: row.amount
     }))
         doc.table(1,1,tableData,headers,{autoSize: true})
@@ -154,7 +153,7 @@ const DonorTable = () => {
                         Export PDF
                     </button>
                 </div>
-                <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+                {/* <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                     <TableContainer sx={{ maxHeight: 440 }}>
                         <Table stickyHeader aria-label="sticky table">
                             <TableHead>
@@ -205,8 +204,90 @@ const DonorTable = () => {
                         onPageChange={handleChangePage}
                         onRowsPerPageChange={handleChangeRowsPerPage}
                     />
-                </Paper>
-            </div>
+                </Paper> */}
+                
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Profile
+                </th>
+                <th scope="col" class="px-6 py-3">
+                Amount
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Mobile No
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Acount No
+                </th>
+                <th scope="col" class="px-6 py-3">
+                IFSC Code
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {CurrentData.length > 1 && CurrentData.map((item)=>(
+ <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+ <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+     {item.name}
+ </th>
+ <td class="px-6 py-4">
+    <img src={item.image} width='50px'/>
+ 
+ </td>
+ <td class="px-6 py-4">
+ {item.amount}
+ </td>
+ <td class="px-6 py-4">
+ {item.mobile}
+ </td>
+ <td class="px-6 py-4">
+ {item.accountNo}
+
+ </td>
+ <td class="px-6 py-4">
+ {item.IfcsCode}
+
+ </td>
+</tr>
+            ))
+
+            }
+           
+        </tbody>
+    </table>
+    
+    </div>
+    
+    <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+  <div class="flex  sm:items-center sm:justify-between">
+    <div>
+      <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+        <a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" onClick={()=>onPageChange("-")}>
+          <span >Previous</span>
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+          </svg>
+        </a>
+
+        <a  class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" onClick={()=>onPageChange("+")}>
+          <span  >Next</span>
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>
+
+
         </>
     )
 }
