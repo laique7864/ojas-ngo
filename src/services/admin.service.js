@@ -240,6 +240,23 @@ export const deleteEventId = async (value) => {
       return error;
     }
   };
+  export const deleteMemberId = async (value) => {
+    //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
+      try {
+        const storedObj = localStorage.getItem('user');
+  
+        const token = JSON.parse(storedObj).token;
+       return await axios
+          .put(
+            `${baseUrl}/api/deleteMember?eventId=${value}`
+          )
+          .then((response) => {
+           return response
+          });
+      } catch (error) {
+        return error;
+      }
+    };
   
   export const deletePostId = async (value) => {
     //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time

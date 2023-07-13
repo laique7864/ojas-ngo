@@ -63,3 +63,6 @@ sliding-element {
   .swiper-scrollbar-horizontal{
     display: none;
   }
+  /* .custimise-swipe .swiper-slide{
+    width: 100% !important;
+  } */

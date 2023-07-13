@@ -8,7 +8,7 @@ const VerfiedMember = () => {
     const navigate = useNavigate()
     const fetchData = async () => {
         const data = await getMemberVerified()
-        console.log(data,'data')
+        console.log(data,'data');
         setDataRow(data.data.Events);
     }
     React.useEffect(() => {
@@ -20,6 +20,7 @@ const VerfiedMember = () => {
                 <div>
                     <h3 className='text-1C6FB font-sans text-3xl font-bold'>Verified Members</h3>
                 </div>
+
 
                 <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 ">
                 {dataRow.length > 0 && dataRow.map((item)=>(
