@@ -45,7 +45,7 @@ const VerfiedMember = () => {
 
                 <div className='bottom-heading'>
                     <p>want to donate to a NGO?</p>
-                    <button onClick={() => navigate("/DonationForm")}>Donate</button>
+                    <button onClick={() => navigate("/DonationForm")} >Donate</button>
                 </div>
 
 

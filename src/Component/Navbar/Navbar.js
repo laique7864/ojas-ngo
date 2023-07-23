@@ -17,7 +17,9 @@ const Navbar = () => {
     { name: 'Donorslist', href: 'DonorList' },
     // { name: 'President Desk', href: '#' },
     { name: 'LMC-BODY ', href: 'Manajment' },
-    { name: 'ContactUs', href: 'Contact' }   
+  
+    { name: 'GovtRecogntions', href: 'GovtRecogntions' },
+    { name: 'ContactUs', href: 'Contact' },
   ];
   const [current, setCurrent] = useState(0);
   const [currentState, setCurrentState] = useState(false);
@@ -57,13 +59,14 @@ useEffect(()=>{
         <div className='bg-blue-500 flex items-center justify-end sm:h-14 h-20	'>
           
           <div className='flex items-center '>
-         
-            <img src={tirenga} alt='' className='absolute top-0 left-14 sm:max-w-full sm:w-40	 w-16'  />
+          
+            <img src={tirenga} alt='' className='absolute top-0 left-6 sm:max-w-full sm:w-40	 w-16 z-10'  />
             
           
             {/* <h1 >LOG0</h1> */}
           </div>
           {/* <div></div> */}
+          
     
           <div className='hidden sm:flex items-center w-2/6'>
             {/* <div href='!' className=' text-white'></div> */}

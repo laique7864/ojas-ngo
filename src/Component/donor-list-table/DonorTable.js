@@ -20,45 +20,6 @@ const DonorTable = () => {
     const [currentPage, setCurrentPage] = React.useState(1);
     const [dataRow, setDataRow] = React.useState([])
 
-    const columns = [
-        { id: 'name', label: 'Name', minWidth: 170 },
-        {
-            id: 'image',
-            label: 'Image',
-            minWidth: 170,
-            align: 'right',
-            format: (value) => {
-                console.log(value, 'data');
-                return <img src={value} width='50px' height='50px' />
-            },
-        },
-
-        {
-            id: 'amount',
-            label: 'amount',
-            minWidth: 10,
-            align: 'right',
-        },
-        {
-            id: 'mobileNo',
-            label: 'Created Date',
-            minWidth: 170,
-            align: 'right'
-        },
-        {
-            id: 'accountNo',
-            label: 'Account No',
-            minWidth: 170,
-            align: 'right'
-        },
-        {
-            id: 'IfcsCode',
-            label: 'IFSC Code',
-            minWidth: 170,
-            align: 'right'
-        },
-    ];
-   
 
 
     const itemPerPage = 10;

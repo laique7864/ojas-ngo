@@ -7,6 +7,7 @@ import Baba from '../../assets/Navbarlogo/LMC4.png'
 import ADV from '../../assets/Navbarlogo/LMC5.png'
 import ped from '../../assets/Navbarlogo/LMC6.png'
 import gutay from '../../assets/Navbarlogo/LMC7.png'
+import ADVSIRS from '../../assets/Navbarlogo/SALEEM BHAI.png'
 import ADVSIR from '../../assets/Navbarlogo/LMC8.png'
 
 
@@ -16,7 +17,7 @@ import ADVSIR from '../../assets/Navbarlogo/LMC8.png'
 
 const ManagementTeam=()=> {
     return (
-        <div className='container flex items-center flex-col p-8 gap-8'>
+        <div className=' flex items-center flex-col p-8 gap-8'>
             <div>
                 <h3 className='h3 text-1C6FB font-sans text-3xl font-bold'>Management Team</h3>
             </div>
@@ -43,19 +44,10 @@ const ManagementTeam=()=> {
 <div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
     
     <div class="flex flex-col items-center pb-10">
-        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={Aruna} alt="Bonnie image"/>
-        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">MISS. ARUNA MUNDHEOJAS LMC PRESIDENT</h5>
-        <span class="font-sans text-1C6FB font-bold">Parbhani</span>
-        <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
-    
-    </div>
-</div>
-<div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
-    <div class="flex flex-col items-center pb-10">
-        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={Nitin} alt="Bonnie image"/>
-        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">KU.SEJAL G. MATRA</h5>
-        <span class="font-sans text-1C6FB font-bold">(RESEARCHER NATIONAL CHEMICAL LAB PUNE)</span>
-        <span class="font-sans text-1C6FB font-bold">OJAS LMC PROJECT-JOIN DIRECTOR</span>
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={ADVSIRS} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4">SHRI. SALEEM JAHANGIR</h5>
+        <span class="font-sans text-1C6FB font-bold">BJP STATE SECRETARY MH (MINORITY)</span>
+        <span class="font-sans text-1C6FB font-bold">BHIR Maharashtra</span>
     
     </div>
 </div>
@@ -72,20 +64,33 @@ const ManagementTeam=()=> {
 <div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
     
     <div class="flex flex-col items-center pb-10">
-        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={ADV} alt="Bonnie image"/>
-        <h5 class="font-sans text-1C6FB font-bold mt-4">ADV.SHAIKH MOHSIN</h5>
-        <span class="font-sans text-1C6FB font-bold">lAWYER BASMATH COURT</span>
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={Aruna} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">MISS. ARUNA MUNDHE (OJAS.B.U.S.B.S) </h5>
+        <span class="font-sans text-1C6FB font-bold">LMC PRESIDENT</span>
+        <span class="font-sans text-1C6FB font-bold">Parbhani</span>
         <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
     
     </div>
 </div>
+
+<div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={Nitin} alt="Bonnie image"/>
+        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">KU.SEJAL G. MATRA</h5>
+        <span class="font-sans text-1C6FB font-bold">(RESEARCHER NATIONAL CHEMICAL LAB PUNE)</span>
+        <span class="font-sans text-1C6FB font-bold">(OJAS.B.U.S.B.S) LMC VICE PRESIDENT</span>
+    
+    </div>
+</div>
+
+
 <div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
     
     <div class="flex flex-col items-center pb-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={ADV} alt="Bonnie image"/>
         <h5 class="font-sans text-1C6FB font-bold mt-4">ADV.SHAIKH MOHSIN</h5>
-        <span class="font-sans text-1C6FB font-bold">lAWYER BASMATH COURT</span>
-        <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
+        <span class="font-sans text-1C6FB font-bold">LEAGAL ADVISOR OJAS </span>
+        <span class="font-sans text-1C6FB font-bold">lAWYER BASMATH COURT Maharashtra</span>
     
     </div>
 </div>
@@ -103,7 +108,9 @@ const ManagementTeam=()=> {
     
     <div class="flex flex-col items-center pb-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={gutay} alt="Bonnie image"/>
-        <h5 class="font-sans text-1C6FB font-bold mt-4 text-[10px]">MR. SHRINIVAS GUTTE (SDK DEVELOPER SILICON, HYDERABAD)</h5>
+        <h5 class="font-sans text-1C6FB font-bold mt-4 ">MR. SHRINIVAS GUTTE</h5>
+        <span class="font-sans text-1C6FB font-bold">  (SDK DEVELOPER SILICON, HYDERABAD)</span>
+        <span class="font-sans text-1C6FB font-bold">DIGITAL ADVISOR OJAS</span>
         <span class="font-sans text-1C6FB font-bold">Parbhani</span>
         <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
     
@@ -113,8 +120,8 @@ const ManagementTeam=()=> {
     
     <div class="flex flex-col items-center pb-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={ADVSIR} alt="Bonnie image"/>
-        <h5 class="font-sans text-1C6FB font-bold mt-4">MR. SANTOSH DADKE GUTTE </h5>
-        <span class="font-sans text-1C6FB font-bold">LMC OJAS ADVISOR</span>
+        <h5 class="font-sans text-1C6FB font-bold mt-4">MR. SANTOSH DADKE</h5>
+        <span class="font-sans text-1C6FB font-bold">LMC (O.B.U.S.B.S) SUPERVISOR</span>
         <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
     
     </div>
@@ -242,7 +249,7 @@ const ManagementTeam=()=> {
            
             </div> */}
             <div className='bottom-heading'>
-                <p>want to donate to a NGO?</p>
+                <p>"Empower Change, Donate Today: Transforming Lives with Your Support!"</p>
                 <button>Donate</button>
             </div>
 

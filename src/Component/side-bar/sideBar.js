@@ -15,23 +15,10 @@ import {
   useTheme,
 } from "@mui/material";
 import {
-  SettingsOutlined,
   ChevronLeft,
   ChevronRightOutlined,
-  HomeOutlined,
-  ShoppingCartOutlined,
   Groups2Outlined,
-  ReceiptLongOutlined,
-  PublicOutlined,
-  PointOfSaleOutlined,
-  TodayOutlined,
-  CalendarMonthOutlined,
-  AdminPanelSettingsOutlined,
-  TrendingUpOutlined,
-  EventOutlinedIcon,
-  ChevronRight,
 } from "@mui/icons-material";
-import Diversity1Icon from '@mui/icons-material/Diversity1';
 import EventIcon from '@mui/icons-material/Event';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import { useEffect, useState } from "react";
@@ -52,10 +39,7 @@ const FlexBetween = styled(Box)({
 
 
 const navItems = [
-  {
-    text: "Home",
-    icon: <HomeOutlined />,
-  },
+ 
   {
     text: "VerifiedMembers",
     icon: <HowToRegIcon />,
@@ -69,10 +53,7 @@ const navItems = [
     text: "Posts",
     icon: <FeedOutlinedIcon />,
   },
-  {
-    text: "Management Team",
-    icon: <Groups2Outlined />,
-  },
+
   {
     text:'DonorTable',
     icon: <Groups2Outlined/>
@@ -80,15 +61,10 @@ const navItems = [
   {
     text: "Contact",
     icon: <CallOutlinedIcon />,
-  },
-  {
-    text: "Log Out",
-    icon: <InputIcon />,
   }
 ];
 
 const Sidebar = ({
-  drawerWidth,
   setIsSidebarOpen,
   isSidebarOpen,
   user
@@ -207,12 +183,7 @@ const Sidebar = ({
                 >
                   {user?.firstName}
                 </Typography>
-                {/* <Typography
-                  fontSize="0.8rem"
-                  sx={{ color: colors.secondary[200] }}
-                >
-                  Skyline
-                </Typography> */}
+              
               </Box>
 
             </FlexBetween>

@@ -26,6 +26,7 @@ import DonationForm from './Component/donation-form/DonationForm';
 import VerifiedMembers from './Component/verifiedmembers/VerifiedMembers';
 import AddPost from './Component/add-post/AddPost';
 import DonorTable from './Component/donor-list-table/DonorTable';
+import GovtRecogntions from './Component/Govt.Recogntions/GovtRecogntions';
 
 
 
@@ -61,6 +62,7 @@ function App() {
 
 
           <Route path='/events' element={<Events />} />
+            <Route path='/GovtRecogntions' element={<GovtRecogntions />} />
 
 
         </Route>

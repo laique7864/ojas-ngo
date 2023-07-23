@@ -94,8 +94,7 @@ const AddPost = () => {
         const data = await deletePostId(Id)
         console.log(data, 'daata');
         if (data.status === 201 || data.status === 200) {
-            console.log('daata');
-            toast("Event Added Successfully")
+            toast("Event Delete Successfully")
 
             fetchData()
 
@@ -234,7 +233,7 @@ const AddPost = () => {
             </tr>
         </thead>
         <tbody>
-            {CurrentData.length > 1 && CurrentData.map((item)=>(
+            {CurrentData.length > 0 && CurrentData.map((item)=>(
  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
      {item.name}

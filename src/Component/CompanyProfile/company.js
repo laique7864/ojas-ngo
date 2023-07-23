@@ -1,6 +1,6 @@
 import React from 'react'
 import img from '../images/burgurbtn.png'
-import './company.scss'
+import './company.css'
 
 function CompanyProfile() {
     return (

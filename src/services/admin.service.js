@@ -192,7 +192,6 @@ export const getCompletedEvent = async () => {
 };
 
 export const CompleteEvent = async (id) => {
-  console.log(id ,'skdmls');
 // console.log(editedParams);
 //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
   try {
@@ -208,7 +207,6 @@ export const CompleteEvent = async (id) => {
   }
 };
 export const CompleteMember = async (id) => {
-  console.log(id ,'skdmls');
 // console.log(editedParams);
 //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
   try {
@@ -226,9 +224,7 @@ export const CompleteMember = async (id) => {
 export const deleteEventId = async (value) => {
   //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
     try {
-      const storedObj = localStorage.getItem('user');
 
-      const token = JSON.parse(storedObj).token;
      return await axios
         .put(
           `${baseUrl}/api/removeEvent?eventId=${value}`
@@ -243,9 +239,7 @@ export const deleteEventId = async (value) => {
   export const deleteMemberId = async (value) => {
     //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
       try {
-        const storedObj = localStorage.getItem('user');
   
-        const token = JSON.parse(storedObj).token;
        return await axios
           .put(
             `${baseUrl}/api/deleteMember?eventId=${value}`
@@ -261,9 +255,7 @@ export const deleteEventId = async (value) => {
   export const deletePostId = async (value) => {
     //  const  params = await stringify(editedParams); // assigned to different variable to reduce api calling time
       try {
-        const storedObj = localStorage.getItem('user');
-  
-        const token = JSON.parse(storedObj).token;
+    
        return await axios
           .put(
             `${baseUrl}/api/removePost?eventId=${value}`
