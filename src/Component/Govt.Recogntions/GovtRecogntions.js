@@ -8,22 +8,9 @@ const GovtRecogntions = () => {
     e.preventDefault();
   };
 
-  const disableTextSelection = () => {
-    document.body.style.userSelect = 'none';
-  };
-
-  const enableTextSelection = () => {
-    document.body.style.userSelect = 'auto';
-  };
-
-  const handleDownloadClick = (e) => {
-    // You can add authentication logic here before allowing the download
-    // For now, let's allow everyone to download the PDF
-    // Implement your authentication logic to protect the PDF as needed
-  };
 
   return (
-    <div className='container'>
+    <div onContextMenu={disableContextMenu} >
  
 
             <p className="mt-2 text-slate-500 p-8" >
