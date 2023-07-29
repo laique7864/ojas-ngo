@@ -11,15 +11,16 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   const navigation = [
     { name: 'Home', href: '#' },
-    { name: 'VerifiedMember', href: 'VerifiedMember' },
+    { name: 'Verified Member', href: 'VerifiedMember' },
     { name: 'Events', href: 'Events' },
-    { name: 'RegistrationForm', href: 'RegistrationForm' },
-    { name: 'Donorslist', href: 'DonorList' },
+    { name: 'Registration Form', href: 'RegistrationForm' },
+    { name: 'Donors List', href: 'DonorList' },
     // { name: 'President Desk', href: '#' },
     { name: 'LMC-BODY ', href: 'Manajment' },
-  
-    { name: 'GovtRecogntions', href: 'GovtRecogntions' },
-    { name: 'ContactUs', href: 'Contact' },
+    {name : ' Gov Registration' ,herf:'Registration'},  
+    { name: 'Govt Recogntions', href: 'GovtRecogntions' },
+    { name: 'Contact Us', href: 'Contact' },
+   
   ];
   const [current, setCurrent] = useState(0);
   const [currentState, setCurrentState] = useState(false);
@@ -78,9 +79,10 @@ useEffect(()=>{
             </div>
           </div>
 
-<div className='m-2' >
-             <p className=' text-white'>Contact:9420114282</p>
-  <p className='text-white'>Email:ojassansthapbn@gmail.com</p>
+ 
+<div className='mr-10' >
+             <p className=' text-white font-bold  '>'ओजस' ब.उ.से.भा.वि.संस्था </p>
+  <p className='text-white italic'>सहायता के साथ,सबका साथ</p>
 </div>
           <div className='sm:hidden block'>
 

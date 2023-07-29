@@ -27,6 +27,12 @@ import VerifiedMembers from './Component/verifiedmembers/VerifiedMembers';
 import AddPost from './Component/add-post/AddPost';
 import DonorTable from './Component/donor-list-table/DonorTable';
 import GovtRecogntions from './Component/Govt.Recogntions/GovtRecogntions';
+import Registration from './Component/junaid/Registration';
+import Privacy from './Component/Footer/privacy';
+import Termcondition from './Component/Footer/Term&condition';
+
+
+
 
 
 
@@ -52,18 +58,20 @@ function App() {
           <Route path='/DonorList' element={<DonorList/>} />
           <Route path='/Registrationform' element={<Registrationform/>} />
           <Route path='/DonationForm' element={<DonationForm/>} />
-
+        
 
           <Route path='/Manajment' element={<Manajment />} />
-
-
+      
 
           <Route path='/Icard' element={<Icard />} />
 
-
-          <Route path='/events' element={<Events />} />
+          
+            <Route path='/events' element={<Events />} />
             <Route path='/GovtRecogntions' element={<GovtRecogntions />} />
-
+      
+            <Route path='/Registration' element={<Registration />}/>
+            <Route path='/Privacy'  element={<Privacy/>}/>
+            <Route path='/Termcondition' element={<Termcondition/>}/>
 
         </Route>
 

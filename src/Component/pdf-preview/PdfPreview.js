@@ -8,6 +8,7 @@ const PdfViewerComponent = (props) => {
   const handleContextMenu = (event) => {
     event.preventDefault(); // Prevent context menu (right-click) on the PDF
   };
+  
 
   return (
     <div onContextMenu={handleContextMenu}>

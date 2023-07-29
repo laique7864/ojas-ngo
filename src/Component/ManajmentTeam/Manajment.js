@@ -35,9 +35,10 @@ const ManagementTeam=()=> {
                    <div class="w-full max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
     <div class="flex flex-col items-center pb-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={MoinSir} alt="Bonnie image"/>
-        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">M.K. SHAIKH  PRESIDENT (OJAS.B.U.S.B.S)</h5>
-        <span class="font-sans text-1C6FB font-bold">Parbhani</span>
-        <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
+        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">M.K. SHAIKH</h5>
+        <span class="font-sans text-1C6FB font-bold">PRESIDENT (OJAS.B.U.S.B.S)</span>
+        <span class="font-sans text-1C6FB font-bold">Parbhani Maharashtra</span>
+        
     
     </div>
 </div>
@@ -47,7 +48,8 @@ const ManagementTeam=()=> {
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={ADVSIRS} alt="Bonnie image"/>
         <h5 class="font-sans text-1C6FB font-bold mt-4">SHRI. SALEEM JAHANGIR</h5>
         <span class="font-sans text-1C6FB font-bold">BJP STATE SECRETARY MH (MINORITY)</span>
-        <span class="font-sans text-1C6FB font-bold">BHIR Maharashtra</span>
+        <span class="font-sans text-1C6FB font-bold">VICE PRESIDENT OJAS LMC</span>
+        <span class="font-sans text-1C6FB font-bold">BEED Maharashtra</span>
     
     </div>
 </div>
@@ -56,7 +58,7 @@ const ManagementTeam=()=> {
     <div class="flex flex-col items-center pb-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={Baba} alt="Bonnie image"/>
         <h5 class="font-sans text-1C6FB font-bold mt-4">MR. BABA PATHAN</h5>
-        <span class="font-sans text-1C6FB font-bold">(BJP STATE VICE-PRESIDENT MINORITY CELL)</span>
+        <span class="font-sans text-1C6FB font-bold">(BJP STATE VICE-PRESIDENT)</span>
         <span class="font-sans text-1C6FB font-bold"> OJAS LMC SECRETARY</span>
     
     </div>
@@ -65,8 +67,8 @@ const ManagementTeam=()=> {
     
     <div class="flex flex-col items-center pb-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={Aruna} alt="Bonnie image"/>
-        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">MISS. ARUNA MUNDHE (OJAS.B.U.S.B.S) </h5>
-        <span class="font-sans text-1C6FB font-bold">LMC PRESIDENT</span>
+        <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">MISS. ARUNA MUNDHE </h5>
+        <span class="font-sans text-1C6FB font-bold">VICE SECRETARY LMC (OJAS.B.U.S.B.S) </span>
         <span class="font-sans text-1C6FB font-bold">Parbhani</span>
         <span class="font-sans text-1C6FB font-bold">Maharashtra</span>
     
@@ -77,8 +79,8 @@ const ManagementTeam=()=> {
     <div class="flex flex-col items-center pb-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={Nitin} alt="Bonnie image"/>
         <h5 class="font-sans text-1C6FB font-bold mt-4 text-sm">KU.SEJAL G. MATRA</h5>
-        <span class="font-sans text-1C6FB font-bold">(RESEARCHER NATIONAL CHEMICAL LAB PUNE)</span>
-        <span class="font-sans text-1C6FB font-bold">(OJAS.B.U.S.B.S) LMC VICE PRESIDENT</span>
+        <span class="font-sans text-1C6FB font-bold">(RESEARCHER NCL LAB PUNE)</span>
+        <span class="font-sans text-1C6FB font-bold">VICE SECRETARY LMC (OJAS.B.U.S.B.S)</span>
     
     </div>
 </div>

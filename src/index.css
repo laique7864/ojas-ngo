@@ -3,7 +3,11 @@ body {
 
   font-family:'Inter', sans-serif;
 }
-
+@media print {
+  html, body {
+     display: none;  /* hide whole page */
+  }
+}
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
