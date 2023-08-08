@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 import Sidebar from '../side-bar/sideBar'
 import { Box, useMediaQuery,  useTheme ,IconButton} from '@mui/material'
 import { tokens } from "../../theme";
@@ -17,12 +17,10 @@ function AdminRoutes() {
 
 // Parse the retrieved string back into an object
 const token = JSON.parse(storedObj);
-console.log(token);
-  return (
-    <>
-
-     <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
-     <IconButton style={{  top: '0px', left: "5%", color: colors.blueAccent[100] ,position:'sticky' }} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+return token ? (
+  <>
+  <Box display={ "block" } width="100%" height="100%">
+     <IconButton style={{  top: '0px', left: "1%", color: colors.blueAccent[100] ,position:'sticky' }} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
         <ChevronRight style={{fontSize:'3rem'}}/>
 
       </IconButton>
@@ -38,12 +36,11 @@ console.log(token);
         <Outlet />
       </Box>
     </Box>
-      {/* <Outlet/>
-      <Footer/> */}
 
-        
-    </>
-  )
+  </>
+) :<Navigate to={"/login"}/>
+
+
 }
 
 export default AdminRoutes

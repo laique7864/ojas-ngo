@@ -112,12 +112,11 @@ const Sidebar = ({
                     OJAS NGO
                   </Typography>
                 </Box>
-                {!isNonMobile && (
+           
                   <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                     <ChevronLeft />
 
                   </IconButton>
-                )}
               </FlexBetween>
             </Box>
             <List>

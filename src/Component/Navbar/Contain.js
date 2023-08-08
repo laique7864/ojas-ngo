@@ -162,7 +162,7 @@ const Contain = () => {
         <div className="Latest-Text text-center">
           <h3 className="text-blue-600/100   font-bold">Latest Activity</h3>
         </div>
-        <div class="grid flex-col bg-white overflow-scroll gap-12 items-center justify-center w-full h-1211 p-4 mx-auto border-2 rounded-lg border-0966BB ">
+        <div class="grid flex-col bg-white overflow-y-scroll gap-12 items-center justify-center w-full h-1211 p-4 mx-auto border-2 rounded-lg border-0966BB ">
           {dataRow.map((item) => {
             return (
               <>
@@ -186,7 +186,7 @@ const Contain = () => {
                       />
                     </div>
                     <div className="p-8">
-                      <p className="mt-2 text-slate-500">{item.description}</p>
+                      <p className="mt-2 text-slate-500 text-justify indent-1.5 whitespace-normal">{item.description}</p>
                     </div>
                   </div>
                 </div>
@@ -283,7 +283,7 @@ const Contain = () => {
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
 
                     <div class="border-b-2 border-gray-400 w-4/5 ml-6"></div> */}
-          <p className=" italic text-sky-400 ml-4 text-2.6 overflow-hidden">
+          <p className=" italic text-sky-400 ml-4 text-2.6 overflow-hidden text-justify">
             Testimonial : I am honored to share my heartfelt testimonial about
             my life-changing experience with OJAS. From the very beginning, this
             remarkable organization has been dedicated to transforming lives and
@@ -306,7 +306,7 @@ const Contain = () => {
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
                     <div class="border-b-2 border-gray-400 w-4/5 ml-11"></div> */}
-          <p className="mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden">
+          <p className="mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden text-justify">
             Testimonial : [ Empowerment and Education ] Education is the
             cornerstone of progress, and OJAS understands this fundamental
             truth. They provided me with opportunities for personal and
