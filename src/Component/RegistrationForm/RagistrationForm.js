@@ -2,8 +2,6 @@ import React, { useRef, useState } from "react";
 import { RegistrationMember, addEvent } from "../../services/admin.service";
 import { ToastContainer, toast } from "react-toastify";
 import ConfirmationModelRegistration from "./ConfirmationModelRegistration";
-import { Alert } from "@mui/material";
-import emailjs from "@emailjs/browser";
 
 const RegistrationForm = () => {
   const form = useRef();
