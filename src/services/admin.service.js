@@ -96,16 +96,13 @@ export const RegistrationMember = async (values) => {
 
 export const getEventAll = async () => {
   // console.log(values);
-  const storedObj = localStorage.getItem('user');
+  // const storedObj = localStorage.getItem('user');
 
-  const token = JSON.parse(storedObj).token;
-  console.log(token);
+  // const token = JSON.parse(storedObj).token;
+  // console.log(token);
     try {
     const { data } = await axios.get(
-      `${baseUrl}/api/getEvents`,
-      {
-        headers: { Authorization: token },
-      }
+      `${baseUrl}/api/getEvents`
     );
     return data;
   } catch (error) {
@@ -114,16 +111,13 @@ export const getEventAll = async () => {
 };
 export const getPostsAll = async () => {
   // console.log(values);
-  const storedObj = localStorage.getItem('user');
+  // const storedObj = localStorage.getItem('user');
 
-  const token = JSON.parse(storedObj).token;
-  console.log(token);
+  // const token = JSON.parse(storedObj).token;
+  // console.log(token);
     try {
     const { data } = await axios.get(
-      `${baseUrl}/api/getPost`,
-      {
-        headers: { Authorization: token },
-      }
+      `${baseUrl}/api/getPost`
     );
     return data;
   } catch (error) {
@@ -132,16 +126,13 @@ export const getPostsAll = async () => {
 };
 export const getDonorAll = async () => {
   // console.log(values);
-  const storedObj = localStorage.getItem('user');
+  // const storedObj = localStorage.getItem('user');
 
-  const token = JSON.parse(storedObj).token;
-  console.log(token);
+  // const token = JSON.parse(storedObj).token;
+  // console.log(token);
     try {
     const { data } = await axios.get(
-      `${baseUrl}/api/getDonarAllList`,
-      {
-        headers: { Authorization: token },
-      }
+      `${baseUrl}/api/getDonarAllList`
     );
     return data;
   } catch (error) {
@@ -174,16 +165,13 @@ export const getMemberVerified = async () => {
 };
 export const getCompletedEvent = async () => {
   // console.log(values);
-  const storedObj = localStorage.getItem('user');
+  // const storedObj = localStorage.getItem('user');
 
-  const token = JSON.parse(storedObj).token;
-  console.log(token);
+  // const token = JSON.parse(storedObj).token;
+  // console.log(token);
     try {
     const { data } = await axios.get(
-      `${baseUrl}/api/getEvents`,
-      {
-        headers: { Authorization: token },
-      }
+      `${baseUrl}/api/getEvents`
     );
     return data;
   } catch (error) {

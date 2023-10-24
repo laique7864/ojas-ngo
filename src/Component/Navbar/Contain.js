@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Contain.css";
 import img from "../../assets/Navbarlogo/Ellipse 4.png";
-import img2 from "../../assets/Navbarlogo/5x5h-removebg-preview.png";
 import freeMedicl from "../../assets/Navbarlogo/free medical chek up.png";
 import Sanitation from "../../assets/fifithobject.jpeg";
 import urineTest from "../../assets/Navbarlogo/blod and urine test.jpg";
@@ -20,7 +19,7 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -48,7 +47,7 @@ const ObjectiveSlider = [
 ];
 
 const Contain = () => {
-  // const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  
   const isMobile = useMediaQuery("(max-width: 600px)");
   const navigate = useNavigate();
   const [completedEvent, setCompletedEvent] = useState([]);
@@ -65,22 +64,22 @@ const Contain = () => {
 
   const fetchData = async () => {
     const data = await getPostsAll();
-    console.log(data, "data");
+    
     setDataRow(data.data.Events);
   };
 
   useEffect(() => {
     fetchData();
     getUpcominEvent();
-    // getComletedEvent()
+   
   }, []);
   return (
     <>
       <div className="flex justify-center items-center h-600 w-1440 custimise-swipe">
         <Swiper
-          // install Swiper modules
+          
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          // spaceBetween={50}
+          
           slidesPerView={1}
           navigation
           mousewheel={{
@@ -104,28 +103,16 @@ const Contain = () => {
         </Swiper>
       </div>
       <div>
-        <h3 className="Main-Contain-text text-center font-bold mt-8  text-blue-600/100">
+        <h3 className="Main-Contain-text text-center font-bold mt-1  text-blue-600/100">
           Upcoming Events
         </h3>
       </div>
-      <div class="  mt-4">
-        {/* {completedEvent.map((item)=>{
-        console.log(item);
-        return (
-<div className='w-10/12 pl-8 mb-8 h-80'>
-        <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB"> 
-        <img src={item.img} className='h-full'/>
-          </div>
-        <p className='text-025FB5 w-10/12 font-sans text-center'>{item.name}</p>
-        </div>
-        )
-      })
-
-      } */}
+      <div class="  mt-2">
+        
         <Swiper
-          // install Swiper modules
+          
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          // spaceBetween={50}
+         
           slidesPerView={isMobile ? 1 : 3}
           navigation
           mousewheel={{
@@ -140,7 +127,7 @@ const Contain = () => {
           {completedEvent.map((item) => {
             return (
               <SwiperSlide>
-                <div className=" pl-14 mb-8 h-80">
+                <div className=" pl-14 mb-11 h-80">
                   <div class="w-10/12 h-80 bg-FFFFFF border  border-1C6FB">
                     <img src={item.img} className="h-full" />
                   </div>
@@ -154,9 +141,9 @@ const Contain = () => {
           ...
         </Swiper>
       </div>
-      <div className="bottom-heading">
-        <p className="text-gray-800">Empower Change, Donate Today, Transforming Lives with Your Support!</p>
-        <button onClick={() => navigate("/DonationForm")}>Donate</button>
+      <div className="bottom-heading mb-1">
+        <p className="text-gray-800 ">Empower Change, Donate Today, Transforming Lives with Your Support!</p>
+        <button className=" hover:bg-indigo-500 " onClick={() => navigate("/DonationForm")}>Donate</button>
       </div>
       <div className="p-2">
         <div className="Latest-Text text-center">
@@ -230,16 +217,16 @@ const Contain = () => {
       <div>
         <div className="bottom-heading">
           <p className="text-gray-800">"Empower Change, Donate Today, Transforming Lives with Your Support!"</p>
-          <button onClick={() => navigate("/DonationForm")}>Donate</button>
+          <button className=" hover:bg-indigo-500 " onClick={() => navigate("/DonationForm")}>Donate</button>
         </div>
-        <h4 className="flex items-center justify-center text-025FB5 mb-9 text-2xl font-sans">
+        <h4 className="flex items-center justify-center text-025FB5 mb-8 text-2xl font-sans">
           Our Objective
         </h4>
-        <div className=" mb-4 ">
+        <div className=" mb-3 ">
           <Swiper
-            // install Swiper modules
+            
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            // spaceBetween={50}
+           
             slidesPerView={isMobile ? 2 : 4}
             navigation
             autoplay={{ delay: 2000 }}
@@ -278,11 +265,7 @@ const Contain = () => {
           <div className="sliding-element">
             <p>This element will slide in when first rendered.</p>
           </div>
-          {/* <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-6"></div>
-                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
-                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-6"></div>
-
-                    <div class="border-b-2 border-gray-400 w-4/5 ml-6"></div> */}
+         
           <p className=" italic text-sky-400 ml-4 text-2.6 overflow-hidden text-justify">
             Testimonial : I am honored to share my heartfelt testimonial about
             my life-changing experience with OJAS. From the very beginning, this
@@ -302,10 +285,7 @@ const Contain = () => {
           </div>
         </div>
         <div class="sm:w-2/5  w-full bg-FFFFFF border border-1C6FB  mr-3.5 flex flex-col justify-between sm:mt-0 mt-1.5">
-          {/* <div class="border-b-2 border-gray-400 w-4/5 mb-8 mt-11 ml-11"></div>
-                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
-                    <div class="border-b-2 border-gray-400 w-4/5 mb-8 ml-11"></div>
-                    <div class="border-b-2 border-gray-400 w-4/5 ml-11"></div> */}
+          
           <p className="mt-4 italic text-sky-400 ml-4 text-2.6 overflow-hidden text-justify">
             Testimonial : [ Empowerment and Education ] Education is the
             cornerstone of progress, and OJAS understands this fundamental

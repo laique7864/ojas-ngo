@@ -38,7 +38,7 @@ return token ? (
     </Box>
 
   </>
-) :<Navigate to={"/login"}/>
+) : <Navigate to={"/login"}/>
 
 
 }

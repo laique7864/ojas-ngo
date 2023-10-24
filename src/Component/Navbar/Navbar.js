@@ -12,12 +12,13 @@ const Navbar = () => {
   const navigation = [
     { name: 'Home', href: '#' },
     { name: 'Verified Member', href: 'VerifiedMember' },
+    {name:'Volunteers', href:'Volunteer'},
     { name: 'Events', href: 'Events' },
     { name: 'Registration Form', href: 'RegistrationForm' },
     { name: 'Donors List', href: 'DonorList' },
-    // { name: 'President Desk', href: '#' },
+    { name: 'Gov Registration', href: 'Registration' },
     { name: 'LMC-BODY ', href: 'Manajment' },
-    {name : ' Gov Registration' ,herf:'Registration'},  
+   
     { name: 'Govt Recogntions', href: 'GovtRecogntions' },
     { name: 'Contact Us', href: 'Contact' },
    

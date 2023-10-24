@@ -90,19 +90,19 @@ export default function KeepMountedModal({ refetch }) {
                             justifyContent: 'center'
                         }}>
                             <div style={{ textAlign: "center", marginBottom: "1rem" }}>
-                                <InputLabel htmlFor='name'>Event Name</InputLabel>
+                                <InputLabel >Event Name</InputLabel>
                                 <TextField style={{ padding: "0.2rem" }} onChange={(e) => setName(e.target.value)} required id='adminid' vatiant=' outlined' placeholder="" />
                             </div>
                             <div style={{ textAlign: "center", marginBottom: "1rem" }}>
-                                <InputLabel htmlFor='name'>Location</InputLabel>
+                                <InputLabel >Location</InputLabel>
                                 <TextField style={{ padding: "0.2rem" }} onChange={(e) => setLocation(e.target.value)} required id='adminid' vatiant=' outlined' placeholder="" />
                             </div>
                             <div style={{ textAlign: "center", marginBottom: "1rem" }}>
-                                <InputLabel htmlFor='name'>Date</InputLabel>
+                                <InputLabel >Date</InputLabel>
                                 <TextField style={{ padding: "0.2rem" }} type="date" onChange={(e) => setDate(e.target.value)} required id='adminid' vatiant=' outlined' placeholder="" />
                             </div>
                             {/* <div style={{ textAlign: "center", marginBottom: "1rem" }}>
-                                <InputLabel htmlFor='adminid'>Admin Id</InputLabel>
+                                <InputLabel id'>Admin Id</InputLabel>
                                 <TextField onChange={(e) => setAdminId(e.target.value)} value={adminid} required id='name' vatiant=' outlined' placeholder="" />
                             </div> */}
                             <Button className='imageUpload' variant="contained" component="label">

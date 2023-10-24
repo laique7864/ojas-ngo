@@ -12,7 +12,7 @@ const GovtRecogntions = () => {
     <div onContextMenu={disableContextMenu} >
  
 
-            <p className="mt-4 text-slate-500 p-8 font-bold " >
+            <p className="mt-4 text-slate-500 p-8 font-[500] text-justify " >
               At our NGO (OJAS BAHU UDDESHIYE SEVA BHAVI SANSTHA, PARBHANI - MAHARASHTRA), We are committed to making a positive impact on society through various social activities. With a strong belief in the power of collective action, we actively engage in initiatives that promote education, healthcare, environmental sustainability, and community development. Our dedicated team of passionate volunteers works tirelessly to implement projects that address pressing social issues, fostering a sense of empowerment and inclusivity within the communities we serve. Through collaboration and partnerships, we strive to create a ripple effect of positive change, touching the lives of those in need and inspiring others to join us in our mission. Together, we can build a brighter, more equitable future for all. Join us today and be part of the change.
             </p>
 

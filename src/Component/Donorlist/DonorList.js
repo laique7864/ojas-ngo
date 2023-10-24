@@ -25,11 +25,11 @@ React.useEffect(() => {
           <h3 className='text-1C6FB font-sans text-3xl font-bold'>Donor's list</h3>
         </div>
 
-        <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 ">
+        <div class="grid  grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 ">
          
       {dataRow.length > 1 && dataRow.map((item)=>(
-        <div class="w-52 max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
-    <div class="flex justify-end px-4 pt-4">
+        <div class="w-44 md:w-52 max-w-sm bg-white border-2 border-1C6FB rounded-lg shadow">
+    <div class="flex justify-end px-4 pt-2">
     </div>
     <div class="flex flex-col items-center pb-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={item?.image} alt="Bonnie image"/>

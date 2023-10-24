@@ -30,6 +30,7 @@ import GovtRecogntions from './Component/Govt.Recogntions/GovtRecogntions';
 import Registration from './Component/junaid/Registration';
 import Privacy from './Component/Footer/privacy';
 import Termcondition from './Component/Footer/Term&condition';
+import Volunteer from './Component/volunteer/volunteer';
 
 
 
@@ -37,8 +38,8 @@ import Termcondition from './Component/Footer/Term&condition';
 
 
 
-
-
+// mdmoinmkshaikh@gmail.com
+// 9420114282@Mks
 // import Upcoming from './Components/Navbar/Upcomingevent/upcoming'
 
 
@@ -53,6 +54,7 @@ function App() {
         <Route element={<Root />}>
           <Route path='/' element={<Contain />} />
           <Route path='/VerifiedMember' element={<VerifiedMember />} />
+          <Route path='/Volunteer' element={<Volunteer />} />
           <Route path='/Contact' element={<Contact />} />
           <Route path='/Donation' element={<Donation/>} />
           <Route path='/DonorList' element={<DonorList/>} />

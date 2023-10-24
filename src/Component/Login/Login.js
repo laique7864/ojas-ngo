@@ -64,7 +64,7 @@ const Login = () => {
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div className="sm:col-span-2">
               <label
-                htmlFor="email"
+              
                 className="block text-sm font-semibold leading-6 text-1C6FB"
               >
                 Email
@@ -83,7 +83,7 @@ const Login = () => {
             </div>
             <div className="sm:col-span-2">
               <label
-                htmlFor="email"
+              
                 className="block text-sm font-semibold leading-6 text-1C6FB"
               >
                 Password

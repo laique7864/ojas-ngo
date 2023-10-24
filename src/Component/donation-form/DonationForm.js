@@ -170,7 +170,7 @@ const [mobile, setMobile] = useState(null)
       <h1 className="text-2xl font-bold mb-4 text-1C6FB text-center ">Make a Donation</h1>
       <form onSubmit={checkoutHandler} className="space-y-4">
         <div>
-          <label htmlFor="amount" className="block text-sm font-medium text-gray-700">
+          <label  className="block text-sm font-medium text-gray-700">
             Amount (in INR) <span class="text-yellow-500 text-2xl">*</span>
           </label>
           <input
@@ -183,7 +183,7 @@ const [mobile, setMobile] = useState(null)
           />
         </div>
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          <label  className="block text-sm font-medium text-gray-700">
             Name <span class="text-yellow-500 text-2xl">*</span>
 
           </label>
@@ -197,7 +197,7 @@ const [mobile, setMobile] = useState(null)
           />
         </div>
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          <label  className="block text-sm font-medium text-gray-700">
             Account No <span class="text-yellow-500 text-2xl">*</span>
 
           </label>
@@ -211,7 +211,7 @@ const [mobile, setMobile] = useState(null)
           />
         </div>
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          <label  className="block text-sm font-medium text-gray-700">
             IFSC Code <span class="text-yellow-500 text-2xl">*</span>
 
           </label>
@@ -226,7 +226,7 @@ const [mobile, setMobile] = useState(null)
         </div>
         
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          <label  className="block text-sm font-medium text-gray-700">
             Email Address <span class="text-yellow-500 text-2xl">*</span>
 
           </label>
@@ -240,7 +240,7 @@ const [mobile, setMobile] = useState(null)
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          <label  className="block text-sm font-medium text-gray-700">
              Contact No <span class="text-yellow-500 text-2xl">*</span>
           </label>
           <input
@@ -253,7 +253,7 @@ const [mobile, setMobile] = useState(null)
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700"  >
+          <label  className="block text-sm font-medium text-gray-700"  >
             Profile 
           </label>
           <input
